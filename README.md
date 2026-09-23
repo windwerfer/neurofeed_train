@@ -106,4 +106,8 @@ Private Kaggle datasets / kernels were used as **GPU scratch** during developmen
 
 ## License posture
 
-See [`docs/LICENSE_NOTES.md`](docs/LICENSE_NOTES.md). Prefer open corpora (CC0 / CC BY / ODC-By / MIT / BSD). Publish **head-only** weights with dataset + encoder attribution. Do not redistribute gated foundation bases (e.g. REVE-base).
+- **Original code in this repo** (scripts, docs, recipes, subject-split JSON authored here): **[Apache-2.0](LICENSE)** — see [`LICENSE`](LICENSE).
+- **Third-party snippets under `vendor/`**: upstream licenses apply (see [`vendor/cbramod/NOTICE.md`](vendor/cbramod/NOTICE.md)). This Apache grant does not re-license those materials.
+- **Training corpora / Hugging Face window binaries**: remain under their **source licenses**; see [`docs/LICENSE_NOTES.md`](docs/LICENSE_NOTES.md). This Apache grant does **not** re-license those materials.
+
+Prefer open corpora (CC0 / CC BY / ODC-By / MIT / BSD). Publish **head-only** weights with dataset + encoder attribution. Do not redistribute gated foundation bases (e.g. REVE-base).

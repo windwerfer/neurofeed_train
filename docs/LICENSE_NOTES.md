@@ -1,5 +1,14 @@
 # License notes — shipping & publish path
 
+## Project code license
+
+Original project code in this repository (scripts, docs, recipes, subject-split JSON authored here) is licensed under **Apache-2.0** — see [`LICENSE`](../LICENSE) at the repo root.
+
+This grant covers **windwerfer-authored code only**. It does **not** re-license:
+
+- third-party snippets under `vendor/` (see `vendor/cbramod/NOTICE.md` and upstream licenses);
+- training corpora or derived window binaries on Hugging Face (source licenses; table below).
+
 This project trains and **publishes head-only weights** on top of frozen encoders.  
 Stay within **open licenses** for anything that touches the shipping training mix or redistributed artifacts.
 
