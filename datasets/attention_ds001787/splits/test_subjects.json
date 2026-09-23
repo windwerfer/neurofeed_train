@@ -1,0 +1,11 @@
+{
+  "corpus": "attention_ds001787",
+  "split": "test",
+  "policy": "fixed_subject_json",
+  "subjects": [
+    "sub-019",
+    "sub-013"
+  ],
+  "created_utc": "2026-09-07T07:13:21.989341+00:00",
+  "note": "updated by expand_attention_batch40_ds001787; frozen test=['sub-019', 'sub-013']"
+}

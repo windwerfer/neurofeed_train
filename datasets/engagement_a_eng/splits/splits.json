@@ -1,0 +1,1250 @@
+{
+  "corpus": "engagement_a_eng",
+  "policy": "fixed_subject_json",
+  "policy_note": "Subject-wise on unique_person_id. Barras ds007169+ds007262 share person IDs so both tasks stay in the same split (no identity leakage).",
+  "created_utc": "2026-09-08T13:41:14.160638+00:00",
+  "seed": 42,
+  "splits": {
+    "train": [
+      "barras_sub-002",
+      "barras_sub-006",
+      "barras_sub-007",
+      "barras_sub-008",
+      "barras_sub-009",
+      "barras_sub-010",
+      "barras_sub-011",
+      "barras_sub-012",
+      "barras_sub-015",
+      "barras_sub-016",
+      "barras_sub-018",
+      "barras_sub-019",
+      "ds007554_sub-001",
+      "ds007554_sub-003",
+      "ds007554_sub-004",
+      "ds007554_sub-005",
+      "ds007554_sub-008",
+      "ds007554_sub-009",
+      "ds007554_sub-011",
+      "ds007554_sub-012",
+      "ds007554_sub-013",
+      "ds007554_sub-014",
+      "ds007554_sub-016",
+      "ds007554_sub-017",
+      "ds007554_sub-018",
+      "ds007554_sub-020",
+      "ds007554_sub-021",
+      "ds007554_sub-022",
+      "ds007554_sub-023",
+      "ds007554_sub-024",
+      "ds007554_sub-025",
+      "ds007554_sub-026",
+      "ds007554_sub-027",
+      "ds007554_sub-029",
+      "ds007554_sub-030",
+      "eegmat_Subject00",
+      "eegmat_Subject02",
+      "eegmat_Subject04",
+      "eegmat_Subject05",
+      "eegmat_Subject06",
+      "eegmat_Subject08",
+      "eegmat_Subject09",
+      "eegmat_Subject11",
+      "eegmat_Subject12",
+      "eegmat_Subject13",
+      "eegmat_Subject14",
+      "eegmat_Subject15",
+      "eegmat_Subject18",
+      "eegmat_Subject20",
+      "eegmat_Subject21",
+      "eegmat_Subject25",
+      "eegmat_Subject26",
+      "eegmat_Subject27",
+      "eegmat_Subject28",
+      "eegmat_Subject30",
+      "eegmat_Subject31",
+      "eegmat_Subject33",
+      "eegmat_Subject34",
+      "eegmat_Subject35",
+      "stew_1",
+      "stew_11",
+      "stew_13",
+      "stew_14",
+      "stew_15",
+      "stew_16",
+      "stew_17",
+      "stew_18",
+      "stew_19",
+      "stew_20",
+      "stew_21",
+      "stew_22",
+      "stew_23",
+      "stew_24",
+      "stew_25",
+      "stew_26",
+      "stew_27",
+      "stew_29",
+      "stew_30",
+      "stew_31",
+      "stew_32",
+      "stew_35",
+      "stew_38",
+      "stew_4",
+      "stew_40",
+      "stew_41",
+      "stew_42",
+      "stew_43",
+      "stew_45",
+      "stew_47",
+      "stew_5",
+      "stew_6",
+      "stew_7",
+      "stew_8"
+    ],
+    "val": [
+      "barras_sub-004",
+      "barras_sub-013",
+      "barras_sub-014",
+      "barras_sub-020",
+      "ds007554_sub-019",
+      "ds007554_sub-028",
+      "eegmat_Subject03",
+      "eegmat_Subject07",
+      "eegmat_Subject10",
+      "eegmat_Subject17",
+      "eegmat_Subject22",
+      "eegmat_Subject23",
+      "eegmat_Subject24",
+      "eegmat_Subject29",
+      "stew_2",
+      "stew_3",
+      "stew_33",
+      "stew_37",
+      "stew_46",
+      "stew_48"
+    ],
+    "test": [
+      "barras_sub-001",
+      "barras_sub-003",
+      "barras_sub-005",
+      "ds007554_sub-002",
+      "ds007554_sub-006",
+      "ds007554_sub-007",
+      "ds007554_sub-010",
+      "ds007554_sub-015",
+      "eegmat_Subject01",
+      "eegmat_Subject16",
+      "eegmat_Subject19",
+      "eegmat_Subject32",
+      "stew_10",
+      "stew_12",
+      "stew_28",
+      "stew_34",
+      "stew_36",
+      "stew_39",
+      "stew_44",
+      "stew_9"
+    ]
+  },
+  "n_unique_persons": 133,
+  "n_window_packs": 150,
+  "persons": {
+    "barras_sub-001": {
+      "packs": [
+        "ds007169_sub-001",
+        "ds007262_sub-001"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-002": {
+      "packs": [
+        "ds007169_sub-002"
+      ],
+      "sources": [
+        "ds007169"
+      ]
+    },
+    "barras_sub-003": {
+      "packs": [
+        "ds007169_sub-003",
+        "ds007262_sub-003"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-004": {
+      "packs": [
+        "ds007169_sub-004",
+        "ds007262_sub-004"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-005": {
+      "packs": [
+        "ds007169_sub-005",
+        "ds007262_sub-005"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-006": {
+      "packs": [
+        "ds007169_sub-006",
+        "ds007262_sub-006"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-007": {
+      "packs": [
+        "ds007169_sub-007",
+        "ds007262_sub-007"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-008": {
+      "packs": [
+        "ds007169_sub-008",
+        "ds007262_sub-008"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-009": {
+      "packs": [
+        "ds007169_sub-009",
+        "ds007262_sub-009"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-010": {
+      "packs": [
+        "ds007169_sub-010",
+        "ds007262_sub-010"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-011": {
+      "packs": [
+        "ds007169_sub-011",
+        "ds007262_sub-011"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-012": {
+      "packs": [
+        "ds007169_sub-012",
+        "ds007262_sub-012"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-013": {
+      "packs": [
+        "ds007262_sub-013"
+      ],
+      "sources": [
+        "ds007262"
+      ]
+    },
+    "barras_sub-014": {
+      "packs": [
+        "ds007169_sub-014",
+        "ds007262_sub-014"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-015": {
+      "packs": [
+        "ds007169_sub-015",
+        "ds007262_sub-015"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-016": {
+      "packs": [
+        "ds007169_sub-016",
+        "ds007262_sub-016"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-018": {
+      "packs": [
+        "ds007169_sub-018",
+        "ds007262_sub-018"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-019": {
+      "packs": [
+        "ds007169_sub-019",
+        "ds007262_sub-019"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "barras_sub-020": {
+      "packs": [
+        "ds007169_sub-020",
+        "ds007262_sub-020"
+      ],
+      "sources": [
+        "ds007169",
+        "ds007262"
+      ]
+    },
+    "ds007554_sub-001": {
+      "packs": [
+        "ds007554_sub-001"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-002": {
+      "packs": [
+        "ds007554_sub-002"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-003": {
+      "packs": [
+        "ds007554_sub-003"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-004": {
+      "packs": [
+        "ds007554_sub-004"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-005": {
+      "packs": [
+        "ds007554_sub-005"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-006": {
+      "packs": [
+        "ds007554_sub-006"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-007": {
+      "packs": [
+        "ds007554_sub-007"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-008": {
+      "packs": [
+        "ds007554_sub-008"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-009": {
+      "packs": [
+        "ds007554_sub-009"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-010": {
+      "packs": [
+        "ds007554_sub-010"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-011": {
+      "packs": [
+        "ds007554_sub-011"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-012": {
+      "packs": [
+        "ds007554_sub-012"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-013": {
+      "packs": [
+        "ds007554_sub-013"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-014": {
+      "packs": [
+        "ds007554_sub-014"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-015": {
+      "packs": [
+        "ds007554_sub-015"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-016": {
+      "packs": [
+        "ds007554_sub-016"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-017": {
+      "packs": [
+        "ds007554_sub-017"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-018": {
+      "packs": [
+        "ds007554_sub-018"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-019": {
+      "packs": [
+        "ds007554_sub-019"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-020": {
+      "packs": [
+        "ds007554_sub-020"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-021": {
+      "packs": [
+        "ds007554_sub-021"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-022": {
+      "packs": [
+        "ds007554_sub-022"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-023": {
+      "packs": [
+        "ds007554_sub-023"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-024": {
+      "packs": [
+        "ds007554_sub-024"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-025": {
+      "packs": [
+        "ds007554_sub-025"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-026": {
+      "packs": [
+        "ds007554_sub-026"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-027": {
+      "packs": [
+        "ds007554_sub-027"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-028": {
+      "packs": [
+        "ds007554_sub-028"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-029": {
+      "packs": [
+        "ds007554_sub-029"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "ds007554_sub-030": {
+      "packs": [
+        "ds007554_sub-030"
+      ],
+      "sources": [
+        "ds007554"
+      ]
+    },
+    "eegmat_Subject00": {
+      "packs": [
+        "eegmat_Subject00"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject01": {
+      "packs": [
+        "eegmat_Subject01"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject02": {
+      "packs": [
+        "eegmat_Subject02"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject03": {
+      "packs": [
+        "eegmat_Subject03"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject04": {
+      "packs": [
+        "eegmat_Subject04"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject05": {
+      "packs": [
+        "eegmat_Subject05"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject06": {
+      "packs": [
+        "eegmat_Subject06"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject07": {
+      "packs": [
+        "eegmat_Subject07"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject08": {
+      "packs": [
+        "eegmat_Subject08"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject09": {
+      "packs": [
+        "eegmat_Subject09"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject10": {
+      "packs": [
+        "eegmat_Subject10"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject11": {
+      "packs": [
+        "eegmat_Subject11"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject12": {
+      "packs": [
+        "eegmat_Subject12"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject13": {
+      "packs": [
+        "eegmat_Subject13"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject14": {
+      "packs": [
+        "eegmat_Subject14"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject15": {
+      "packs": [
+        "eegmat_Subject15"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject16": {
+      "packs": [
+        "eegmat_Subject16"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject17": {
+      "packs": [
+        "eegmat_Subject17"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject18": {
+      "packs": [
+        "eegmat_Subject18"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject19": {
+      "packs": [
+        "eegmat_Subject19"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject20": {
+      "packs": [
+        "eegmat_Subject20"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject21": {
+      "packs": [
+        "eegmat_Subject21"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject22": {
+      "packs": [
+        "eegmat_Subject22"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject23": {
+      "packs": [
+        "eegmat_Subject23"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject24": {
+      "packs": [
+        "eegmat_Subject24"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject25": {
+      "packs": [
+        "eegmat_Subject25"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject26": {
+      "packs": [
+        "eegmat_Subject26"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject27": {
+      "packs": [
+        "eegmat_Subject27"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject28": {
+      "packs": [
+        "eegmat_Subject28"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject29": {
+      "packs": [
+        "eegmat_Subject29"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject30": {
+      "packs": [
+        "eegmat_Subject30"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject31": {
+      "packs": [
+        "eegmat_Subject31"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject32": {
+      "packs": [
+        "eegmat_Subject32"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject33": {
+      "packs": [
+        "eegmat_Subject33"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject34": {
+      "packs": [
+        "eegmat_Subject34"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "eegmat_Subject35": {
+      "packs": [
+        "eegmat_Subject35"
+      ],
+      "sources": [
+        "eegmat"
+      ]
+    },
+    "stew_1": {
+      "packs": [
+        "stew_sub-001"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_10": {
+      "packs": [
+        "stew_sub-010"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_11": {
+      "packs": [
+        "stew_sub-011"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_12": {
+      "packs": [
+        "stew_sub-012"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_13": {
+      "packs": [
+        "stew_sub-013"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_14": {
+      "packs": [
+        "stew_sub-014"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_15": {
+      "packs": [
+        "stew_sub-015"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_16": {
+      "packs": [
+        "stew_sub-016"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_17": {
+      "packs": [
+        "stew_sub-017"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_18": {
+      "packs": [
+        "stew_sub-018"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_19": {
+      "packs": [
+        "stew_sub-019"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_2": {
+      "packs": [
+        "stew_sub-002"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_20": {
+      "packs": [
+        "stew_sub-020"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_21": {
+      "packs": [
+        "stew_sub-021"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_22": {
+      "packs": [
+        "stew_sub-022"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_23": {
+      "packs": [
+        "stew_sub-023"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_24": {
+      "packs": [
+        "stew_sub-024"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_25": {
+      "packs": [
+        "stew_sub-025"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_26": {
+      "packs": [
+        "stew_sub-026"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_27": {
+      "packs": [
+        "stew_sub-027"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_28": {
+      "packs": [
+        "stew_sub-028"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_29": {
+      "packs": [
+        "stew_sub-029"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_3": {
+      "packs": [
+        "stew_sub-003"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_30": {
+      "packs": [
+        "stew_sub-030"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_31": {
+      "packs": [
+        "stew_sub-031"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_32": {
+      "packs": [
+        "stew_sub-032"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_33": {
+      "packs": [
+        "stew_sub-033"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_34": {
+      "packs": [
+        "stew_sub-034"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_35": {
+      "packs": [
+        "stew_sub-035"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_36": {
+      "packs": [
+        "stew_sub-036"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_37": {
+      "packs": [
+        "stew_sub-037"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_38": {
+      "packs": [
+        "stew_sub-038"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_39": {
+      "packs": [
+        "stew_sub-039"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_4": {
+      "packs": [
+        "stew_sub-004"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_40": {
+      "packs": [
+        "stew_sub-040"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_41": {
+      "packs": [
+        "stew_sub-041"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_42": {
+      "packs": [
+        "stew_sub-042"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_43": {
+      "packs": [
+        "stew_sub-043"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_44": {
+      "packs": [
+        "stew_sub-044"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_45": {
+      "packs": [
+        "stew_sub-045"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_46": {
+      "packs": [
+        "stew_sub-046"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_47": {
+      "packs": [
+        "stew_sub-047"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_48": {
+      "packs": [
+        "stew_sub-048"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_5": {
+      "packs": [
+        "stew_sub-005"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_6": {
+      "packs": [
+        "stew_sub-006"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_7": {
+      "packs": [
+        "stew_sub-007"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_8": {
+      "packs": [
+        "stew_sub-008"
+      ],
+      "sources": [
+        "stew"
+      ]
+    },
+    "stew_9": {
+      "packs": [
+        "stew_sub-009"
+      ],
+      "sources": [
+        "stew"
+      ]
+    }
+  }
+}

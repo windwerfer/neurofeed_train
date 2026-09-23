@@ -1,0 +1,121 @@
+{
+  "head_a_4way": [
+    "concentration",
+    "mind_wandering",
+    "drowsy",
+    "hypnagogic"
+  ],
+  "head_a_vigilance_binary": [
+    "drowsy",
+    "hypnagogic"
+  ],
+  "head_a_attention_binary": [
+    "concentration",
+    "mind_wandering"
+  ],
+  "sleep_edf_head_a_map": {
+    "Sleep stage W": "drowsy",
+    "Sleep stage 1": "hypnagogic",
+    "Sleep stage 2": null,
+    "Sleep stage 3": null,
+    "Sleep stage 4": null,
+    "Sleep stage R": null,
+    "Sleep stage ?": null,
+    "Movement time": null
+  },
+  "head_a_notes": "LEGACY 4-way (concentration/mind_wandering/drowsy/hypnagogic) kept for historical windows. Product Head A is multi-head A-vig/A-med/A-eng as of 2026-09-07 \u2014 see docs/head_a_multihead.md. Sleep-EDF Head A map unchanged: W\u2192drowsy, N1\u2192hypnagogic.",
+  "stage_raw": {
+    "description": "Hypnogram text as stored in Sleep-EDF annotations (Head C label field).",
+    "examples": [
+      "Sleep stage W",
+      "Sleep stage 1",
+      "Sleep stage 2",
+      "Sleep stage 3",
+      "Sleep stage 4",
+      "Sleep stage R",
+      "Sleep stage ?",
+      "Movement time"
+    ]
+  },
+  "stage_coarse": {
+    "description": "Head C coarse stage; required on every Sleep-EDF window.",
+    "values": [
+      "wake",
+      "light",
+      "deep",
+      "rem",
+      "unknown"
+    ],
+    "map_from_stage_raw": {
+      "Sleep stage W": "wake",
+      "Sleep stage 1": "light",
+      "Sleep stage 2": "light",
+      "Sleep stage 3": "deep",
+      "Sleep stage 4": "deep",
+      "Sleep stage R": "rem",
+      "Sleep stage ?": "unknown",
+      "Movement time": "unknown"
+    }
+  },
+  "head_c_policy": "Persist stage_raw + stage_coarse on every Sleep-EDF window for future Head C; do not prioritize training Head C yet.",
+  "head_b_deferred": [
+    "blink",
+    "double_blink",
+    "jaw",
+    "double_jaw",
+    "clean"
+  ],
+  "muse_channels_order": [
+    "AF7",
+    "AF8",
+    "TP9",
+    "TP10"
+  ],
+  "window_sec": 2.0,
+  "input_sr_hz": 256.0,
+  "head_a_multihead": {
+    "decision_date": "2026-09-07",
+    "doc": "docs/head_a_multihead.md",
+    "architecture": "shared_frozen_encoder_separate_tiny_heads",
+    "vig": {
+      "id": "head_a_vig",
+      "labels_2": [
+        "drowsy",
+        "hypnagogic"
+      ],
+      "labels_3_optional": [
+        "awake",
+        "drowsy",
+        "hypnagogic"
+      ],
+      "logits": "[B, 2] or [B, 3]",
+      "ship_order": 1
+    },
+    "med": {
+      "id": "head_a_med",
+      "labels": [
+        "rest",
+        "meditation"
+      ],
+      "logits": "[B, 2]",
+      "ship_order": 2
+    },
+    "eng": {
+      "id": "head_a_eng",
+      "labels": [
+        "low_engagement",
+        "high_engagement"
+      ],
+      "logits": "[B, 2]",
+      "ship_order": 3,
+      "status": "deferred_ingest",
+      "deferred_corpora": [
+        "STEW",
+        "ds007169",
+        "ds007262"
+      ],
+      "reason": "No local load/engagement labels; not a free byproduct of vig/med"
+    },
+    "mw_concentration_public": "deferred_research_and_personal_calibration_only"
+  }
+}

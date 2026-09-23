@@ -1,0 +1,39 @@
+{
+  "task": "a_vig",
+  "dataset": "Sleep-EDF Expanded + HMC (2\u21924 muse4 proxy, professional)",
+  "labels": [
+    "drowsy",
+    "hypnagogic"
+  ],
+  "ai_macro_f1": 0.7469416004366879,
+  "ai_source": "exports/head_a_vig_full_corpus/metrics_summary.json",
+  "band_macro_f1": 0.6304385196908846,
+  "band_logistic_macro_f1": 0.6304385196908846,
+  "logistic_detail": {
+    "C": 10.0,
+    "n_train": 80000,
+    "n_test": 61822,
+    "n_features": 18,
+    "macro_f1": 0.6304385196908846,
+    "accuracy": 0.6379605965513895,
+    "balanced_accuracy": 0.6901370574063461,
+    "val_select_macro_f1": 0.6201750985278178
+  },
+  "band_best_single": "extra.theta_beta",
+  "band_best_single_macro_f1": 0.5402767538578115,
+  "per_app_feature_macro_f1": {
+    "band.atr": 0.4195894928443169,
+    "band.tar": 0.4195894928443169,
+    "band.btr": 0.5401337166284044,
+    "band.alpha": 0.4907449081710459,
+    "band.delta": 0.5241179260245834,
+    "extra.theta_beta": 0.5402767538578115,
+    "extra.delta_theta": 0.5319355668620878,
+    "extra.alpha_beta": 0.5090345558597263
+  },
+  "method": "logistic_all_features",
+  "n_train": 397920,
+  "n_val": 59267,
+  "n_test": 61822,
+  "decision": "lose"
+}

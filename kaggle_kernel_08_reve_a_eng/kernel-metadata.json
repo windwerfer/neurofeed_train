@@ -1,0 +1,20 @@
+{
+  "id": "windwerfer/muse-eeg-heads-reve-a-eng",
+  "title": "muse-eeg-heads-reve-a-eng",
+  "code_file": "muse-eeg-heads-reve-a-eng.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [
+    "windwerfer/muse-eeg-heads-src",
+    "windwerfer/muse-eeg-heads-aeng",
+    "windwerfer/muse-eeg-heads-cache"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets / credentials
+.env
+.env.*
+!.env.example
+**/kaggle.json
+**/secrets.json
+**/*token*
+!**/*token*_notes.md
+!**/*token*_docs.md
+*.pem
+id_rsa
+id_ed25519
+*.key
+
+# Large / binary EEG & model caches (never commit)
+*.edf
+*.bdf
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.onnx
+*.safetensors
+
+# Dataset materialization (HF mirror / local)
+**/windows/
+**/raw/
+**/annotations/
+!**/splits/
+datasets/*/windows/
+datasets/*/raw/
+datasets/*/annotations/
+
+# Kaggle private caches
+kaggle_datasets/
+kaggle_dataset/
+kaggle_dataset_flat/
+
+# Exports / run artifacts
+exports/
+**/exports/
+exports/**/*.pt
+exports/**/*.pth
+exports/**/*.npz
+*.log
+nohup.out
+overnight_state.json
+
+# Caches / noise
+.DS_Store
+.ipynb_checkpoints/
+*.swp
+.cache/
+hf_cache/
+data/
+**/features_cache.npz
+band_math/results/*.npz
+
+# IDE
+.idea/
+.vscode/

@@ -1,0 +1,451 @@
+{
+  "corpus": "attention_ds003969_crown8",
+  "policy": "fixed_subject_json",
+  "subjects": {
+    "sub-001": {
+      "group": "htr",
+      "recordings": [
+        "sub001"
+      ]
+    },
+    "sub-002": {
+      "group": "htr",
+      "recordings": [
+        "sub002"
+      ]
+    },
+    "sub-003": {
+      "group": "htr",
+      "recordings": [
+        "sub003"
+      ]
+    },
+    "sub-004": {
+      "group": "htr",
+      "recordings": [
+        "sub004"
+      ]
+    },
+    "sub-005": {
+      "group": "htr",
+      "recordings": [
+        "sub005"
+      ]
+    },
+    "sub-006": {
+      "group": "htr",
+      "recordings": [
+        "sub006"
+      ]
+    },
+    "sub-025": {
+      "group": "ctr",
+      "recordings": [
+        "sub025"
+      ],
+      "notes": "prior holdout (near chance on attention_only_head_smoke)"
+    },
+    "sub-026": {
+      "group": "ctr",
+      "recordings": [
+        "sub026"
+      ]
+    },
+    "sub-027": {
+      "group": "ctr",
+      "recordings": [
+        "sub027"
+      ],
+      "notes": "held in test with sub-025 for multi-subject holdout"
+    },
+    "sub-028": {
+      "group": "ctr",
+      "recordings": [
+        "sub028"
+      ]
+    },
+    "sub-029": {
+      "group": "ctr",
+      "recordings": [
+        "sub029"
+      ]
+    },
+    "sub-007": {
+      "group": "htr",
+      "recordings": [
+        "sub007"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds003969"
+    },
+    "sub-008": {
+      "group": "htr",
+      "recordings": [
+        "sub008"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds003969"
+    },
+    "sub-009": {
+      "group": "htr",
+      "recordings": [
+        "sub009"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds003969"
+    },
+    "sub-010": {
+      "group": "htr",
+      "recordings": [
+        "sub010"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds003969"
+    },
+    "sub-030": {
+      "group": "ctr",
+      "recordings": [
+        "sub030"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds003969"
+    },
+    "sub-031": {
+      "group": "ctr",
+      "recordings": [
+        "sub031"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds003969"
+    },
+    "sub-032": {
+      "group": "ctr",
+      "recordings": [
+        "sub032"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds003969"
+    },
+    "sub-033": {
+      "group": "ctr",
+      "recordings": [
+        "sub033"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds003969"
+    },
+    "sub-011": {
+      "group": "htr",
+      "recordings": [
+        "sub011"
+      ],
+      "notes": "batch40-close expand_attention_batch40_close_ds003969"
+    },
+    "sub-012": {
+      "group": "htr",
+      "recordings": [
+        "sub012"
+      ],
+      "notes": "batch40-close expand_attention_batch40_close_ds003969"
+    },
+    "sub-013": {
+      "group": "htr",
+      "recordings": [
+        "sub013"
+      ],
+      "notes": "batch40-close expand_attention_batch40_close_ds003969"
+    },
+    "sub-034": {
+      "group": "ctr",
+      "recordings": [
+        "sub034"
+      ],
+      "notes": "batch40-close expand_attention_batch40_close_ds003969"
+    },
+    "sub-035": {
+      "group": "ctr",
+      "recordings": [
+        "sub035"
+      ],
+      "notes": "batch40-close expand_attention_batch40_close_ds003969"
+    },
+    "sub-014": {
+      "group": "htr",
+      "recordings": [
+        "sub014"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-015": {
+      "group": "htr",
+      "recordings": [
+        "sub015"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-016": {
+      "group": "htr",
+      "recordings": [
+        "sub016"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-017": {
+      "group": "htr",
+      "recordings": [
+        "sub017"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-018": {
+      "group": "htr",
+      "recordings": [
+        "sub018"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-019": {
+      "group": "htr",
+      "recordings": [
+        "sub019"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-020": {
+      "group": "htr",
+      "recordings": [
+        "sub020"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-021": {
+      "group": "htr",
+      "recordings": [
+        "sub021"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-022": {
+      "group": "htr",
+      "recordings": [
+        "sub022"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-023": {
+      "group": "htr",
+      "recordings": [
+        "sub023"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-024": {
+      "group": "htr",
+      "recordings": [
+        "sub024"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-036": {
+      "group": "ctr",
+      "recordings": [
+        "sub036"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-037": {
+      "group": "ctr",
+      "recordings": [
+        "sub037"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-038": {
+      "group": "ctr",
+      "recordings": [
+        "sub038"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-039": {
+      "group": "ctr",
+      "recordings": [
+        "sub039"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-040": {
+      "group": "ctr",
+      "recordings": [
+        "sub040"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-041": {
+      "group": "ctr",
+      "recordings": [
+        "sub041"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-042": {
+      "group": "ctr",
+      "recordings": [
+        "sub042"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-043": {
+      "group": "ctr",
+      "recordings": [
+        "sub043"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-044": {
+      "group": "ctr",
+      "recordings": [
+        "sub044"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-045": {
+      "group": "ctr",
+      "recordings": [
+        "sub045"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-046": {
+      "group": "ctr",
+      "recordings": [
+        "sub046"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-047": {
+      "group": "ctr",
+      "recordings": [
+        "sub047"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-048": {
+      "group": "ctr",
+      "recordings": [
+        "sub048"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-049": {
+      "group": "ctr",
+      "recordings": [
+        "sub049"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-050": {
+      "group": "ctr",
+      "recordings": [
+        "sub050"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-051": {
+      "group": "ctr",
+      "recordings": [
+        "sub051"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-052": {
+      "group": "ctr",
+      "recordings": [
+        "sub052"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-053": {
+      "group": "ctr",
+      "recordings": [
+        "sub053"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-054": {
+      "group": "ctr",
+      "recordings": [
+        "sub054"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-055": {
+      "group": "ctr",
+      "recordings": [
+        "sub055"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-056": {
+      "group": "tm",
+      "recordings": [
+        "sub056"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-057": {
+      "group": "tm",
+      "recordings": [
+        "sub057"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-058": {
+      "group": "tm",
+      "recordings": [
+        "sub058"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-059": {
+      "group": "tm",
+      "recordings": [
+        "sub059"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-060": {
+      "group": "vip",
+      "recordings": [
+        "sub060"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-061": {
+      "group": "vip",
+      "recordings": [
+        "sub061"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-062": {
+      "group": "vip",
+      "recordings": [
+        "sub062"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-063": {
+      "group": "vip",
+      "recordings": [
+        "sub063"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    },
+    "sub-064": {
+      "group": "vip",
+      "recordings": [
+        "sub064"
+      ],
+      "notes": "toward80 expand_attention_toward80_ds003969"
+    }
+  },
+  "recordings": null,
+  "created_utc": "2026-09-07T07:53:47.778269+00:00",
+  "montage_id": "crown8",
+  "parallel_to_muse4": "datasets/attention_ds003969",
+  "updated_utc": "2026-09-07T08:44:06.140927+00:00",
+  "updated_by": "reparse_crown8_attention"
+}

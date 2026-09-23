@@ -1,0 +1,15 @@
+{
+  "corpus": "attention_ds001787_crown8",
+  "split": "val",
+  "policy": "fixed_subject_json",
+  "subjects": [
+    "sub-006",
+    "sub-015"
+  ],
+  "created_utc": "2026-09-07T07:13:21.989341+00:00",
+  "note": "updated by expand_attention_batch40_ds001787; frozen test=['sub-019', 'sub-013']",
+  "montage_id": "crown8",
+  "parallel_to_muse4": "datasets/attention_ds001787",
+  "updated_utc": "2026-09-07T08:44:27.267254+00:00",
+  "updated_by": "reparse_crown8_attention"
+}

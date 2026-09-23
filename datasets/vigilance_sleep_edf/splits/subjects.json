@@ -1,0 +1,1753 @@
+{
+  "corpus": "vigilance_sleep_edf",
+  "policy": "fixed_subject_json",
+  "subjects": {
+    "SC400": {
+      "recordings": [
+        "SC4001",
+        "SC4002"
+      ],
+      "notes": "prior primary holdout; both nights held out when present for subject purity",
+      "source": "sleep_edf"
+    },
+    "SC401": {
+      "recordings": [
+        "SC4011"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC402": {
+      "recordings": [
+        "SC4021"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC403": {
+      "recordings": [
+        "SC4031"
+      ],
+      "notes": "prior secondary holdout / val anchor",
+      "source": "sleep_edf"
+    },
+    "SC404": {
+      "recordings": [
+        "SC4041"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC405": {
+      "recordings": [
+        "SC4051"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC406": {
+      "recordings": [
+        "SC4061"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC407": {
+      "recordings": [
+        "SC4071"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC408": {
+      "recordings": [
+        "SC4081"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC409": {
+      "recordings": [
+        "SC4091"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC410": {
+      "recordings": [
+        "SC4101"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC411": {
+      "recordings": [
+        "SC4111"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC412": {
+      "recordings": [
+        "SC4121"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC413": {
+      "recordings": [
+        "SC4131"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC414": {
+      "recordings": [
+        "SC4141"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC415": {
+      "recordings": [
+        "SC4151"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC416": {
+      "recordings": [
+        "SC4161"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC417": {
+      "recordings": [
+        "SC4171"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC418": {
+      "recordings": [
+        "SC4181"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC419": {
+      "recordings": [
+        "SC4191"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC420": {
+      "recordings": [
+        "SC4201"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC421": {
+      "recordings": [
+        "SC4211"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC422": {
+      "recordings": [
+        "SC4221"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC423": {
+      "recordings": [
+        "SC4231"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC424": {
+      "recordings": [
+        "SC4241"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC425": {
+      "recordings": [
+        "SC4251"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC426": {
+      "recordings": [
+        "SC4261"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC427": {
+      "recordings": [
+        "SC4271"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC428": {
+      "recordings": [
+        "SC4281"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC429": {
+      "recordings": [
+        "SC4291"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC430": {
+      "recordings": [
+        "SC4301"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC431": {
+      "recordings": [
+        "SC4311"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC432": {
+      "recordings": [
+        "SC4321"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC433": {
+      "recordings": [
+        "SC4331"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC434": {
+      "recordings": [
+        "SC4341"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC435": {
+      "recordings": [
+        "SC4351"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC436": {
+      "recordings": [
+        "SC4362"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC437": {
+      "recordings": [
+        "SC4371"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC438": {
+      "recordings": [
+        "SC4381"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC440": {
+      "recordings": [
+        "SC4401"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC441": {
+      "recordings": [
+        "SC4411"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC442": {
+      "recordings": [
+        "SC4421"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC443": {
+      "recordings": [
+        "SC4431"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC444": {
+      "recordings": [
+        "SC4441"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC445": {
+      "recordings": [
+        "SC4451"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC446": {
+      "recordings": [
+        "SC4461"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC447": {
+      "recordings": [
+        "SC4471"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC448": {
+      "recordings": [
+        "SC4481"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC449": {
+      "recordings": [
+        "SC4491"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC450": {
+      "recordings": [
+        "SC4501"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC451": {
+      "recordings": [
+        "SC4511"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC452": {
+      "recordings": [
+        "SC4522"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC453": {
+      "recordings": [
+        "SC4531"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC454": {
+      "recordings": [
+        "SC4541"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC455": {
+      "recordings": [
+        "SC4551"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC456": {
+      "recordings": [
+        "SC4561"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC457": {
+      "recordings": [
+        "SC4571"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC458": {
+      "recordings": [
+        "SC4581"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC459": {
+      "recordings": [
+        "SC4591"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC460": {
+      "recordings": [
+        "SC4601"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC461": {
+      "recordings": [
+        "SC4611"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC462": {
+      "recordings": [
+        "SC4621"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC463": {
+      "recordings": [
+        "SC4631"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC464": {
+      "recordings": [
+        "SC4641"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC465": {
+      "recordings": [
+        "SC4651"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC466": {
+      "recordings": [
+        "SC4661"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC467": {
+      "recordings": [
+        "SC4671"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC470": {
+      "recordings": [
+        "SC4701"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC471": {
+      "recordings": [
+        "SC4711"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC472": {
+      "recordings": [
+        "SC4721"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC473": {
+      "recordings": [
+        "SC4731"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC474": {
+      "recordings": [
+        "SC4741"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC475": {
+      "recordings": [
+        "SC4751"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC476": {
+      "recordings": [
+        "SC4761"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC477": {
+      "recordings": [
+        "SC4771"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC480": {
+      "recordings": [
+        "SC4801"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC481": {
+      "recordings": [
+        "SC4811"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SC482": {
+      "recordings": [
+        "SC4821"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "SN001": {
+      "recordings": [
+        "SN001"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN002": {
+      "recordings": [
+        "SN002"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN003": {
+      "recordings": [
+        "SN003"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN004": {
+      "recordings": [
+        "SN004"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN005": {
+      "recordings": [
+        "SN005"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN006": {
+      "recordings": [
+        "SN006"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN007": {
+      "recordings": [
+        "SN007"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN008": {
+      "recordings": [
+        "SN008"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN009": {
+      "recordings": [
+        "SN009"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN010": {
+      "recordings": [
+        "SN010"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN011": {
+      "recordings": [
+        "SN011"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN012": {
+      "recordings": [
+        "SN012"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN013": {
+      "recordings": [
+        "SN013"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN015": {
+      "recordings": [
+        "SN015"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN016": {
+      "recordings": [
+        "SN016"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN017": {
+      "recordings": [
+        "SN017"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN018": {
+      "recordings": [
+        "SN018"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN019": {
+      "recordings": [
+        "SN019"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN020": {
+      "recordings": [
+        "SN020"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN021": {
+      "recordings": [
+        "SN021"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN022": {
+      "recordings": [
+        "SN022"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN023": {
+      "recordings": [
+        "SN023"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN024": {
+      "recordings": [
+        "SN024"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "SN025": {
+      "recordings": [
+        "SN025"
+      ],
+      "notes": "",
+      "source": "hmc"
+    },
+    "ST701": {
+      "recordings": [
+        "ST7011"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST702": {
+      "recordings": [
+        "ST7021"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST704": {
+      "recordings": [
+        "ST7041"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST705": {
+      "recordings": [
+        "ST7051"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST706": {
+      "recordings": [
+        "ST7061"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST707": {
+      "recordings": [
+        "ST7071"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST708": {
+      "recordings": [
+        "ST7081"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST709": {
+      "recordings": [
+        "ST7091"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST710": {
+      "recordings": [
+        "ST7101"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST711": {
+      "recordings": [
+        "ST7111"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST712": {
+      "recordings": [
+        "ST7121"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST713": {
+      "recordings": [
+        "ST7131"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST714": {
+      "recordings": [
+        "ST7141"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST715": {
+      "recordings": [
+        "ST7151"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST716": {
+      "recordings": [
+        "ST7161"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST717": {
+      "recordings": [
+        "ST7171"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST718": {
+      "recordings": [
+        "ST7181"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST719": {
+      "recordings": [
+        "ST7191"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST720": {
+      "recordings": [
+        "ST7201"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST721": {
+      "recordings": [
+        "ST7211"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST722": {
+      "recordings": [
+        "ST7221"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    },
+    "ST724": {
+      "recordings": [
+        "ST7241"
+      ],
+      "notes": "",
+      "source": "sleep_edf"
+    }
+  },
+  "recordings": {
+    "SC4001": {
+      "subject_id": "SC400",
+      "night": 1,
+      "tag": "sc4001",
+      "source": "sleep_edf",
+      "study": null
+    },
+    "SC4002": {
+      "subject_id": "SC400",
+      "night": 2,
+      "tag": "sc4002",
+      "source": "sleep_edf",
+      "study": null
+    },
+    "SC4011": {
+      "subject_id": "SC401",
+      "night": 1,
+      "tag": "sc4011",
+      "source": "sleep_edf",
+      "study": null
+    },
+    "SC4021": {
+      "subject_id": "SC402",
+      "night": 1,
+      "tag": "sc4021",
+      "source": "sleep_edf",
+      "study": null
+    },
+    "SC4031": {
+      "subject_id": "SC403",
+      "night": 1,
+      "tag": "sc4031",
+      "source": "sleep_edf",
+      "study": null
+    },
+    "SC4041": {
+      "subject_id": "SC404",
+      "night": 1,
+      "tag": "sc4041",
+      "source": "sleep_edf",
+      "study": null
+    },
+    "SC4051": {
+      "subject_id": "SC405",
+      "night": 1,
+      "tag": "sc4051",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4061": {
+      "subject_id": "SC406",
+      "night": 1,
+      "tag": "sc4061",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4071": {
+      "subject_id": "SC407",
+      "night": 1,
+      "tag": "sc4071",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4081": {
+      "subject_id": "SC408",
+      "night": 1,
+      "tag": "sc4081",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4091": {
+      "subject_id": "SC409",
+      "night": 1,
+      "tag": "sc4091",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4101": {
+      "subject_id": "SC410",
+      "night": 1,
+      "tag": "sc4101",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4111": {
+      "subject_id": "SC411",
+      "night": 1,
+      "tag": "sc4111",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4121": {
+      "subject_id": "SC412",
+      "night": 1,
+      "tag": "sc4121",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4131": {
+      "subject_id": "SC413",
+      "night": 1,
+      "tag": "sc4131",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4141": {
+      "subject_id": "SC414",
+      "night": 1,
+      "tag": "sc4141",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4151": {
+      "subject_id": "SC415",
+      "night": 1,
+      "tag": "sc4151",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4161": {
+      "subject_id": "SC416",
+      "night": 1,
+      "tag": "sc4161",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4171": {
+      "subject_id": "SC417",
+      "night": 1,
+      "tag": "sc4171",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4181": {
+      "subject_id": "SC418",
+      "night": 1,
+      "tag": "sc4181",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4191": {
+      "subject_id": "SC419",
+      "night": 1,
+      "tag": "sc4191",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4201": {
+      "subject_id": "SC420",
+      "night": 1,
+      "tag": "sc4201",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4211": {
+      "subject_id": "SC421",
+      "night": 1,
+      "tag": "sc4211",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4221": {
+      "subject_id": "SC422",
+      "night": 1,
+      "tag": "sc4221",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4231": {
+      "subject_id": "SC423",
+      "night": 1,
+      "tag": "sc4231",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4241": {
+      "subject_id": "SC424",
+      "night": 1,
+      "tag": "sc4241",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4251": {
+      "subject_id": "SC425",
+      "night": 1,
+      "tag": "sc4251",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4261": {
+      "subject_id": "SC426",
+      "night": 1,
+      "tag": "sc4261",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4271": {
+      "subject_id": "SC427",
+      "night": 1,
+      "tag": "sc4271",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4281": {
+      "subject_id": "SC428",
+      "night": 1,
+      "tag": "sc4281",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4291": {
+      "subject_id": "SC429",
+      "night": 1,
+      "tag": "sc4291",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4301": {
+      "subject_id": "SC430",
+      "night": 1,
+      "tag": "sc4301",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4311": {
+      "subject_id": "SC431",
+      "night": 1,
+      "tag": "sc4311",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4321": {
+      "subject_id": "SC432",
+      "night": 1,
+      "tag": "sc4321",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4331": {
+      "subject_id": "SC433",
+      "night": 1,
+      "tag": "sc4331",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4341": {
+      "subject_id": "SC434",
+      "night": 1,
+      "tag": "sc4341",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4351": {
+      "subject_id": "SC435",
+      "night": 1,
+      "tag": "sc4351",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4362": {
+      "subject_id": "SC436",
+      "night": 2,
+      "tag": "sc4362",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4371": {
+      "subject_id": "SC437",
+      "night": 1,
+      "tag": "sc4371",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4381": {
+      "subject_id": "SC438",
+      "night": 1,
+      "tag": "sc4381",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4401": {
+      "subject_id": "SC440",
+      "night": 1,
+      "tag": "sc4401",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4411": {
+      "subject_id": "SC441",
+      "night": 1,
+      "tag": "sc4411",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4421": {
+      "subject_id": "SC442",
+      "night": 1,
+      "tag": "sc4421",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4431": {
+      "subject_id": "SC443",
+      "night": 1,
+      "tag": "sc4431",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4441": {
+      "subject_id": "SC444",
+      "night": 1,
+      "tag": "sc4441",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4451": {
+      "subject_id": "SC445",
+      "night": 1,
+      "tag": "sc4451",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4461": {
+      "subject_id": "SC446",
+      "night": 1,
+      "tag": "sc4461",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4471": {
+      "subject_id": "SC447",
+      "night": 1,
+      "tag": "sc4471",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4481": {
+      "subject_id": "SC448",
+      "night": 1,
+      "tag": "sc4481",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4491": {
+      "subject_id": "SC449",
+      "night": 1,
+      "tag": "sc4491",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4501": {
+      "subject_id": "SC450",
+      "night": 1,
+      "tag": "sc4501",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4511": {
+      "subject_id": "SC451",
+      "night": 1,
+      "tag": "sc4511",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4522": {
+      "subject_id": "SC452",
+      "night": 2,
+      "tag": "sc4522",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4531": {
+      "subject_id": "SC453",
+      "night": 1,
+      "tag": "sc4531",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4541": {
+      "subject_id": "SC454",
+      "night": 1,
+      "tag": "sc4541",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4551": {
+      "subject_id": "SC455",
+      "night": 1,
+      "tag": "sc4551",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4561": {
+      "subject_id": "SC456",
+      "night": 1,
+      "tag": "sc4561",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4571": {
+      "subject_id": "SC457",
+      "night": 1,
+      "tag": "sc4571",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4581": {
+      "subject_id": "SC458",
+      "night": 1,
+      "tag": "sc4581",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4591": {
+      "subject_id": "SC459",
+      "night": 1,
+      "tag": "sc4591",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4601": {
+      "subject_id": "SC460",
+      "night": 1,
+      "tag": "sc4601",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4611": {
+      "subject_id": "SC461",
+      "night": 1,
+      "tag": "sc4611",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4621": {
+      "subject_id": "SC462",
+      "night": 1,
+      "tag": "sc4621",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4631": {
+      "subject_id": "SC463",
+      "night": 1,
+      "tag": "sc4631",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4641": {
+      "subject_id": "SC464",
+      "night": 1,
+      "tag": "sc4641",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4651": {
+      "subject_id": "SC465",
+      "night": 1,
+      "tag": "sc4651",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4661": {
+      "subject_id": "SC466",
+      "night": 1,
+      "tag": "sc4661",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4671": {
+      "subject_id": "SC467",
+      "night": 1,
+      "tag": "sc4671",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4701": {
+      "subject_id": "SC470",
+      "night": 1,
+      "tag": "sc4701",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4711": {
+      "subject_id": "SC471",
+      "night": 1,
+      "tag": "sc4711",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4721": {
+      "subject_id": "SC472",
+      "night": 1,
+      "tag": "sc4721",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4731": {
+      "subject_id": "SC473",
+      "night": 1,
+      "tag": "sc4731",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4741": {
+      "subject_id": "SC474",
+      "night": 1,
+      "tag": "sc4741",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4751": {
+      "subject_id": "SC475",
+      "night": 1,
+      "tag": "sc4751",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4761": {
+      "subject_id": "SC476",
+      "night": 1,
+      "tag": "sc4761",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4771": {
+      "subject_id": "SC477",
+      "night": 1,
+      "tag": "sc4771",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4801": {
+      "subject_id": "SC480",
+      "night": 1,
+      "tag": "sc4801",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4811": {
+      "subject_id": "SC481",
+      "night": 1,
+      "tag": "sc4811",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SC4821": {
+      "subject_id": "SC482",
+      "night": 1,
+      "tag": "sc4821",
+      "source": "sleep_edf",
+      "study": "cassette"
+    },
+    "SN001": {
+      "subject_id": "SN001",
+      "night": 1,
+      "tag": "sn001",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN002": {
+      "subject_id": "SN002",
+      "night": 1,
+      "tag": "sn002",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN003": {
+      "subject_id": "SN003",
+      "night": 1,
+      "tag": "sn003",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN004": {
+      "subject_id": "SN004",
+      "night": 1,
+      "tag": "sn004",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN005": {
+      "subject_id": "SN005",
+      "night": 1,
+      "tag": "sn005",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN006": {
+      "subject_id": "SN006",
+      "night": 1,
+      "tag": "sn006",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN007": {
+      "subject_id": "SN007",
+      "night": 1,
+      "tag": "sn007",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN008": {
+      "subject_id": "SN008",
+      "night": 1,
+      "tag": "sn008",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN009": {
+      "subject_id": "SN009",
+      "night": 1,
+      "tag": "sn009",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN010": {
+      "subject_id": "SN010",
+      "night": 1,
+      "tag": "sn010",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN011": {
+      "subject_id": "SN011",
+      "night": 1,
+      "tag": "sn011",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN012": {
+      "subject_id": "SN012",
+      "night": 1,
+      "tag": "sn012",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN013": {
+      "subject_id": "SN013",
+      "night": 1,
+      "tag": "sn013",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN015": {
+      "subject_id": "SN015",
+      "night": 1,
+      "tag": "sn015",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN016": {
+      "subject_id": "SN016",
+      "night": 1,
+      "tag": "sn016",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN017": {
+      "subject_id": "SN017",
+      "night": 1,
+      "tag": "sn017",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN018": {
+      "subject_id": "SN018",
+      "night": 1,
+      "tag": "sn018",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN019": {
+      "subject_id": "SN019",
+      "night": 1,
+      "tag": "sn019",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN020": {
+      "subject_id": "SN020",
+      "night": 1,
+      "tag": "sn020",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN021": {
+      "subject_id": "SN021",
+      "night": 1,
+      "tag": "sn021",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN022": {
+      "subject_id": "SN022",
+      "night": 1,
+      "tag": "sn022",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN023": {
+      "subject_id": "SN023",
+      "night": 1,
+      "tag": "sn023",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN024": {
+      "subject_id": "SN024",
+      "night": 1,
+      "tag": "sn024",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "SN025": {
+      "subject_id": "SN025",
+      "night": 1,
+      "tag": "sn025",
+      "source": "hmc",
+      "study": "hmc"
+    },
+    "ST7011": {
+      "subject_id": "ST701",
+      "night": 1,
+      "tag": "st7011",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7021": {
+      "subject_id": "ST702",
+      "night": 1,
+      "tag": "st7021",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7041": {
+      "subject_id": "ST704",
+      "night": 1,
+      "tag": "st7041",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7051": {
+      "subject_id": "ST705",
+      "night": 1,
+      "tag": "st7051",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7061": {
+      "subject_id": "ST706",
+      "night": 1,
+      "tag": "st7061",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7071": {
+      "subject_id": "ST707",
+      "night": 1,
+      "tag": "st7071",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7081": {
+      "subject_id": "ST708",
+      "night": 1,
+      "tag": "st7081",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7091": {
+      "subject_id": "ST709",
+      "night": 1,
+      "tag": "st7091",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7101": {
+      "subject_id": "ST710",
+      "night": 1,
+      "tag": "st7101",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7111": {
+      "subject_id": "ST711",
+      "night": 1,
+      "tag": "st7111",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7121": {
+      "subject_id": "ST712",
+      "night": 1,
+      "tag": "st7121",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7131": {
+      "subject_id": "ST713",
+      "night": 1,
+      "tag": "st7131",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7141": {
+      "subject_id": "ST714",
+      "night": 1,
+      "tag": "st7141",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7151": {
+      "subject_id": "ST715",
+      "night": 1,
+      "tag": "st7151",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7161": {
+      "subject_id": "ST716",
+      "night": 1,
+      "tag": "st7161",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7171": {
+      "subject_id": "ST717",
+      "night": 1,
+      "tag": "st7171",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7181": {
+      "subject_id": "ST718",
+      "night": 1,
+      "tag": "st7181",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7191": {
+      "subject_id": "ST719",
+      "night": 1,
+      "tag": "st7191",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7201": {
+      "subject_id": "ST720",
+      "night": 1,
+      "tag": "st7201",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7211": {
+      "subject_id": "ST721",
+      "night": 1,
+      "tag": "st7211",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7221": {
+      "subject_id": "ST722",
+      "night": 1,
+      "tag": "st7221",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    },
+    "ST7241": {
+      "subject_id": "ST724",
+      "night": 1,
+      "tag": "st7241",
+      "source": "sleep_edf",
+      "study": "telemetry"
+    }
+  },
+  "created_utc": "2026-09-08T13:09:48.611263+00:00"
+}

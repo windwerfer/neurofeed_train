@@ -1,0 +1,24 @@
+{
+  "task": "a_med_rest_meditation",
+  "dataset": "ds003816 (Muse-native AF7/AF8/TP9/TP10, professional)",
+  "labels": [
+    "rest",
+    "meditation"
+  ],
+  "ai_macro_f1": 0.333,
+  "ai_source": "exports/head_a_med_smoke/metrics_summary.json (~0.33)",
+  "band_macro_f1": 0.5839138436501519,
+  "band_logistic_macro_f1": 0.2866700127569693,
+  "band_best_single": "band.delta",
+  "band_best_single_macro_f1": 0.5839138436501519,
+  "per_app_feature_macro_f1": {
+    "band.atr": 0.38651318977133514,
+    "band.tar": 0.38166218492033027,
+    "band.btr": 0.5133030890298331,
+    "band.alpha": 0.24013973536773112,
+    "band.delta": 0.5839138436501519
+  },
+  "method": "loso_threshold:band.delta",
+  "n_subjects_loso": 6,
+  "decision": "win"
+}

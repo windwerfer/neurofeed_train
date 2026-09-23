@@ -1,0 +1,40 @@
+{
+  "corpus": "attention_ds001787_crown8",
+  "policy": "fixed_subject_json",
+  "updated_utc": "2026-09-07T08:44:27.267628+00:00",
+  "updated_by": "reparse_crown8_attention",
+  "splits": {
+    "train": [
+      "sub-001",
+      "sub-002",
+      "sub-003",
+      "sub-004",
+      "sub-005",
+      "sub-007",
+      "sub-008",
+      "sub-014",
+      "sub-016",
+      "sub-017",
+      "sub-020",
+      "sub-021"
+    ],
+    "val": [
+      "sub-006",
+      "sub-015"
+    ],
+    "test": [
+      "sub-019",
+      "sub-013"
+    ]
+  },
+  "frozen_test": [
+    "sub-019",
+    "sub-013"
+  ],
+  "frozen_val": [
+    "sub-006",
+    "sub-015"
+  ],
+  "montage_id": "crown8",
+  "parallel_to_muse4": "datasets/attention_ds001787"
+}

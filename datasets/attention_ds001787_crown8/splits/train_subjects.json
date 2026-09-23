@@ -1,0 +1,25 @@
+{
+  "corpus": "attention_ds001787_crown8",
+  "split": "train",
+  "policy": "fixed_subject_json",
+  "subjects": [
+    "sub-001",
+    "sub-002",
+    "sub-003",
+    "sub-004",
+    "sub-005",
+    "sub-007",
+    "sub-008",
+    "sub-014",
+    "sub-016",
+    "sub-017",
+    "sub-020",
+    "sub-021"
+  ],
+  "created_utc": "2026-09-07T07:13:21.989341+00:00",
+  "note": "updated by expand_attention_batch40_ds001787; frozen test=['sub-019', 'sub-013']",
+  "montage_id": "crown8",
+  "parallel_to_muse4": "datasets/attention_ds001787",
+  "updated_utc": "2026-09-07T08:44:27.267055+00:00",
+  "updated_by": "reparse_crown8_attention"
+}

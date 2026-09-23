@@ -1,0 +1,41 @@
+{
+  "task": "a_eng",
+  "dataset": "engagement_a_eng union (mix 19/23/32-ch professional + STEW 14-ch Emotiv hobbyist)",
+  "labels": [
+    "low_engagement",
+    "high_engagement"
+  ],
+  "ai_macro_f1": 0.5481672654749781,
+  "ai_source": "exports/head_a_eng_train_cbramod/metrics_summary.json",
+  "band_macro_f1": 0.5741522412332278,
+  "band_logistic_macro_f1": 0.556348532815066,
+  "logistic_detail": {
+    "C": 1.0,
+    "n_train": 13708,
+    "n_test": 3084,
+    "n_features": 18,
+    "macro_f1": 0.556348532815066,
+    "accuracy": 0.5651750972762646,
+    "balanced_accuracy": 0.5609234780499636,
+    "val_select_macro_f1": 0.5868215841530812
+  },
+  "band_best_single": "band.atr",
+  "band_best_single_macro_f1": 0.5741522412332278,
+  "per_app_feature_macro_f1": {
+    "band.atr": 0.5741522412332278,
+    "band.tar": 0.5741522412332278,
+    "band.btr": 0.5476135721606605,
+    "band.alpha": 0.5435959383319525,
+    "band.delta": 0.5041271077708261,
+    "extra.theta_beta": 0.5469908849155435,
+    "extra.delta_theta": 0.4971233093683425,
+    "extra.alpha_beta": 0.5366570394939321
+  },
+  "method": "threshold:band.atr",
+  "n_train": 13708,
+  "n_val": 2914,
+  "n_test": 3084,
+  "decision": "win",
+  "ai_macro_f1_reve": 0.59,
+  "decision_vs_reve": "lose"
+}

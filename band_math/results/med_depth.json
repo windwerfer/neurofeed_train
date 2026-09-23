@@ -1,0 +1,39 @@
+{
+  "task": "med_depth_q1",
+  "dataset": "ds001787 (64-ch BioSemi, professional) \u2014 muse4 proxy; Q1\u22641 vs Q1\u22652",
+  "labels": [
+    "meditation_depth_low",
+    "meditation_depth_high"
+  ],
+  "ai_macro_f1": 0.333,
+  "ai_source": "exports/head_a_med_depth_smoke/metrics_summary.json",
+  "band_macro_f1": 0.703525641025641,
+  "band_logistic_macro_f1": 0.4865306122448979,
+  "logistic_detail": {
+    "C": 0.1,
+    "n_train": 268,
+    "n_test": 37,
+    "n_features": 18,
+    "macro_f1": 0.4865306122448979,
+    "accuracy": 0.5405405405405406,
+    "balanced_accuracy": 0.5176470588235295,
+    "val_select_macro_f1": 0.6488949646844384
+  },
+  "band_best_single": "extra.alpha_beta",
+  "band_best_single_macro_f1": 0.703525641025641,
+  "per_app_feature_macro_f1": {
+    "band.atr": 0.4688995215311005,
+    "band.tar": 0.4688995215311005,
+    "band.btr": 0.34705882352941175,
+    "band.alpha": 0.5469387755102041,
+    "band.delta": 0.3615903975993998,
+    "extra.theta_beta": 0.37655677655677655,
+    "extra.delta_theta": 0.5469387755102041,
+    "extra.alpha_beta": 0.703525641025641
+  },
+  "method": "threshold:extra.alpha_beta",
+  "n_train": 268,
+  "n_val": 0,
+  "n_test": 37,
+  "decision": "win"
+}

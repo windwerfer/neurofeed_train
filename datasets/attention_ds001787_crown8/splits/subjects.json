@@ -1,0 +1,118 @@
+{
+  "corpus": "attention_ds001787_crown8",
+  "policy": "fixed_subject_json",
+  "subjects": {
+    "sub-001": {
+      "group": "expert",
+      "recordings": [
+        "sub001_ses01"
+      ]
+    },
+    "sub-002": {
+      "group": "expert",
+      "recordings": [
+        "sub002_ses01"
+      ]
+    },
+    "sub-003": {
+      "group": "expert",
+      "recordings": [
+        "sub003_ses01"
+      ]
+    },
+    "sub-004": {
+      "group": "expert",
+      "recordings": [
+        "sub004_ses01"
+      ]
+    },
+    "sub-005": {
+      "group": "expert",
+      "recordings": [
+        "sub005_ses01"
+      ]
+    },
+    "sub-006": {
+      "group": "expert",
+      "recordings": [
+        "sub006_ses01"
+      ],
+      "notes": "val: both classes present"
+    },
+    "sub-013": {
+      "group": "novice",
+      "recordings": [
+        "sub013_ses01"
+      ],
+      "notes": "prior secondary holdout (near chance)"
+    },
+    "sub-014": {
+      "group": "novice",
+      "recordings": [
+        "sub014_ses01"
+      ],
+      "notes": "conc-only after ingest; kept in train"
+    },
+    "sub-015": {
+      "group": "novice",
+      "recordings": [
+        "sub015_ses01"
+      ],
+      "notes": "val: balanced C/MW"
+    },
+    "sub-017": {
+      "group": "novice",
+      "recordings": [
+        "sub017_ses01"
+      ],
+      "notes": "conc-only after ingest; kept in train"
+    },
+    "sub-019": {
+      "group": "novice",
+      "recordings": [
+        "sub019_ses01"
+      ],
+      "notes": "prior primary holdout (near chance)"
+    },
+    "sub-020": {
+      "group": "novice",
+      "recordings": [
+        "sub020_ses01"
+      ]
+    },
+    "sub-007": {
+      "group": "expert",
+      "recordings": [
+        "sub007_ses01"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds001787"
+    },
+    "sub-008": {
+      "group": "expert",
+      "recordings": [
+        "sub008_ses01"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds001787"
+    },
+    "sub-016": {
+      "group": "novice",
+      "recordings": [
+        "sub016_ses01"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds001787"
+    },
+    "sub-021": {
+      "group": "novice",
+      "recordings": [
+        "sub021_ses01"
+      ],
+      "notes": "batch40 expand_attention_batch40_ds001787"
+    }
+  },
+  "recordings": null,
+  "created_utc": "2026-09-07T07:13:21.989341+00:00",
+  "montage_id": "crown8",
+  "parallel_to_muse4": "datasets/attention_ds001787",
+  "updated_utc": "2026-09-07T08:44:27.266750+00:00",
+  "updated_by": "reparse_crown8_attention"
+}

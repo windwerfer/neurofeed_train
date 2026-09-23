@@ -1,0 +1,552 @@
+{
+  "created_utc": "2026-09-17T08:58:02.277787+00:00",
+  "protocol": {
+    "fft": "256 @ 256 Hz (Flutter muse.rs)",
+    "bands_hz": {
+      "delta": "1-4",
+      "theta": "4-8",
+      "alpha": "8-13",
+      "beta": "13-30",
+      "gamma": "30-50"
+    },
+    "pads": [
+      "AF7",
+      "AF8"
+    ],
+    "window": "2 s muse4 npz; average two 1 s FFT halves",
+    "metric": "macro-F1 on AI test subjects (same splits)",
+    "models": [
+      "LogisticRegression balanced on all band features",
+      "single-feature threshold sweep"
+    ],
+    "ai_heads_not_retrained": true,
+    "canonical_a_vig": {
+      "windows": "datasets/vigilance_sleep_edf/windows/*_windows.npz",
+      "splits": "datasets/vigilance_sleep_edf/splits/",
+      "ai_head": "exports/head_a_vig_full_corpus/head_a_vig_linear.pt (argmax)",
+      "ai_metrics": "exports/head_a_vig_full_corpus/metrics_summary.json",
+      "emb_cache_ref": "exports/head_c_full_corpus/emb_cache (AI only; band-math uses raw windows)",
+      "n_windows_scored": 519009,
+      "test_n": 61822
+    },
+    "flutter_source": [
+      "flutter_muse-rs_ml/rust/src/api/muse.rs compute_fft_bands",
+      "flutter_muse-rs_ml/rust/src/api/features.rs aggregate_band_feature",
+      "flutter_muse-rs_ml/assets/features.json"
+    ],
+    "train_cap": 80000,
+    "reve_notes": {
+      "sleep_heads": "exports/reve_sleep_heads_local \u2014 REVE frozen, local CPU subsample; Diggus: directional only, not fair vs full CBraMod",
+      "a_eng": "exports/head_a_eng_train_reve \u2014 fair same-split vs CBraMod A-eng",
+      "attention": "exports/reve_attention_loso \u2014 LOSO mean ~0.50 vs CBraMod LOSO ~0.36",
+      "hmc_5stage_optional": "exports/reve_hmc_paper_compare compare_table.json ours_test bal_acc=0.649 (30s epochs; no band-math row)"
+    }
+  },
+  "tasks": [
+    {
+      "task": "a_vig",
+      "dataset": "Sleep-EDF Expanded + HMC (2\u21924 muse4 proxy, professional)",
+      "labels": [
+        "drowsy",
+        "hypnagogic"
+      ],
+      "ai_macro_f1": 0.7469416004366879,
+      "ai_source": "exports/head_a_vig_full_corpus/metrics_summary.json",
+      "band_macro_f1": 0.6304385196908846,
+      "band_logistic_macro_f1": 0.6304385196908846,
+      "logistic_detail": {
+        "C": 10.0,
+        "n_train": 80000,
+        "n_test": 61822,
+        "n_features": 18,
+        "macro_f1": 0.6304385196908846,
+        "accuracy": 0.6379605965513895,
+        "balanced_accuracy": 0.6901370574063461,
+        "val_select_macro_f1": 0.6201750985278178
+      },
+      "band_best_single": "extra.theta_beta",
+      "band_best_single_macro_f1": 0.5402767538578115,
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.4195894928443169,
+        "band.tar": 0.4195894928443169,
+        "band.btr": 0.5401337166284044,
+        "band.alpha": 0.4907449081710459,
+        "band.delta": 0.5241179260245834,
+        "extra.theta_beta": 0.5402767538578115,
+        "extra.delta_theta": 0.5319355668620878,
+        "extra.alpha_beta": 0.5090345558597263
+      },
+      "method": "logistic_all_features",
+      "n_train": 397920,
+      "n_val": 59267,
+      "n_test": 61822,
+      "decision": "lose",
+      "reve_macro_f1": 0.7831959721361417,
+      "reve_source": "exports/reve_sleep_heads_local/metrics_summary.json",
+      "reve_caveat": "Local CPU subsample \u226480 windows/class/recording; NOT apples-to-apples vs full CBraMod subject-holdout. Full REVE encode deferred to Kaggle T4.",
+      "reve_fair_compare": false,
+      "decision_vs_reve": "lose"
+    },
+    {
+      "task": "head_c_wake_light",
+      "dataset": "Sleep-EDF Expanded + HMC (2\u21924 muse4 proxy, professional)",
+      "labels": [
+        "wake",
+        "light"
+      ],
+      "ai_macro_f1": 0.759732696722526,
+      "ai_source": "exports/head_c_full_corpus/metrics_summary.json",
+      "band_macro_f1": 0.6304385196908846,
+      "band_logistic_macro_f1": 0.6304385196908846,
+      "logistic_detail": {
+        "C": 10.0,
+        "n_train": 80000,
+        "n_test": 61822,
+        "n_features": 18,
+        "macro_f1": 0.6304385196908846,
+        "accuracy": 0.6379605965513895,
+        "balanced_accuracy": 0.6901370574063461,
+        "val_select_macro_f1": 0.6201750985278178
+      },
+      "band_best_single": "extra.theta_beta",
+      "band_best_single_macro_f1": 0.5402767538578115,
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.4195894928443169,
+        "band.tar": 0.4195894928443169,
+        "band.btr": 0.5401337166284044,
+        "band.alpha": 0.4907449081710459,
+        "band.delta": 0.5241179260245834,
+        "extra.theta_beta": 0.5402767538578115,
+        "extra.delta_theta": 0.5319355668620878,
+        "extra.alpha_beta": 0.5090345558597263
+      },
+      "method": "logistic_all_features",
+      "n_train": 397920,
+      "n_val": 59267,
+      "n_test": 61822,
+      "decision": "lose",
+      "reve_macro_f1": 0.7913432406912848,
+      "reve_source": "exports/reve_sleep_heads_local/metrics_summary.json",
+      "reve_caveat": "Same REVE local subsample caveat as A-vig; not fair vs full CBraMod.",
+      "reve_fair_compare": false,
+      "decision_vs_reve": "lose"
+    },
+    {
+      "task": "a_eng",
+      "dataset": "engagement_a_eng union (mix 19/23/32-ch professional + STEW 14-ch Emotiv hobbyist)",
+      "labels": [
+        "low_engagement",
+        "high_engagement"
+      ],
+      "ai_macro_f1": 0.5481672654749781,
+      "ai_source": "exports/head_a_eng_train_cbramod/metrics_summary.json",
+      "band_macro_f1": 0.5741522412332278,
+      "band_logistic_macro_f1": 0.556348532815066,
+      "logistic_detail": {
+        "C": 1.0,
+        "n_train": 13708,
+        "n_test": 3084,
+        "n_features": 18,
+        "macro_f1": 0.556348532815066,
+        "accuracy": 0.5651750972762646,
+        "balanced_accuracy": 0.5609234780499636,
+        "val_select_macro_f1": 0.5868215841530812
+      },
+      "band_best_single": "band.atr",
+      "band_best_single_macro_f1": 0.5741522412332278,
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.5741522412332278,
+        "band.tar": 0.5741522412332278,
+        "band.btr": 0.5476135721606605,
+        "band.alpha": 0.5435959383319525,
+        "band.delta": 0.5041271077708261,
+        "extra.theta_beta": 0.5469908849155435,
+        "extra.delta_theta": 0.4971233093683425,
+        "extra.alpha_beta": 0.5366570394939321
+      },
+      "method": "threshold:band.atr",
+      "n_train": 13708,
+      "n_val": 2914,
+      "n_test": 3084,
+      "decision": "win",
+      "ai_macro_f1_reve": 0.59,
+      "decision_vs_reve": "lose",
+      "reve_macro_f1": 0.5895352672603857,
+      "reve_source": "exports/head_a_eng_train_reve/metrics_summary.json",
+      "reve_caveat": "Same engagement splits as CBraMod A-eng; misfit / not ship.",
+      "reve_fair_compare": true
+    },
+    {
+      "task": "mw_attention_ds001787",
+      "dataset": "ds001787 (64-ch BioSemi\u2192muse4 proxy, professional)",
+      "labels": [
+        "concentration",
+        "mind_wandering"
+      ],
+      "ai_macro_f1": 0.36,
+      "ai_source": "docs/dataset_confidence_table.md (LOSO ~0.36)",
+      "band_macro_f1": 0.6249898249898249,
+      "band_logistic_macro_f1": 0.5258943038763555,
+      "logistic_detail": {
+        "C": 0.1,
+        "n_train": 3791,
+        "n_test": 765,
+        "n_features": 18,
+        "macro_f1": 0.5258943038763555,
+        "accuracy": 0.5320261437908497,
+        "balanced_accuracy": 0.5305010893246187,
+        "val_select_macro_f1": 0.5260871763754045
+      },
+      "band_best_single": "band.atr",
+      "band_best_single_macro_f1": 0.6249898249898249,
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.6249898249898249,
+        "band.tar": 0.6249898249898249,
+        "band.btr": 0.5553397913088334,
+        "band.alpha": 0.6122824292623592,
+        "band.delta": 0.500956340956341,
+        "extra.theta_beta": 0.5785931549828754,
+        "extra.delta_theta": 0.3408734527118077,
+        "extra.alpha_beta": 0.39879877103395306
+      },
+      "method": "threshold:band.atr",
+      "n_train": 3791,
+      "n_val": 629,
+      "n_test": 765,
+      "decision": "win",
+      "reve_macro_f1": 0.5004725109069171,
+      "reve_source": "exports/reve_attention_loso/metrics_summary.json (LOSO mean across 77 folds, both attention corpora)",
+      "reve_caveat": "REVE attention LOSO pooled mean; not split-matched to fixed ds001787 holdout used for band math.",
+      "reve_fair_compare": false,
+      "decision_vs_reve": "win"
+    },
+    {
+      "task": "mw_attention_ds003969",
+      "dataset": "ds003969 (64-ch Muse-proximal muse4, professional)",
+      "labels": [
+        "concentration",
+        "mind_wandering"
+      ],
+      "ai_macro_f1": 0.36,
+      "ai_source": "docs/dataset_confidence_table.md (LOSO ~0.36)",
+      "band_macro_f1": 0.5915330590312957,
+      "band_logistic_macro_f1": 0.5236409055755507,
+      "logistic_detail": {
+        "C": 10.0,
+        "n_train": 48000,
+        "n_test": 1600,
+        "n_features": 18,
+        "macro_f1": 0.5236409055755507,
+        "accuracy": 0.5775,
+        "balanced_accuracy": 0.5775,
+        "val_select_macro_f1": 0.3692546484449542
+      },
+      "band_best_single": "extra.delta_theta",
+      "band_best_single_macro_f1": 0.5915330590312957,
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.3465021135778964,
+        "band.tar": 0.3465021135778964,
+        "band.btr": 0.3509873392275744,
+        "band.alpha": 0.5557451765167984,
+        "band.delta": 0.41270652359052973,
+        "extra.theta_beta": 0.3496455691525069,
+        "extra.delta_theta": 0.5915330590312957,
+        "extra.alpha_beta": 0.3550277638532926
+      },
+      "method": "threshold:extra.delta_theta",
+      "n_train": 48000,
+      "n_val": 1600,
+      "n_test": 1600,
+      "decision": "win",
+      "reve_macro_f1": 0.5004725109069171,
+      "reve_source": "exports/reve_attention_loso/metrics_summary.json (LOSO mean across 77 folds, both attention corpora)",
+      "reve_caveat": "Same pooled REVE LOSO mean as ds001787 row; not split-matched to fixed ds003969 holdout.",
+      "reve_fair_compare": false,
+      "decision_vs_reve": "win"
+    },
+    {
+      "task": "a_med_rest_meditation",
+      "dataset": "ds003816 (Muse-native AF7/AF8/TP9/TP10, professional)",
+      "labels": [
+        "rest",
+        "meditation"
+      ],
+      "ai_macro_f1": 0.333,
+      "ai_source": "exports/head_a_med_smoke/metrics_summary.json (~0.33)",
+      "band_macro_f1": 0.5839138436501519,
+      "band_logistic_macro_f1": 0.2866700127569693,
+      "band_best_single": "band.delta",
+      "band_best_single_macro_f1": 0.5839138436501519,
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.38651318977133514,
+        "band.tar": 0.38166218492033027,
+        "band.btr": 0.5133030890298331,
+        "band.alpha": 0.24013973536773112,
+        "band.delta": 0.5839138436501519
+      },
+      "method": "loso_threshold:band.delta",
+      "n_subjects_loso": 6,
+      "decision": "win",
+      "reve_macro_f1": null,
+      "reve_source": null,
+      "reve_caveat": "No frozen REVE A-med metrics in exports.",
+      "reve_fair_compare": null,
+      "decision_vs_reve": null
+    },
+    {
+      "task": "med_depth_q1",
+      "dataset": "ds001787 (64-ch BioSemi, professional) \u2014 muse4 proxy; Q1\u22641 vs Q1\u22652",
+      "labels": [
+        "meditation_depth_low",
+        "meditation_depth_high"
+      ],
+      "ai_macro_f1": 0.333,
+      "ai_source": "exports/head_a_med_depth_smoke/metrics_summary.json",
+      "band_macro_f1": 0.703525641025641,
+      "band_logistic_macro_f1": 0.4865306122448979,
+      "logistic_detail": {
+        "C": 0.1,
+        "n_train": 268,
+        "n_test": 37,
+        "n_features": 18,
+        "macro_f1": 0.4865306122448979,
+        "accuracy": 0.5405405405405406,
+        "balanced_accuracy": 0.5176470588235295,
+        "val_select_macro_f1": 0.6488949646844384
+      },
+      "band_best_single": "extra.alpha_beta",
+      "band_best_single_macro_f1": 0.703525641025641,
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.4688995215311005,
+        "band.tar": 0.4688995215311005,
+        "band.btr": 0.34705882352941175,
+        "band.alpha": 0.5469387755102041,
+        "band.delta": 0.3615903975993998,
+        "extra.theta_beta": 0.37655677655677655,
+        "extra.delta_theta": 0.5469387755102041,
+        "extra.alpha_beta": 0.703525641025641
+      },
+      "method": "threshold:extra.alpha_beta",
+      "n_train": 268,
+      "n_val": 0,
+      "n_test": 37,
+      "decision": "win",
+      "reve_macro_f1": null,
+      "reve_source": null,
+      "reve_caveat": "No frozen REVE med-depth metrics in exports.",
+      "reve_fair_compare": null,
+      "decision_vs_reve": null
+    }
+  ],
+  "gaps": [
+    {
+      "item": "optional_hmc_5stage_bal_acc",
+      "note": "REVE HMC paper compare uses 30 s 5-stage epochs (bal_acc\u22480.649). Not scored here \u2014 different window length/task than 2 s muse4 packs. Mirror exports/reve_hmc_paper_compare/ if needed later."
+    },
+    {
+      "item": "annotations/recording_manifest.json stale",
+      "note": "Only 6 recordings; loaders use splits/*.json recordings (125) + on-disk npz."
+    },
+    {
+      "item": "Head C labels \u2261 A-vig on n1-slice",
+      "note": "W\u2192wake/drowsy, N1\u2192light/hypnagogic \u2014 identical binary targets on this corpus; same band-math F1 expected."
+    }
+  ],
+  "table": [
+    {
+      "task": "a_vig",
+      "dataset": "Sleep-EDF Expanded + HMC (2\u21924 muse4 proxy, professional)",
+      "ai_macro_f1": 0.7469416004366879,
+      "ai_macro_f1_reve": null,
+      "band_macro_f1": 0.6304385196908846,
+      "delta_band_minus_ai": -0.11650308074580329,
+      "decision": "lose",
+      "decision_vs_reve": "lose",
+      "method": "logistic_all_features",
+      "band_best_single": "extra.theta_beta",
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.4195894928443169,
+        "band.tar": 0.4195894928443169,
+        "band.btr": 0.5401337166284044,
+        "band.alpha": 0.4907449081710459,
+        "band.delta": 0.5241179260245834,
+        "extra.theta_beta": 0.5402767538578115,
+        "extra.delta_theta": 0.5319355668620878,
+        "extra.alpha_beta": 0.5090345558597263
+      },
+      "n_test": 61822,
+      "reve_macro_f1": 0.7831959721361417,
+      "reve_source": "exports/reve_sleep_heads_local/metrics_summary.json",
+      "reve_caveat": "Local CPU subsample \u226480 windows/class/recording; NOT apples-to-apples vs full CBraMod subject-holdout. Full REVE encode deferred to Kaggle T4.",
+      "reve_fair_compare": false,
+      "delta_reve_minus_cbramod": 0.03625437169945378
+    },
+    {
+      "task": "head_c_wake_light",
+      "dataset": "Sleep-EDF Expanded + HMC (2\u21924 muse4 proxy, professional)",
+      "ai_macro_f1": 0.759732696722526,
+      "ai_macro_f1_reve": null,
+      "band_macro_f1": 0.6304385196908846,
+      "delta_band_minus_ai": -0.12929417703164137,
+      "decision": "lose",
+      "decision_vs_reve": "lose",
+      "method": "logistic_all_features",
+      "band_best_single": "extra.theta_beta",
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.4195894928443169,
+        "band.tar": 0.4195894928443169,
+        "band.btr": 0.5401337166284044,
+        "band.alpha": 0.4907449081710459,
+        "band.delta": 0.5241179260245834,
+        "extra.theta_beta": 0.5402767538578115,
+        "extra.delta_theta": 0.5319355668620878,
+        "extra.alpha_beta": 0.5090345558597263
+      },
+      "n_test": 61822,
+      "reve_macro_f1": 0.7913432406912848,
+      "reve_source": "exports/reve_sleep_heads_local/metrics_summary.json",
+      "reve_caveat": "Same REVE local subsample caveat as A-vig; not fair vs full CBraMod.",
+      "reve_fair_compare": false,
+      "delta_reve_minus_cbramod": 0.03161054396875884
+    },
+    {
+      "task": "a_eng",
+      "dataset": "engagement_a_eng union (mix 19/23/32-ch professional + STEW 14-ch Emotiv hobbyist)",
+      "ai_macro_f1": 0.5481672654749781,
+      "ai_macro_f1_reve": 0.59,
+      "band_macro_f1": 0.5741522412332278,
+      "delta_band_minus_ai": 0.025984975758249762,
+      "decision": "win",
+      "decision_vs_reve": "lose",
+      "method": "threshold:band.atr",
+      "band_best_single": "band.atr",
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.5741522412332278,
+        "band.tar": 0.5741522412332278,
+        "band.btr": 0.5476135721606605,
+        "band.alpha": 0.5435959383319525,
+        "band.delta": 0.5041271077708261,
+        "extra.theta_beta": 0.5469908849155435,
+        "extra.delta_theta": 0.4971233093683425,
+        "extra.alpha_beta": 0.5366570394939321
+      },
+      "n_test": 3084,
+      "reve_macro_f1": 0.5895352672603857,
+      "reve_source": "exports/head_a_eng_train_reve/metrics_summary.json",
+      "reve_caveat": "Same engagement splits as CBraMod A-eng; misfit / not ship.",
+      "reve_fair_compare": true,
+      "delta_reve_minus_cbramod": 0.04136800178540767
+    },
+    {
+      "task": "mw_attention_ds001787",
+      "dataset": "ds001787 (64-ch BioSemi\u2192muse4 proxy, professional)",
+      "ai_macro_f1": 0.36,
+      "ai_macro_f1_reve": null,
+      "band_macro_f1": 0.6249898249898249,
+      "delta_band_minus_ai": 0.26498982498982493,
+      "decision": "win",
+      "decision_vs_reve": "win",
+      "method": "threshold:band.atr",
+      "band_best_single": "band.atr",
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.6249898249898249,
+        "band.tar": 0.6249898249898249,
+        "band.btr": 0.5553397913088334,
+        "band.alpha": 0.6122824292623592,
+        "band.delta": 0.500956340956341,
+        "extra.theta_beta": 0.5785931549828754,
+        "extra.delta_theta": 0.3408734527118077,
+        "extra.alpha_beta": 0.39879877103395306
+      },
+      "n_test": 765,
+      "reve_macro_f1": 0.5004725109069171,
+      "reve_source": "exports/reve_attention_loso/metrics_summary.json (LOSO mean across 77 folds, both attention corpora)",
+      "reve_caveat": "REVE attention LOSO pooled mean; not split-matched to fixed ds001787 holdout used for band math.",
+      "reve_fair_compare": false,
+      "delta_reve_minus_cbramod": 0.14047251090691715
+    },
+    {
+      "task": "mw_attention_ds003969",
+      "dataset": "ds003969 (64-ch Muse-proximal muse4, professional)",
+      "ai_macro_f1": 0.36,
+      "ai_macro_f1_reve": null,
+      "band_macro_f1": 0.5915330590312957,
+      "delta_band_minus_ai": 0.23153305903129573,
+      "decision": "win",
+      "decision_vs_reve": "win",
+      "method": "threshold:extra.delta_theta",
+      "band_best_single": "extra.delta_theta",
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.3465021135778964,
+        "band.tar": 0.3465021135778964,
+        "band.btr": 0.3509873392275744,
+        "band.alpha": 0.5557451765167984,
+        "band.delta": 0.41270652359052973,
+        "extra.theta_beta": 0.3496455691525069,
+        "extra.delta_theta": 0.5915330590312957,
+        "extra.alpha_beta": 0.3550277638532926
+      },
+      "n_test": 1600,
+      "reve_macro_f1": 0.5004725109069171,
+      "reve_source": "exports/reve_attention_loso/metrics_summary.json (LOSO mean across 77 folds, both attention corpora)",
+      "reve_caveat": "Same pooled REVE LOSO mean as ds001787 row; not split-matched to fixed ds003969 holdout.",
+      "reve_fair_compare": false,
+      "delta_reve_minus_cbramod": 0.14047251090691715
+    },
+    {
+      "task": "a_med_rest_meditation",
+      "dataset": "ds003816 (Muse-native AF7/AF8/TP9/TP10, professional)",
+      "ai_macro_f1": 0.333,
+      "ai_macro_f1_reve": null,
+      "band_macro_f1": 0.5839138436501519,
+      "delta_band_minus_ai": 0.25091384365015185,
+      "decision": "win",
+      "decision_vs_reve": null,
+      "method": "loso_threshold:band.delta",
+      "band_best_single": "band.delta",
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.38651318977133514,
+        "band.tar": 0.38166218492033027,
+        "band.btr": 0.5133030890298331,
+        "band.alpha": 0.24013973536773112,
+        "band.delta": 0.5839138436501519
+      },
+      "n_test": 6,
+      "reve_macro_f1": null,
+      "reve_source": null,
+      "reve_caveat": "No frozen REVE A-med metrics in exports.",
+      "reve_fair_compare": null,
+      "delta_reve_minus_cbramod": null
+    },
+    {
+      "task": "med_depth_q1",
+      "dataset": "ds001787 (64-ch BioSemi, professional) \u2014 muse4 proxy; Q1\u22641 vs Q1\u22652",
+      "ai_macro_f1": 0.333,
+      "ai_macro_f1_reve": null,
+      "band_macro_f1": 0.703525641025641,
+      "delta_band_minus_ai": 0.37052564102564095,
+      "decision": "win",
+      "decision_vs_reve": null,
+      "method": "threshold:extra.alpha_beta",
+      "band_best_single": "extra.alpha_beta",
+      "per_app_feature_macro_f1": {
+        "band.atr": 0.4688995215311005,
+        "band.tar": 0.4688995215311005,
+        "band.btr": 0.34705882352941175,
+        "band.alpha": 0.5469387755102041,
+        "band.delta": 0.3615903975993998,
+        "extra.theta_beta": 0.37655677655677655,
+        "extra.delta_theta": 0.5469387755102041,
+        "extra.alpha_beta": 0.703525641025641
+      },
+      "n_test": 37,
+      "reve_macro_f1": null,
+      "reve_source": null,
+      "reve_caveat": "No frozen REVE med-depth metrics in exports.",
+      "reve_fair_compare": null,
+      "delta_reve_minus_cbramod": null
+    }
+  ],
+  "updated_utc": "2026-09-17T09:49:02.328015+00:00",
+  "reve_added": true
+}

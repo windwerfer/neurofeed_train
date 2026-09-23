@@ -1,0 +1,24 @@
+{
+  "id": "windwerfer/muse-eeg-heads-reve-hmc-paper-compare",
+  "title": "muse-eeg-heads-reve-hmc-paper-compare",
+  "code_file": "muse-eeg-heads-reve-hmc-paper-compare.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [
+    "eeg",
+    "reve",
+    "hmc",
+    "sleep"
+  ],
+  "dataset_sources": [
+    "windwerfer/muse-eeg-heads-src",
+    "windwerfer/muse-eeg-heads-cache"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

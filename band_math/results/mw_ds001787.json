@@ -1,0 +1,39 @@
+{
+  "task": "mw_attention_ds001787",
+  "dataset": "ds001787 (64-ch BioSemi\u2192muse4 proxy, professional)",
+  "labels": [
+    "concentration",
+    "mind_wandering"
+  ],
+  "ai_macro_f1": 0.36,
+  "ai_source": "docs/dataset_confidence_table.md (LOSO ~0.36)",
+  "band_macro_f1": 0.6249898249898249,
+  "band_logistic_macro_f1": 0.5258943038763555,
+  "logistic_detail": {
+    "C": 0.1,
+    "n_train": 3791,
+    "n_test": 765,
+    "n_features": 18,
+    "macro_f1": 0.5258943038763555,
+    "accuracy": 0.5320261437908497,
+    "balanced_accuracy": 0.5305010893246187,
+    "val_select_macro_f1": 0.5260871763754045
+  },
+  "band_best_single": "band.atr",
+  "band_best_single_macro_f1": 0.6249898249898249,
+  "per_app_feature_macro_f1": {
+    "band.atr": 0.6249898249898249,
+    "band.tar": 0.6249898249898249,
+    "band.btr": 0.5553397913088334,
+    "band.alpha": 0.6122824292623592,
+    "band.delta": 0.500956340956341,
+    "extra.theta_beta": 0.5785931549828754,
+    "extra.delta_theta": 0.3408734527118077,
+    "extra.alpha_beta": 0.39879877103395306
+  },
+  "method": "threshold:band.atr",
+  "n_train": 3791,
+  "n_val": 629,
+  "n_test": 765,
+  "decision": "win"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "windwerfer/muse-eeg-heads-cbramod-outline",
+  "title": "Muse EEG Heads CBraMod Outline",
+  "code_file": "muse-eeg-heads-cbramod-outline.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [
+    "windwerfer/muse-eeg-heads-src",
+    "windwerfer/muse-eeg-heads-cache"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

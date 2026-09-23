@@ -1,0 +1,119 @@
+{
+  "muse4": {
+    "device": "Interaxon Muse (Classic/Athena four-channel keep)",
+    "sample_rate_hz": 256,
+    "units": "uV",
+    "stream_order": [
+      "TP9",
+      "AF7",
+      "AF8",
+      "TP10"
+    ],
+    "model_order_reve_app": [
+      "AF7",
+      "AF8",
+      "TP9",
+      "TP10"
+    ],
+    "gate_channels": [
+      "AF7",
+      "AF8"
+    ],
+    "positions_m_stream_order": {
+      "TP9": [
+        -0.08562,
+        -0.04651,
+        -0.04571
+      ],
+      "AF7": [
+        -0.05484,
+        0.06857,
+        -0.01059
+      ],
+      "AF8": [
+        0.05574,
+        0.06966,
+        -0.01075
+      ],
+      "TP10": [
+        0.08616,
+        -0.04704,
+        -0.04587
+      ]
+    },
+    "notes": "FPz is ref not data on Classic; Athena extras not kept by app today."
+  },
+  "crown8": {
+    "device": "Neurosity Crown",
+    "sample_rate_hz": 256,
+    "units": "uV",
+    "stream_order": [
+      "CP3",
+      "C3",
+      "F5",
+      "PO3",
+      "PO4",
+      "F6",
+      "C4",
+      "CP4"
+    ],
+    "gate_channels": [
+      "PO3",
+      "PO4"
+    ],
+    "ref_bias_not_in_stream": [
+      "T7",
+      "T8"
+    ],
+    "osc_raw_prefilter": "Butterworth 2-45 Hz + 50/60 notch; prefer rawUnfiltered for matched offline filter",
+    "positions_m_stream_order": {
+      "CP3": [
+        -0.06356,
+        -0.04701,
+        0.06562
+      ],
+      "C3": [
+        -0.06536,
+        -0.01163,
+        0.06436
+      ],
+      "F5": [
+        -0.06447,
+        0.04804,
+        0.01692
+      ],
+      "PO3": [
+        -0.03651,
+        -0.10085,
+        0.03717
+      ],
+      "PO4": [
+        0.03678,
+        -0.10085,
+        0.0364
+      ],
+      "F6": [
+        0.06791,
+        0.04983,
+        0.01637
+      ],
+      "C4": [
+        0.06712,
+        -0.0109,
+        0.06358
+      ],
+      "CP4": [
+        0.06661,
+        -0.04664,
+        0.06558
+      ]
+    }
+  },
+  "policy": {
+    "separate_heads_per_montage": true,
+    "never_mix_muse_crown_in_one_example": true,
+    "reve_train_hz": 200,
+    "reve_positions": "huggingface.co/brain-bzh/reve-positions",
+    "reve_weights_gated": "brain-bzh/reve-base"
+  }
+}

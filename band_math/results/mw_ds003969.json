@@ -1,0 +1,39 @@
+{
+  "task": "mw_attention_ds003969",
+  "dataset": "ds003969 (64-ch Muse-proximal muse4, professional)",
+  "labels": [
+    "concentration",
+    "mind_wandering"
+  ],
+  "ai_macro_f1": 0.36,
+  "ai_source": "docs/dataset_confidence_table.md (LOSO ~0.36)",
+  "band_macro_f1": 0.5915330590312957,
+  "band_logistic_macro_f1": 0.5236409055755507,
+  "logistic_detail": {
+    "C": 10.0,
+    "n_train": 48000,
+    "n_test": 1600,
+    "n_features": 18,
+    "macro_f1": 0.5236409055755507,
+    "accuracy": 0.5775,
+    "balanced_accuracy": 0.5775,
+    "val_select_macro_f1": 0.3692546484449542
+  },
+  "band_best_single": "extra.delta_theta",
+  "band_best_single_macro_f1": 0.5915330590312957,
+  "per_app_feature_macro_f1": {
+    "band.atr": 0.3465021135778964,
+    "band.tar": 0.3465021135778964,
+    "band.btr": 0.3509873392275744,
+    "band.alpha": 0.5557451765167984,
+    "band.delta": 0.41270652359052973,
+    "extra.theta_beta": 0.3496455691525069,
+    "extra.delta_theta": 0.5915330590312957,
+    "extra.alpha_beta": 0.3550277638532926
+  },
+  "method": "threshold:extra.delta_theta",
+  "n_train": 48000,
+  "n_val": 1600,
+  "n_test": 1600,
+  "decision": "win"
+}
