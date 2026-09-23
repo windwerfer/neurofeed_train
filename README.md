@@ -14,7 +14,8 @@ This repo is **code, docs, recipes, and subject-split JSON** — not the app, no
 
 ## Honest status
 
-- **Vigilance (Muse4 / A-vig)** — primary ship path on top of frozen CBraMod (Sleep-EDF + HMC muse4 proxy).
+- **Vigilance (Muse4 / A-vig)** — primary Muse ship path on top of frozen CBraMod (Sleep-EDF + HMC muse4 proxy).
+- **Vigilance (Crown HMC proxy)** — shippable Crown vig path: HF `crown2_vigilance_hmc` / `crown4_vigilance_hmc`; CBraMod test macro-F1 **0.670 / 0.680** (see `docs/crown_hmc_vig_compare.md`). Honest proxy F6≈F4, PO4≈O2. Do not mix with muse4 vig.
 - **Attention (OpenNeuro ds001787 / ds003969)** — research; Crown8 attention is **not shippable** as a public frozen pack.
 - **Engagement (A-eng)** — research / misfit; do not treat as a ship head.
 - **A-med / mind-wandering** — personal calibration / research; not a public ship decoder.
@@ -46,8 +47,9 @@ Expected layout idea (match HF / `datasets/` corpus names):
 
 ```
 data/hf_windows/
-  vigilance_sleep_edf/windows/...
-  attention_ds001787/windows/...
+  muse4_vigilance_sleep_edf/windows/...
+  crown2_vigilance_hmc/windows/...
+  crown4_vigilance_hmc/windows/...
   ...
 ```
 

@@ -1,0 +1,3074 @@
+{
+  "corpus": "vigilance_hmc_crown4",
+  "policy": "subject_wise_70_15_15",
+  "seed": 42,
+  "train_frac": 0.7,
+  "val_frac": 0.15,
+  "created_utc": "2026-09-23T09:07:40.624523+00:00",
+  "subject_key_rule": "HMC SN### id == subject_id (1 night / subject)",
+  "montage": {
+    "kind": "crown4_hmc",
+    "ch_count": 4,
+    "ch_names": [
+      "C3",
+      "C4",
+      "F6",
+      "PO4"
+    ],
+    "source_channels": [
+      "EEG C3-M2",
+      "EEG C4-M1",
+      "EEG F4-M1",
+      "EEG O2-M1"
+    ]
+  },
+  "recordings": {
+    "SN001": {
+      "subject_id": "SN001",
+      "recording_id": "SN001",
+      "source": "hmc",
+      "n_windows": 2629,
+      "window_shape": [
+        2629,
+        4,
+        512
+      ]
+    },
+    "SN002": {
+      "subject_id": "SN002",
+      "recording_id": "SN002",
+      "source": "hmc",
+      "n_windows": 894,
+      "window_shape": [
+        894,
+        4,
+        512
+      ]
+    },
+    "SN003": {
+      "subject_id": "SN003",
+      "recording_id": "SN003",
+      "source": "hmc",
+      "n_windows": 2749,
+      "window_shape": [
+        2749,
+        4,
+        512
+      ]
+    },
+    "SN004": {
+      "subject_id": "SN004",
+      "recording_id": "SN004",
+      "source": "hmc",
+      "n_windows": 1967,
+      "window_shape": [
+        1967,
+        4,
+        512
+      ]
+    },
+    "SN005": {
+      "subject_id": "SN005",
+      "recording_id": "SN005",
+      "source": "hmc",
+      "n_windows": 4125,
+      "window_shape": [
+        4125,
+        4,
+        512
+      ]
+    },
+    "SN006": {
+      "subject_id": "SN006",
+      "recording_id": "SN006",
+      "source": "hmc",
+      "n_windows": 2266,
+      "window_shape": [
+        2266,
+        4,
+        512
+      ]
+    },
+    "SN007": {
+      "subject_id": "SN007",
+      "recording_id": "SN007",
+      "source": "hmc",
+      "n_windows": 2269,
+      "window_shape": [
+        2269,
+        4,
+        512
+      ]
+    },
+    "SN008": {
+      "subject_id": "SN008",
+      "recording_id": "SN008",
+      "source": "hmc",
+      "n_windows": 2155,
+      "window_shape": [
+        2155,
+        4,
+        512
+      ]
+    },
+    "SN009": {
+      "subject_id": "SN009",
+      "recording_id": "SN009",
+      "source": "hmc",
+      "n_windows": 4668,
+      "window_shape": [
+        4668,
+        4,
+        512
+      ]
+    },
+    "SN010": {
+      "subject_id": "SN010",
+      "recording_id": "SN010",
+      "source": "hmc",
+      "n_windows": 4187,
+      "window_shape": [
+        4187,
+        4,
+        512
+      ]
+    },
+    "SN011": {
+      "subject_id": "SN011",
+      "recording_id": "SN011",
+      "source": "hmc",
+      "n_windows": 1612,
+      "window_shape": [
+        1612,
+        4,
+        512
+      ]
+    },
+    "SN012": {
+      "subject_id": "SN012",
+      "recording_id": "SN012",
+      "source": "hmc",
+      "n_windows": 1975,
+      "window_shape": [
+        1975,
+        4,
+        512
+      ]
+    },
+    "SN013": {
+      "subject_id": "SN013",
+      "recording_id": "SN013",
+      "source": "hmc",
+      "n_windows": 3168,
+      "window_shape": [
+        3168,
+        4,
+        512
+      ]
+    },
+    "SN015": {
+      "subject_id": "SN015",
+      "recording_id": "SN015",
+      "source": "hmc",
+      "n_windows": 3052,
+      "window_shape": [
+        3052,
+        4,
+        512
+      ]
+    },
+    "SN016": {
+      "subject_id": "SN016",
+      "recording_id": "SN016",
+      "source": "hmc",
+      "n_windows": 716,
+      "window_shape": [
+        716,
+        4,
+        512
+      ]
+    },
+    "SN017": {
+      "subject_id": "SN017",
+      "recording_id": "SN017",
+      "source": "hmc",
+      "n_windows": 1254,
+      "window_shape": [
+        1254,
+        4,
+        512
+      ]
+    },
+    "SN018": {
+      "subject_id": "SN018",
+      "recording_id": "SN018",
+      "source": "hmc",
+      "n_windows": 1853,
+      "window_shape": [
+        1853,
+        4,
+        512
+      ]
+    },
+    "SN019": {
+      "subject_id": "SN019",
+      "recording_id": "SN019",
+      "source": "hmc",
+      "n_windows": 6450,
+      "window_shape": [
+        6450,
+        4,
+        512
+      ]
+    },
+    "SN020": {
+      "subject_id": "SN020",
+      "recording_id": "SN020",
+      "source": "hmc",
+      "n_windows": 7071,
+      "window_shape": [
+        7071,
+        4,
+        512
+      ]
+    },
+    "SN021": {
+      "subject_id": "SN021",
+      "recording_id": "SN021",
+      "source": "hmc",
+      "n_windows": 2455,
+      "window_shape": [
+        2455,
+        4,
+        512
+      ]
+    },
+    "SN022": {
+      "subject_id": "SN022",
+      "recording_id": "SN022",
+      "source": "hmc",
+      "n_windows": 3766,
+      "window_shape": [
+        3766,
+        4,
+        512
+      ]
+    },
+    "SN023": {
+      "subject_id": "SN023",
+      "recording_id": "SN023",
+      "source": "hmc",
+      "n_windows": 5989,
+      "window_shape": [
+        5989,
+        4,
+        512
+      ]
+    },
+    "SN024": {
+      "subject_id": "SN024",
+      "recording_id": "SN024",
+      "source": "hmc",
+      "n_windows": 1132,
+      "window_shape": [
+        1132,
+        4,
+        512
+      ]
+    },
+    "SN025": {
+      "subject_id": "SN025",
+      "recording_id": "SN025",
+      "source": "hmc",
+      "n_windows": 5085,
+      "window_shape": [
+        5085,
+        4,
+        512
+      ]
+    },
+    "SN026": {
+      "subject_id": "SN026",
+      "recording_id": "SN026",
+      "source": "hmc",
+      "n_windows": 4485,
+      "window_shape": [
+        4485,
+        4,
+        512
+      ]
+    },
+    "SN027": {
+      "subject_id": "SN027",
+      "recording_id": "SN027",
+      "source": "hmc",
+      "n_windows": 6767,
+      "window_shape": [
+        6767,
+        4,
+        512
+      ]
+    },
+    "SN028": {
+      "subject_id": "SN028",
+      "recording_id": "SN028",
+      "source": "hmc",
+      "n_windows": 3953,
+      "window_shape": [
+        3953,
+        4,
+        512
+      ]
+    },
+    "SN029": {
+      "subject_id": "SN029",
+      "recording_id": "SN029",
+      "source": "hmc",
+      "n_windows": 1130,
+      "window_shape": [
+        1130,
+        4,
+        512
+      ]
+    },
+    "SN030": {
+      "subject_id": "SN030",
+      "recording_id": "SN030",
+      "source": "hmc",
+      "n_windows": 2093,
+      "window_shape": [
+        2093,
+        4,
+        512
+      ]
+    },
+    "SN031": {
+      "subject_id": "SN031",
+      "recording_id": "SN031",
+      "source": "hmc",
+      "n_windows": 3406,
+      "window_shape": [
+        3406,
+        4,
+        512
+      ]
+    },
+    "SN032": {
+      "subject_id": "SN032",
+      "recording_id": "SN032",
+      "source": "hmc",
+      "n_windows": 4053,
+      "window_shape": [
+        4053,
+        4,
+        512
+      ]
+    },
+    "SN033": {
+      "subject_id": "SN033",
+      "recording_id": "SN033",
+      "source": "hmc",
+      "n_windows": 2798,
+      "window_shape": [
+        2798,
+        4,
+        512
+      ]
+    },
+    "SN034": {
+      "subject_id": "SN034",
+      "recording_id": "SN034",
+      "source": "hmc",
+      "n_windows": 2515,
+      "window_shape": [
+        2515,
+        4,
+        512
+      ]
+    },
+    "SN035": {
+      "subject_id": "SN035",
+      "recording_id": "SN035",
+      "source": "hmc",
+      "n_windows": 6216,
+      "window_shape": [
+        6216,
+        4,
+        512
+      ]
+    },
+    "SN036": {
+      "subject_id": "SN036",
+      "recording_id": "SN036",
+      "source": "hmc",
+      "n_windows": 1191,
+      "window_shape": [
+        1191,
+        4,
+        512
+      ]
+    },
+    "SN037": {
+      "subject_id": "SN037",
+      "recording_id": "SN037",
+      "source": "hmc",
+      "n_windows": 1073,
+      "window_shape": [
+        1073,
+        4,
+        512
+      ]
+    },
+    "SN038": {
+      "subject_id": "SN038",
+      "recording_id": "SN038",
+      "source": "hmc",
+      "n_windows": 2814,
+      "window_shape": [
+        2814,
+        4,
+        512
+      ]
+    },
+    "SN039": {
+      "subject_id": "SN039",
+      "recording_id": "SN039",
+      "source": "hmc",
+      "n_windows": 4296,
+      "window_shape": [
+        4296,
+        4,
+        512
+      ]
+    },
+    "SN040": {
+      "subject_id": "SN040",
+      "recording_id": "SN040",
+      "source": "hmc",
+      "n_windows": 3101,
+      "window_shape": [
+        3101,
+        4,
+        512
+      ]
+    },
+    "SN041": {
+      "subject_id": "SN041",
+      "recording_id": "SN041",
+      "source": "hmc",
+      "n_windows": 4126,
+      "window_shape": [
+        4126,
+        4,
+        512
+      ]
+    },
+    "SN042": {
+      "subject_id": "SN042",
+      "recording_id": "SN042",
+      "source": "hmc",
+      "n_windows": 2869,
+      "window_shape": [
+        2869,
+        4,
+        512
+      ]
+    },
+    "SN043": {
+      "subject_id": "SN043",
+      "recording_id": "SN043",
+      "source": "hmc",
+      "n_windows": 714,
+      "window_shape": [
+        714,
+        4,
+        512
+      ]
+    },
+    "SN044": {
+      "subject_id": "SN044",
+      "recording_id": "SN044",
+      "source": "hmc",
+      "n_windows": 1548,
+      "window_shape": [
+        1548,
+        4,
+        512
+      ]
+    },
+    "SN045": {
+      "subject_id": "SN045",
+      "recording_id": "SN045",
+      "source": "hmc",
+      "n_windows": 4307,
+      "window_shape": [
+        4307,
+        4,
+        512
+      ]
+    },
+    "SN046": {
+      "subject_id": "SN046",
+      "recording_id": "SN046",
+      "source": "hmc",
+      "n_windows": 4059,
+      "window_shape": [
+        4059,
+        4,
+        512
+      ]
+    },
+    "SN047": {
+      "subject_id": "SN047",
+      "recording_id": "SN047",
+      "source": "hmc",
+      "n_windows": 2508,
+      "window_shape": [
+        2508,
+        4,
+        512
+      ]
+    },
+    "SN048": {
+      "subject_id": "SN048",
+      "recording_id": "SN048",
+      "source": "hmc",
+      "n_windows": 6413,
+      "window_shape": [
+        6413,
+        4,
+        512
+      ]
+    },
+    "SN049": {
+      "subject_id": "SN049",
+      "recording_id": "SN049",
+      "source": "hmc",
+      "n_windows": 2512,
+      "window_shape": [
+        2512,
+        4,
+        512
+      ]
+    },
+    "SN050": {
+      "subject_id": "SN050",
+      "recording_id": "SN050",
+      "source": "hmc",
+      "n_windows": 1971,
+      "window_shape": [
+        1971,
+        4,
+        512
+      ]
+    },
+    "SN051": {
+      "subject_id": "SN051",
+      "recording_id": "SN051",
+      "source": "hmc",
+      "n_windows": 3889,
+      "window_shape": [
+        3889,
+        4,
+        512
+      ]
+    },
+    "SN052": {
+      "subject_id": "SN052",
+      "recording_id": "SN052",
+      "source": "hmc",
+      "n_windows": 6049,
+      "window_shape": [
+        6049,
+        4,
+        512
+      ]
+    },
+    "SN053": {
+      "subject_id": "SN053",
+      "recording_id": "SN053",
+      "source": "hmc",
+      "n_windows": 7176,
+      "window_shape": [
+        7176,
+        4,
+        512
+      ]
+    },
+    "SN054": {
+      "subject_id": "SN054",
+      "recording_id": "SN054",
+      "source": "hmc",
+      "n_windows": 891,
+      "window_shape": [
+        891,
+        4,
+        512
+      ]
+    },
+    "SN055": {
+      "subject_id": "SN055",
+      "recording_id": "SN055",
+      "source": "hmc",
+      "n_windows": 3291,
+      "window_shape": [
+        3291,
+        4,
+        512
+      ]
+    },
+    "SN056": {
+      "subject_id": "SN056",
+      "recording_id": "SN056",
+      "source": "hmc",
+      "n_windows": 5030,
+      "window_shape": [
+        5030,
+        4,
+        512
+      ]
+    },
+    "SN057": {
+      "subject_id": "SN057",
+      "recording_id": "SN057",
+      "source": "hmc",
+      "n_windows": 4242,
+      "window_shape": [
+        4242,
+        4,
+        512
+      ]
+    },
+    "SN058": {
+      "subject_id": "SN058",
+      "recording_id": "SN058",
+      "source": "hmc",
+      "n_windows": 2570,
+      "window_shape": [
+        2570,
+        4,
+        512
+      ]
+    },
+    "SN059": {
+      "subject_id": "SN059",
+      "recording_id": "SN059",
+      "source": "hmc",
+      "n_windows": 2810,
+      "window_shape": [
+        2810,
+        4,
+        512
+      ]
+    },
+    "SN060": {
+      "subject_id": "SN060",
+      "recording_id": "SN060",
+      "source": "hmc",
+      "n_windows": 893,
+      "window_shape": [
+        893,
+        4,
+        512
+      ]
+    },
+    "SN061": {
+      "subject_id": "SN061",
+      "recording_id": "SN061",
+      "source": "hmc",
+      "n_windows": 3053,
+      "window_shape": [
+        3053,
+        4,
+        512
+      ]
+    },
+    "SN062": {
+      "subject_id": "SN062",
+      "recording_id": "SN062",
+      "source": "hmc",
+      "n_windows": 415,
+      "window_shape": [
+        415,
+        4,
+        512
+      ]
+    },
+    "SN063": {
+      "subject_id": "SN063",
+      "recording_id": "SN063",
+      "source": "hmc",
+      "n_windows": 6036,
+      "window_shape": [
+        6036,
+        4,
+        512
+      ]
+    },
+    "SN065": {
+      "subject_id": "SN065",
+      "recording_id": "SN065",
+      "source": "hmc",
+      "n_windows": 1253,
+      "window_shape": [
+        1253,
+        4,
+        512
+      ]
+    },
+    "SN066": {
+      "subject_id": "SN066",
+      "recording_id": "SN066",
+      "source": "hmc",
+      "n_windows": 537,
+      "window_shape": [
+        537,
+        4,
+        512
+      ]
+    },
+    "SN067": {
+      "subject_id": "SN067",
+      "recording_id": "SN067",
+      "source": "hmc",
+      "n_windows": 1614,
+      "window_shape": [
+        1614,
+        4,
+        512
+      ]
+    },
+    "SN068": {
+      "subject_id": "SN068",
+      "recording_id": "SN068",
+      "source": "hmc",
+      "n_windows": 2624,
+      "window_shape": [
+        2624,
+        4,
+        512
+      ]
+    },
+    "SN069": {
+      "subject_id": "SN069",
+      "recording_id": "SN069",
+      "source": "hmc",
+      "n_windows": 3108,
+      "window_shape": [
+        3108,
+        4,
+        512
+      ]
+    },
+    "SN070": {
+      "subject_id": "SN070",
+      "recording_id": "SN070",
+      "source": "hmc",
+      "n_windows": 1190,
+      "window_shape": [
+        1190,
+        4,
+        512
+      ]
+    },
+    "SN071": {
+      "subject_id": "SN071",
+      "recording_id": "SN071",
+      "source": "hmc",
+      "n_windows": 3356,
+      "window_shape": [
+        3356,
+        4,
+        512
+      ]
+    },
+    "SN072": {
+      "subject_id": "SN072",
+      "recording_id": "SN072",
+      "source": "hmc",
+      "n_windows": 2920,
+      "window_shape": [
+        2920,
+        4,
+        512
+      ]
+    },
+    "SN073": {
+      "subject_id": "SN073",
+      "recording_id": "SN073",
+      "source": "hmc",
+      "n_windows": 3348,
+      "window_shape": [
+        3348,
+        4,
+        512
+      ]
+    },
+    "SN074": {
+      "subject_id": "SN074",
+      "recording_id": "SN074",
+      "source": "hmc",
+      "n_windows": 777,
+      "window_shape": [
+        777,
+        4,
+        512
+      ]
+    },
+    "SN075": {
+      "subject_id": "SN075",
+      "recording_id": "SN075",
+      "source": "hmc",
+      "n_windows": 2695,
+      "window_shape": [
+        2695,
+        4,
+        512
+      ]
+    },
+    "SN076": {
+      "subject_id": "SN076",
+      "recording_id": "SN076",
+      "source": "hmc",
+      "n_windows": 1190,
+      "window_shape": [
+        1190,
+        4,
+        512
+      ]
+    },
+    "SN077": {
+      "subject_id": "SN077",
+      "recording_id": "SN077",
+      "source": "hmc",
+      "n_windows": 5321,
+      "window_shape": [
+        5321,
+        4,
+        512
+      ]
+    },
+    "SN078": {
+      "subject_id": "SN078",
+      "recording_id": "SN078",
+      "source": "hmc",
+      "n_windows": 1188,
+      "window_shape": [
+        1188,
+        4,
+        512
+      ]
+    },
+    "SN079": {
+      "subject_id": "SN079",
+      "recording_id": "SN079",
+      "source": "hmc",
+      "n_windows": 2511,
+      "window_shape": [
+        2511,
+        4,
+        512
+      ]
+    },
+    "SN080": {
+      "subject_id": "SN080",
+      "recording_id": "SN080",
+      "source": "hmc",
+      "n_windows": 6705,
+      "window_shape": [
+        6705,
+        4,
+        512
+      ]
+    },
+    "SN081": {
+      "subject_id": "SN081",
+      "recording_id": "SN081",
+      "source": "hmc",
+      "n_windows": 3404,
+      "window_shape": [
+        3404,
+        4,
+        512
+      ]
+    },
+    "SN082": {
+      "subject_id": "SN082",
+      "recording_id": "SN082",
+      "source": "hmc",
+      "n_windows": 1850,
+      "window_shape": [
+        1850,
+        4,
+        512
+      ]
+    },
+    "SN083": {
+      "subject_id": "SN083",
+      "recording_id": "SN083",
+      "source": "hmc",
+      "n_windows": 1735,
+      "window_shape": [
+        1735,
+        4,
+        512
+      ]
+    },
+    "SN084": {
+      "subject_id": "SN084",
+      "recording_id": "SN084",
+      "source": "hmc",
+      "n_windows": 896,
+      "window_shape": [
+        896,
+        4,
+        512
+      ]
+    },
+    "SN085": {
+      "subject_id": "SN085",
+      "recording_id": "SN085",
+      "source": "hmc",
+      "n_windows": 2743,
+      "window_shape": [
+        2743,
+        4,
+        512
+      ]
+    },
+    "SN086": {
+      "subject_id": "SN086",
+      "recording_id": "SN086",
+      "source": "hmc",
+      "n_windows": 1128,
+      "window_shape": [
+        1128,
+        4,
+        512
+      ]
+    },
+    "SN087": {
+      "subject_id": "SN087",
+      "recording_id": "SN087",
+      "source": "hmc",
+      "n_windows": 535,
+      "window_shape": [
+        535,
+        4,
+        512
+      ]
+    },
+    "SN088": {
+      "subject_id": "SN088",
+      "recording_id": "SN088",
+      "source": "hmc",
+      "n_windows": 4425,
+      "window_shape": [
+        4425,
+        4,
+        512
+      ]
+    },
+    "SN089": {
+      "subject_id": "SN089",
+      "recording_id": "SN089",
+      "source": "hmc",
+      "n_windows": 2746,
+      "window_shape": [
+        2746,
+        4,
+        512
+      ]
+    },
+    "SN090": {
+      "subject_id": "SN090",
+      "recording_id": "SN090",
+      "source": "hmc",
+      "n_windows": 3225,
+      "window_shape": [
+        3225,
+        4,
+        512
+      ]
+    },
+    "SN091": {
+      "subject_id": "SN091",
+      "recording_id": "SN091",
+      "source": "hmc",
+      "n_windows": 1430,
+      "window_shape": [
+        1430,
+        4,
+        512
+      ]
+    },
+    "SN092": {
+      "subject_id": "SN092",
+      "recording_id": "SN092",
+      "source": "hmc",
+      "n_windows": 2744,
+      "window_shape": [
+        2744,
+        4,
+        512
+      ]
+    },
+    "SN093": {
+      "subject_id": "SN093",
+      "recording_id": "SN093",
+      "source": "hmc",
+      "n_windows": 4308,
+      "window_shape": [
+        4308,
+        4,
+        512
+      ]
+    },
+    "SN094": {
+      "subject_id": "SN094",
+      "recording_id": "SN094",
+      "source": "hmc",
+      "n_windows": 3529,
+      "window_shape": [
+        3529,
+        4,
+        512
+      ]
+    },
+    "SN095": {
+      "subject_id": "SN095",
+      "recording_id": "SN095",
+      "source": "hmc",
+      "n_windows": 2082,
+      "window_shape": [
+        2082,
+        4,
+        512
+      ]
+    },
+    "SN096": {
+      "subject_id": "SN096",
+      "recording_id": "SN096",
+      "source": "hmc",
+      "n_windows": 6893,
+      "window_shape": [
+        6893,
+        4,
+        512
+      ]
+    },
+    "SN097": {
+      "subject_id": "SN097",
+      "recording_id": "SN097",
+      "source": "hmc",
+      "n_windows": 1132,
+      "window_shape": [
+        1132,
+        4,
+        512
+      ]
+    },
+    "SN098": {
+      "subject_id": "SN098",
+      "recording_id": "SN098",
+      "source": "hmc",
+      "n_windows": 3767,
+      "window_shape": [
+        3767,
+        4,
+        512
+      ]
+    },
+    "SN099": {
+      "subject_id": "SN099",
+      "recording_id": "SN099",
+      "source": "hmc",
+      "n_windows": 716,
+      "window_shape": [
+        716,
+        4,
+        512
+      ]
+    },
+    "SN100": {
+      "subject_id": "SN100",
+      "recording_id": "SN100",
+      "source": "hmc",
+      "n_windows": 3407,
+      "window_shape": [
+        3407,
+        4,
+        512
+      ]
+    },
+    "SN101": {
+      "subject_id": "SN101",
+      "recording_id": "SN101",
+      "source": "hmc",
+      "n_windows": 1609,
+      "window_shape": [
+        1609,
+        4,
+        512
+      ]
+    },
+    "SN102": {
+      "subject_id": "SN102",
+      "recording_id": "SN102",
+      "source": "hmc",
+      "n_windows": 5264,
+      "window_shape": [
+        5264,
+        4,
+        512
+      ]
+    },
+    "SN103": {
+      "subject_id": "SN103",
+      "recording_id": "SN103",
+      "source": "hmc",
+      "n_windows": 896,
+      "window_shape": [
+        896,
+        4,
+        512
+      ]
+    },
+    "SN104": {
+      "subject_id": "SN104",
+      "recording_id": "SN104",
+      "source": "hmc",
+      "n_windows": 1910,
+      "window_shape": [
+        1910,
+        4,
+        512
+      ]
+    },
+    "SN105": {
+      "subject_id": "SN105",
+      "recording_id": "SN105",
+      "source": "hmc",
+      "n_windows": 1014,
+      "window_shape": [
+        1014,
+        4,
+        512
+      ]
+    },
+    "SN106": {
+      "subject_id": "SN106",
+      "recording_id": "SN106",
+      "source": "hmc",
+      "n_windows": 1677,
+      "window_shape": [
+        1677,
+        4,
+        512
+      ]
+    },
+    "SN107": {
+      "subject_id": "SN107",
+      "recording_id": "SN107",
+      "source": "hmc",
+      "n_windows": 1966,
+      "window_shape": [
+        1966,
+        4,
+        512
+      ]
+    },
+    "SN108": {
+      "subject_id": "SN108",
+      "recording_id": "SN108",
+      "source": "hmc",
+      "n_windows": 3351,
+      "window_shape": [
+        3351,
+        4,
+        512
+      ]
+    },
+    "SN109": {
+      "subject_id": "SN109",
+      "recording_id": "SN109",
+      "source": "hmc",
+      "n_windows": 6639,
+      "window_shape": [
+        6639,
+        4,
+        512
+      ]
+    },
+    "SN110": {
+      "subject_id": "SN110",
+      "recording_id": "SN110",
+      "source": "hmc",
+      "n_windows": 5743,
+      "window_shape": [
+        5743,
+        4,
+        512
+      ]
+    },
+    "SN111": {
+      "subject_id": "SN111",
+      "recording_id": "SN111",
+      "source": "hmc",
+      "n_windows": 2396,
+      "window_shape": [
+        2396,
+        4,
+        512
+      ]
+    },
+    "SN112": {
+      "subject_id": "SN112",
+      "recording_id": "SN112",
+      "source": "hmc",
+      "n_windows": 7045,
+      "window_shape": [
+        7045,
+        4,
+        512
+      ]
+    },
+    "SN113": {
+      "subject_id": "SN113",
+      "recording_id": "SN113",
+      "source": "hmc",
+      "n_windows": 6584,
+      "window_shape": [
+        6584,
+        4,
+        512
+      ]
+    },
+    "SN114": {
+      "subject_id": "SN114",
+      "recording_id": "SN114",
+      "source": "hmc",
+      "n_windows": 6688,
+      "window_shape": [
+        6688,
+        4,
+        512
+      ]
+    },
+    "SN115": {
+      "subject_id": "SN115",
+      "recording_id": "SN115",
+      "source": "hmc",
+      "n_windows": 7189,
+      "window_shape": [
+        7189,
+        4,
+        512
+      ]
+    },
+    "SN116": {
+      "subject_id": "SN116",
+      "recording_id": "SN116",
+      "source": "hmc",
+      "n_windows": 5745,
+      "window_shape": [
+        5745,
+        4,
+        512
+      ]
+    },
+    "SN117": {
+      "subject_id": "SN117",
+      "recording_id": "SN117",
+      "source": "hmc",
+      "n_windows": 4848,
+      "window_shape": [
+        4848,
+        4,
+        512
+      ]
+    },
+    "SN118": {
+      "subject_id": "SN118",
+      "recording_id": "SN118",
+      "source": "hmc",
+      "n_windows": 1369,
+      "window_shape": [
+        1369,
+        4,
+        512
+      ]
+    },
+    "SN119": {
+      "subject_id": "SN119",
+      "recording_id": "SN119",
+      "source": "hmc",
+      "n_windows": 2932,
+      "window_shape": [
+        2932,
+        4,
+        512
+      ]
+    },
+    "SN120": {
+      "subject_id": "SN120",
+      "recording_id": "SN120",
+      "source": "hmc",
+      "n_windows": 2393,
+      "window_shape": [
+        2393,
+        4,
+        512
+      ]
+    },
+    "SN121": {
+      "subject_id": "SN121",
+      "recording_id": "SN121",
+      "source": "hmc",
+      "n_windows": 1250,
+      "window_shape": [
+        1250,
+        4,
+        512
+      ]
+    },
+    "SN122": {
+      "subject_id": "SN122",
+      "recording_id": "SN122",
+      "source": "hmc",
+      "n_windows": 2807,
+      "window_shape": [
+        2807,
+        4,
+        512
+      ]
+    },
+    "SN123": {
+      "subject_id": "SN123",
+      "recording_id": "SN123",
+      "source": "hmc",
+      "n_windows": 3212,
+      "window_shape": [
+        3212,
+        4,
+        512
+      ]
+    },
+    "SN124": {
+      "subject_id": "SN124",
+      "recording_id": "SN124",
+      "source": "hmc",
+      "n_windows": 6401,
+      "window_shape": [
+        6401,
+        4,
+        512
+      ]
+    },
+    "SN125": {
+      "subject_id": "SN125",
+      "recording_id": "SN125",
+      "source": "hmc",
+      "n_windows": 895,
+      "window_shape": [
+        895,
+        4,
+        512
+      ]
+    },
+    "SN126": {
+      "subject_id": "SN126",
+      "recording_id": "SN126",
+      "source": "hmc",
+      "n_windows": 5441,
+      "window_shape": [
+        5441,
+        4,
+        512
+      ]
+    },
+    "SN127": {
+      "subject_id": "SN127",
+      "recording_id": "SN127",
+      "source": "hmc",
+      "n_windows": 354,
+      "window_shape": [
+        354,
+        4,
+        512
+      ]
+    },
+    "SN128": {
+      "subject_id": "SN128",
+      "recording_id": "SN128",
+      "source": "hmc",
+      "n_windows": 1432,
+      "window_shape": [
+        1432,
+        4,
+        512
+      ]
+    },
+    "SN129": {
+      "subject_id": "SN129",
+      "recording_id": "SN129",
+      "source": "hmc",
+      "n_windows": 2861,
+      "window_shape": [
+        2861,
+        4,
+        512
+      ]
+    },
+    "SN130": {
+      "subject_id": "SN130",
+      "recording_id": "SN130",
+      "source": "hmc",
+      "n_windows": 1186,
+      "window_shape": [
+        1186,
+        4,
+        512
+      ]
+    },
+    "SN131": {
+      "subject_id": "SN131",
+      "recording_id": "SN131",
+      "source": "hmc",
+      "n_windows": 2094,
+      "window_shape": [
+        2094,
+        4,
+        512
+      ]
+    },
+    "SN132": {
+      "subject_id": "SN132",
+      "recording_id": "SN132",
+      "source": "hmc",
+      "n_windows": 1496,
+      "window_shape": [
+        1496,
+        4,
+        512
+      ]
+    },
+    "SN133": {
+      "subject_id": "SN133",
+      "recording_id": "SN133",
+      "source": "hmc",
+      "n_windows": 4240,
+      "window_shape": [
+        4240,
+        4,
+        512
+      ]
+    },
+    "SN134": {
+      "subject_id": "SN134",
+      "recording_id": "SN134",
+      "source": "hmc",
+      "n_windows": 2933,
+      "window_shape": [
+        2933,
+        4,
+        512
+      ]
+    },
+    "SN136": {
+      "subject_id": "SN136",
+      "recording_id": "SN136",
+      "source": "hmc",
+      "n_windows": 2747,
+      "window_shape": [
+        2747,
+        4,
+        512
+      ]
+    },
+    "SN137": {
+      "subject_id": "SN137",
+      "recording_id": "SN137",
+      "source": "hmc",
+      "n_windows": 3517,
+      "window_shape": [
+        3517,
+        4,
+        512
+      ]
+    },
+    "SN138": {
+      "subject_id": "SN138",
+      "recording_id": "SN138",
+      "source": "hmc",
+      "n_windows": 1188,
+      "window_shape": [
+        1188,
+        4,
+        512
+      ]
+    },
+    "SN139": {
+      "subject_id": "SN139",
+      "recording_id": "SN139",
+      "source": "hmc",
+      "n_windows": 1317,
+      "window_shape": [
+        1317,
+        4,
+        512
+      ]
+    },
+    "SN140": {
+      "subject_id": "SN140",
+      "recording_id": "SN140",
+      "source": "hmc",
+      "n_windows": 2635,
+      "window_shape": [
+        2635,
+        4,
+        512
+      ]
+    },
+    "SN141": {
+      "subject_id": "SN141",
+      "recording_id": "SN141",
+      "source": "hmc",
+      "n_windows": 3640,
+      "window_shape": [
+        3640,
+        4,
+        512
+      ]
+    },
+    "SN142": {
+      "subject_id": "SN142",
+      "recording_id": "SN142",
+      "source": "hmc",
+      "n_windows": 1013,
+      "window_shape": [
+        1013,
+        4,
+        512
+      ]
+    },
+    "SN143": {
+      "subject_id": "SN143",
+      "recording_id": "SN143",
+      "source": "hmc",
+      "n_windows": 5804,
+      "window_shape": [
+        5804,
+        4,
+        512
+      ]
+    },
+    "SN144": {
+      "subject_id": "SN144",
+      "recording_id": "SN144",
+      "source": "hmc",
+      "n_windows": 1191,
+      "window_shape": [
+        1191,
+        4,
+        512
+      ]
+    },
+    "SN145": {
+      "subject_id": "SN145",
+      "recording_id": "SN145",
+      "source": "hmc",
+      "n_windows": 1367,
+      "window_shape": [
+        1367,
+        4,
+        512
+      ]
+    },
+    "SN146": {
+      "subject_id": "SN146",
+      "recording_id": "SN146",
+      "source": "hmc",
+      "n_windows": 7185,
+      "window_shape": [
+        7185,
+        4,
+        512
+      ]
+    },
+    "SN147": {
+      "subject_id": "SN147",
+      "recording_id": "SN147",
+      "source": "hmc",
+      "n_windows": 1668,
+      "window_shape": [
+        1668,
+        4,
+        512
+      ]
+    },
+    "SN148": {
+      "subject_id": "SN148",
+      "recording_id": "SN148",
+      "source": "hmc",
+      "n_windows": 2210,
+      "window_shape": [
+        2210,
+        4,
+        512
+      ]
+    },
+    "SN149": {
+      "subject_id": "SN149",
+      "recording_id": "SN149",
+      "source": "hmc",
+      "n_windows": 2988,
+      "window_shape": [
+        2988,
+        4,
+        512
+      ]
+    },
+    "SN150": {
+      "subject_id": "SN150",
+      "recording_id": "SN150",
+      "source": "hmc",
+      "n_windows": 656,
+      "window_shape": [
+        656,
+        4,
+        512
+      ]
+    },
+    "SN151": {
+      "subject_id": "SN151",
+      "recording_id": "SN151",
+      "source": "hmc",
+      "n_windows": 5030,
+      "window_shape": [
+        5030,
+        4,
+        512
+      ]
+    },
+    "SN152": {
+      "subject_id": "SN152",
+      "recording_id": "SN152",
+      "source": "hmc",
+      "n_windows": 2755,
+      "window_shape": [
+        2755,
+        4,
+        512
+      ]
+    },
+    "SN153": {
+      "subject_id": "SN153",
+      "recording_id": "SN153",
+      "source": "hmc",
+      "n_windows": 2205,
+      "window_shape": [
+        2205,
+        4,
+        512
+      ]
+    },
+    "SN154": {
+      "subject_id": "SN154",
+      "recording_id": "SN154",
+      "source": "hmc",
+      "n_windows": 2680,
+      "window_shape": [
+        2680,
+        4,
+        512
+      ]
+    }
+  },
+  "subjects": {
+    "SN001": {
+      "subject_id": "SN001",
+      "recordings": [
+        "SN001"
+      ],
+      "source": "hmc"
+    },
+    "SN002": {
+      "subject_id": "SN002",
+      "recordings": [
+        "SN002"
+      ],
+      "source": "hmc"
+    },
+    "SN003": {
+      "subject_id": "SN003",
+      "recordings": [
+        "SN003"
+      ],
+      "source": "hmc"
+    },
+    "SN004": {
+      "subject_id": "SN004",
+      "recordings": [
+        "SN004"
+      ],
+      "source": "hmc"
+    },
+    "SN005": {
+      "subject_id": "SN005",
+      "recordings": [
+        "SN005"
+      ],
+      "source": "hmc"
+    },
+    "SN006": {
+      "subject_id": "SN006",
+      "recordings": [
+        "SN006"
+      ],
+      "source": "hmc"
+    },
+    "SN007": {
+      "subject_id": "SN007",
+      "recordings": [
+        "SN007"
+      ],
+      "source": "hmc"
+    },
+    "SN008": {
+      "subject_id": "SN008",
+      "recordings": [
+        "SN008"
+      ],
+      "source": "hmc"
+    },
+    "SN009": {
+      "subject_id": "SN009",
+      "recordings": [
+        "SN009"
+      ],
+      "source": "hmc"
+    },
+    "SN010": {
+      "subject_id": "SN010",
+      "recordings": [
+        "SN010"
+      ],
+      "source": "hmc"
+    },
+    "SN011": {
+      "subject_id": "SN011",
+      "recordings": [
+        "SN011"
+      ],
+      "source": "hmc"
+    },
+    "SN012": {
+      "subject_id": "SN012",
+      "recordings": [
+        "SN012"
+      ],
+      "source": "hmc"
+    },
+    "SN013": {
+      "subject_id": "SN013",
+      "recordings": [
+        "SN013"
+      ],
+      "source": "hmc"
+    },
+    "SN015": {
+      "subject_id": "SN015",
+      "recordings": [
+        "SN015"
+      ],
+      "source": "hmc"
+    },
+    "SN016": {
+      "subject_id": "SN016",
+      "recordings": [
+        "SN016"
+      ],
+      "source": "hmc"
+    },
+    "SN017": {
+      "subject_id": "SN017",
+      "recordings": [
+        "SN017"
+      ],
+      "source": "hmc"
+    },
+    "SN018": {
+      "subject_id": "SN018",
+      "recordings": [
+        "SN018"
+      ],
+      "source": "hmc"
+    },
+    "SN019": {
+      "subject_id": "SN019",
+      "recordings": [
+        "SN019"
+      ],
+      "source": "hmc"
+    },
+    "SN020": {
+      "subject_id": "SN020",
+      "recordings": [
+        "SN020"
+      ],
+      "source": "hmc"
+    },
+    "SN021": {
+      "subject_id": "SN021",
+      "recordings": [
+        "SN021"
+      ],
+      "source": "hmc"
+    },
+    "SN022": {
+      "subject_id": "SN022",
+      "recordings": [
+        "SN022"
+      ],
+      "source": "hmc"
+    },
+    "SN023": {
+      "subject_id": "SN023",
+      "recordings": [
+        "SN023"
+      ],
+      "source": "hmc"
+    },
+    "SN024": {
+      "subject_id": "SN024",
+      "recordings": [
+        "SN024"
+      ],
+      "source": "hmc"
+    },
+    "SN025": {
+      "subject_id": "SN025",
+      "recordings": [
+        "SN025"
+      ],
+      "source": "hmc"
+    },
+    "SN026": {
+      "subject_id": "SN026",
+      "recordings": [
+        "SN026"
+      ],
+      "source": "hmc"
+    },
+    "SN027": {
+      "subject_id": "SN027",
+      "recordings": [
+        "SN027"
+      ],
+      "source": "hmc"
+    },
+    "SN028": {
+      "subject_id": "SN028",
+      "recordings": [
+        "SN028"
+      ],
+      "source": "hmc"
+    },
+    "SN029": {
+      "subject_id": "SN029",
+      "recordings": [
+        "SN029"
+      ],
+      "source": "hmc"
+    },
+    "SN030": {
+      "subject_id": "SN030",
+      "recordings": [
+        "SN030"
+      ],
+      "source": "hmc"
+    },
+    "SN031": {
+      "subject_id": "SN031",
+      "recordings": [
+        "SN031"
+      ],
+      "source": "hmc"
+    },
+    "SN032": {
+      "subject_id": "SN032",
+      "recordings": [
+        "SN032"
+      ],
+      "source": "hmc"
+    },
+    "SN033": {
+      "subject_id": "SN033",
+      "recordings": [
+        "SN033"
+      ],
+      "source": "hmc"
+    },
+    "SN034": {
+      "subject_id": "SN034",
+      "recordings": [
+        "SN034"
+      ],
+      "source": "hmc"
+    },
+    "SN035": {
+      "subject_id": "SN035",
+      "recordings": [
+        "SN035"
+      ],
+      "source": "hmc"
+    },
+    "SN036": {
+      "subject_id": "SN036",
+      "recordings": [
+        "SN036"
+      ],
+      "source": "hmc"
+    },
+    "SN037": {
+      "subject_id": "SN037",
+      "recordings": [
+        "SN037"
+      ],
+      "source": "hmc"
+    },
+    "SN038": {
+      "subject_id": "SN038",
+      "recordings": [
+        "SN038"
+      ],
+      "source": "hmc"
+    },
+    "SN039": {
+      "subject_id": "SN039",
+      "recordings": [
+        "SN039"
+      ],
+      "source": "hmc"
+    },
+    "SN040": {
+      "subject_id": "SN040",
+      "recordings": [
+        "SN040"
+      ],
+      "source": "hmc"
+    },
+    "SN041": {
+      "subject_id": "SN041",
+      "recordings": [
+        "SN041"
+      ],
+      "source": "hmc"
+    },
+    "SN042": {
+      "subject_id": "SN042",
+      "recordings": [
+        "SN042"
+      ],
+      "source": "hmc"
+    },
+    "SN043": {
+      "subject_id": "SN043",
+      "recordings": [
+        "SN043"
+      ],
+      "source": "hmc"
+    },
+    "SN044": {
+      "subject_id": "SN044",
+      "recordings": [
+        "SN044"
+      ],
+      "source": "hmc"
+    },
+    "SN045": {
+      "subject_id": "SN045",
+      "recordings": [
+        "SN045"
+      ],
+      "source": "hmc"
+    },
+    "SN046": {
+      "subject_id": "SN046",
+      "recordings": [
+        "SN046"
+      ],
+      "source": "hmc"
+    },
+    "SN047": {
+      "subject_id": "SN047",
+      "recordings": [
+        "SN047"
+      ],
+      "source": "hmc"
+    },
+    "SN048": {
+      "subject_id": "SN048",
+      "recordings": [
+        "SN048"
+      ],
+      "source": "hmc"
+    },
+    "SN049": {
+      "subject_id": "SN049",
+      "recordings": [
+        "SN049"
+      ],
+      "source": "hmc"
+    },
+    "SN050": {
+      "subject_id": "SN050",
+      "recordings": [
+        "SN050"
+      ],
+      "source": "hmc"
+    },
+    "SN051": {
+      "subject_id": "SN051",
+      "recordings": [
+        "SN051"
+      ],
+      "source": "hmc"
+    },
+    "SN052": {
+      "subject_id": "SN052",
+      "recordings": [
+        "SN052"
+      ],
+      "source": "hmc"
+    },
+    "SN053": {
+      "subject_id": "SN053",
+      "recordings": [
+        "SN053"
+      ],
+      "source": "hmc"
+    },
+    "SN054": {
+      "subject_id": "SN054",
+      "recordings": [
+        "SN054"
+      ],
+      "source": "hmc"
+    },
+    "SN055": {
+      "subject_id": "SN055",
+      "recordings": [
+        "SN055"
+      ],
+      "source": "hmc"
+    },
+    "SN056": {
+      "subject_id": "SN056",
+      "recordings": [
+        "SN056"
+      ],
+      "source": "hmc"
+    },
+    "SN057": {
+      "subject_id": "SN057",
+      "recordings": [
+        "SN057"
+      ],
+      "source": "hmc"
+    },
+    "SN058": {
+      "subject_id": "SN058",
+      "recordings": [
+        "SN058"
+      ],
+      "source": "hmc"
+    },
+    "SN059": {
+      "subject_id": "SN059",
+      "recordings": [
+        "SN059"
+      ],
+      "source": "hmc"
+    },
+    "SN060": {
+      "subject_id": "SN060",
+      "recordings": [
+        "SN060"
+      ],
+      "source": "hmc"
+    },
+    "SN061": {
+      "subject_id": "SN061",
+      "recordings": [
+        "SN061"
+      ],
+      "source": "hmc"
+    },
+    "SN062": {
+      "subject_id": "SN062",
+      "recordings": [
+        "SN062"
+      ],
+      "source": "hmc"
+    },
+    "SN063": {
+      "subject_id": "SN063",
+      "recordings": [
+        "SN063"
+      ],
+      "source": "hmc"
+    },
+    "SN065": {
+      "subject_id": "SN065",
+      "recordings": [
+        "SN065"
+      ],
+      "source": "hmc"
+    },
+    "SN066": {
+      "subject_id": "SN066",
+      "recordings": [
+        "SN066"
+      ],
+      "source": "hmc"
+    },
+    "SN067": {
+      "subject_id": "SN067",
+      "recordings": [
+        "SN067"
+      ],
+      "source": "hmc"
+    },
+    "SN068": {
+      "subject_id": "SN068",
+      "recordings": [
+        "SN068"
+      ],
+      "source": "hmc"
+    },
+    "SN069": {
+      "subject_id": "SN069",
+      "recordings": [
+        "SN069"
+      ],
+      "source": "hmc"
+    },
+    "SN070": {
+      "subject_id": "SN070",
+      "recordings": [
+        "SN070"
+      ],
+      "source": "hmc"
+    },
+    "SN071": {
+      "subject_id": "SN071",
+      "recordings": [
+        "SN071"
+      ],
+      "source": "hmc"
+    },
+    "SN072": {
+      "subject_id": "SN072",
+      "recordings": [
+        "SN072"
+      ],
+      "source": "hmc"
+    },
+    "SN073": {
+      "subject_id": "SN073",
+      "recordings": [
+        "SN073"
+      ],
+      "source": "hmc"
+    },
+    "SN074": {
+      "subject_id": "SN074",
+      "recordings": [
+        "SN074"
+      ],
+      "source": "hmc"
+    },
+    "SN075": {
+      "subject_id": "SN075",
+      "recordings": [
+        "SN075"
+      ],
+      "source": "hmc"
+    },
+    "SN076": {
+      "subject_id": "SN076",
+      "recordings": [
+        "SN076"
+      ],
+      "source": "hmc"
+    },
+    "SN077": {
+      "subject_id": "SN077",
+      "recordings": [
+        "SN077"
+      ],
+      "source": "hmc"
+    },
+    "SN078": {
+      "subject_id": "SN078",
+      "recordings": [
+        "SN078"
+      ],
+      "source": "hmc"
+    },
+    "SN079": {
+      "subject_id": "SN079",
+      "recordings": [
+        "SN079"
+      ],
+      "source": "hmc"
+    },
+    "SN080": {
+      "subject_id": "SN080",
+      "recordings": [
+        "SN080"
+      ],
+      "source": "hmc"
+    },
+    "SN081": {
+      "subject_id": "SN081",
+      "recordings": [
+        "SN081"
+      ],
+      "source": "hmc"
+    },
+    "SN082": {
+      "subject_id": "SN082",
+      "recordings": [
+        "SN082"
+      ],
+      "source": "hmc"
+    },
+    "SN083": {
+      "subject_id": "SN083",
+      "recordings": [
+        "SN083"
+      ],
+      "source": "hmc"
+    },
+    "SN084": {
+      "subject_id": "SN084",
+      "recordings": [
+        "SN084"
+      ],
+      "source": "hmc"
+    },
+    "SN085": {
+      "subject_id": "SN085",
+      "recordings": [
+        "SN085"
+      ],
+      "source": "hmc"
+    },
+    "SN086": {
+      "subject_id": "SN086",
+      "recordings": [
+        "SN086"
+      ],
+      "source": "hmc"
+    },
+    "SN087": {
+      "subject_id": "SN087",
+      "recordings": [
+        "SN087"
+      ],
+      "source": "hmc"
+    },
+    "SN088": {
+      "subject_id": "SN088",
+      "recordings": [
+        "SN088"
+      ],
+      "source": "hmc"
+    },
+    "SN089": {
+      "subject_id": "SN089",
+      "recordings": [
+        "SN089"
+      ],
+      "source": "hmc"
+    },
+    "SN090": {
+      "subject_id": "SN090",
+      "recordings": [
+        "SN090"
+      ],
+      "source": "hmc"
+    },
+    "SN091": {
+      "subject_id": "SN091",
+      "recordings": [
+        "SN091"
+      ],
+      "source": "hmc"
+    },
+    "SN092": {
+      "subject_id": "SN092",
+      "recordings": [
+        "SN092"
+      ],
+      "source": "hmc"
+    },
+    "SN093": {
+      "subject_id": "SN093",
+      "recordings": [
+        "SN093"
+      ],
+      "source": "hmc"
+    },
+    "SN094": {
+      "subject_id": "SN094",
+      "recordings": [
+        "SN094"
+      ],
+      "source": "hmc"
+    },
+    "SN095": {
+      "subject_id": "SN095",
+      "recordings": [
+        "SN095"
+      ],
+      "source": "hmc"
+    },
+    "SN096": {
+      "subject_id": "SN096",
+      "recordings": [
+        "SN096"
+      ],
+      "source": "hmc"
+    },
+    "SN097": {
+      "subject_id": "SN097",
+      "recordings": [
+        "SN097"
+      ],
+      "source": "hmc"
+    },
+    "SN098": {
+      "subject_id": "SN098",
+      "recordings": [
+        "SN098"
+      ],
+      "source": "hmc"
+    },
+    "SN099": {
+      "subject_id": "SN099",
+      "recordings": [
+        "SN099"
+      ],
+      "source": "hmc"
+    },
+    "SN100": {
+      "subject_id": "SN100",
+      "recordings": [
+        "SN100"
+      ],
+      "source": "hmc"
+    },
+    "SN101": {
+      "subject_id": "SN101",
+      "recordings": [
+        "SN101"
+      ],
+      "source": "hmc"
+    },
+    "SN102": {
+      "subject_id": "SN102",
+      "recordings": [
+        "SN102"
+      ],
+      "source": "hmc"
+    },
+    "SN103": {
+      "subject_id": "SN103",
+      "recordings": [
+        "SN103"
+      ],
+      "source": "hmc"
+    },
+    "SN104": {
+      "subject_id": "SN104",
+      "recordings": [
+        "SN104"
+      ],
+      "source": "hmc"
+    },
+    "SN105": {
+      "subject_id": "SN105",
+      "recordings": [
+        "SN105"
+      ],
+      "source": "hmc"
+    },
+    "SN106": {
+      "subject_id": "SN106",
+      "recordings": [
+        "SN106"
+      ],
+      "source": "hmc"
+    },
+    "SN107": {
+      "subject_id": "SN107",
+      "recordings": [
+        "SN107"
+      ],
+      "source": "hmc"
+    },
+    "SN108": {
+      "subject_id": "SN108",
+      "recordings": [
+        "SN108"
+      ],
+      "source": "hmc"
+    },
+    "SN109": {
+      "subject_id": "SN109",
+      "recordings": [
+        "SN109"
+      ],
+      "source": "hmc"
+    },
+    "SN110": {
+      "subject_id": "SN110",
+      "recordings": [
+        "SN110"
+      ],
+      "source": "hmc"
+    },
+    "SN111": {
+      "subject_id": "SN111",
+      "recordings": [
+        "SN111"
+      ],
+      "source": "hmc"
+    },
+    "SN112": {
+      "subject_id": "SN112",
+      "recordings": [
+        "SN112"
+      ],
+      "source": "hmc"
+    },
+    "SN113": {
+      "subject_id": "SN113",
+      "recordings": [
+        "SN113"
+      ],
+      "source": "hmc"
+    },
+    "SN114": {
+      "subject_id": "SN114",
+      "recordings": [
+        "SN114"
+      ],
+      "source": "hmc"
+    },
+    "SN115": {
+      "subject_id": "SN115",
+      "recordings": [
+        "SN115"
+      ],
+      "source": "hmc"
+    },
+    "SN116": {
+      "subject_id": "SN116",
+      "recordings": [
+        "SN116"
+      ],
+      "source": "hmc"
+    },
+    "SN117": {
+      "subject_id": "SN117",
+      "recordings": [
+        "SN117"
+      ],
+      "source": "hmc"
+    },
+    "SN118": {
+      "subject_id": "SN118",
+      "recordings": [
+        "SN118"
+      ],
+      "source": "hmc"
+    },
+    "SN119": {
+      "subject_id": "SN119",
+      "recordings": [
+        "SN119"
+      ],
+      "source": "hmc"
+    },
+    "SN120": {
+      "subject_id": "SN120",
+      "recordings": [
+        "SN120"
+      ],
+      "source": "hmc"
+    },
+    "SN121": {
+      "subject_id": "SN121",
+      "recordings": [
+        "SN121"
+      ],
+      "source": "hmc"
+    },
+    "SN122": {
+      "subject_id": "SN122",
+      "recordings": [
+        "SN122"
+      ],
+      "source": "hmc"
+    },
+    "SN123": {
+      "subject_id": "SN123",
+      "recordings": [
+        "SN123"
+      ],
+      "source": "hmc"
+    },
+    "SN124": {
+      "subject_id": "SN124",
+      "recordings": [
+        "SN124"
+      ],
+      "source": "hmc"
+    },
+    "SN125": {
+      "subject_id": "SN125",
+      "recordings": [
+        "SN125"
+      ],
+      "source": "hmc"
+    },
+    "SN126": {
+      "subject_id": "SN126",
+      "recordings": [
+        "SN126"
+      ],
+      "source": "hmc"
+    },
+    "SN127": {
+      "subject_id": "SN127",
+      "recordings": [
+        "SN127"
+      ],
+      "source": "hmc"
+    },
+    "SN128": {
+      "subject_id": "SN128",
+      "recordings": [
+        "SN128"
+      ],
+      "source": "hmc"
+    },
+    "SN129": {
+      "subject_id": "SN129",
+      "recordings": [
+        "SN129"
+      ],
+      "source": "hmc"
+    },
+    "SN130": {
+      "subject_id": "SN130",
+      "recordings": [
+        "SN130"
+      ],
+      "source": "hmc"
+    },
+    "SN131": {
+      "subject_id": "SN131",
+      "recordings": [
+        "SN131"
+      ],
+      "source": "hmc"
+    },
+    "SN132": {
+      "subject_id": "SN132",
+      "recordings": [
+        "SN132"
+      ],
+      "source": "hmc"
+    },
+    "SN133": {
+      "subject_id": "SN133",
+      "recordings": [
+        "SN133"
+      ],
+      "source": "hmc"
+    },
+    "SN134": {
+      "subject_id": "SN134",
+      "recordings": [
+        "SN134"
+      ],
+      "source": "hmc"
+    },
+    "SN136": {
+      "subject_id": "SN136",
+      "recordings": [
+        "SN136"
+      ],
+      "source": "hmc"
+    },
+    "SN137": {
+      "subject_id": "SN137",
+      "recordings": [
+        "SN137"
+      ],
+      "source": "hmc"
+    },
+    "SN138": {
+      "subject_id": "SN138",
+      "recordings": [
+        "SN138"
+      ],
+      "source": "hmc"
+    },
+    "SN139": {
+      "subject_id": "SN139",
+      "recordings": [
+        "SN139"
+      ],
+      "source": "hmc"
+    },
+    "SN140": {
+      "subject_id": "SN140",
+      "recordings": [
+        "SN140"
+      ],
+      "source": "hmc"
+    },
+    "SN141": {
+      "subject_id": "SN141",
+      "recordings": [
+        "SN141"
+      ],
+      "source": "hmc"
+    },
+    "SN142": {
+      "subject_id": "SN142",
+      "recordings": [
+        "SN142"
+      ],
+      "source": "hmc"
+    },
+    "SN143": {
+      "subject_id": "SN143",
+      "recordings": [
+        "SN143"
+      ],
+      "source": "hmc"
+    },
+    "SN144": {
+      "subject_id": "SN144",
+      "recordings": [
+        "SN144"
+      ],
+      "source": "hmc"
+    },
+    "SN145": {
+      "subject_id": "SN145",
+      "recordings": [
+        "SN145"
+      ],
+      "source": "hmc"
+    },
+    "SN146": {
+      "subject_id": "SN146",
+      "recordings": [
+        "SN146"
+      ],
+      "source": "hmc"
+    },
+    "SN147": {
+      "subject_id": "SN147",
+      "recordings": [
+        "SN147"
+      ],
+      "source": "hmc"
+    },
+    "SN148": {
+      "subject_id": "SN148",
+      "recordings": [
+        "SN148"
+      ],
+      "source": "hmc"
+    },
+    "SN149": {
+      "subject_id": "SN149",
+      "recordings": [
+        "SN149"
+      ],
+      "source": "hmc"
+    },
+    "SN150": {
+      "subject_id": "SN150",
+      "recordings": [
+        "SN150"
+      ],
+      "source": "hmc"
+    },
+    "SN151": {
+      "subject_id": "SN151",
+      "recordings": [
+        "SN151"
+      ],
+      "source": "hmc"
+    },
+    "SN152": {
+      "subject_id": "SN152",
+      "recordings": [
+        "SN152"
+      ],
+      "source": "hmc"
+    },
+    "SN153": {
+      "subject_id": "SN153",
+      "recordings": [
+        "SN153"
+      ],
+      "source": "hmc"
+    },
+    "SN154": {
+      "subject_id": "SN154",
+      "recordings": [
+        "SN154"
+      ],
+      "source": "hmc"
+    }
+  },
+  "splits": {
+    "train": {
+      "subjects": [
+        "SN001",
+        "SN002",
+        "SN003",
+        "SN004",
+        "SN005",
+        "SN006",
+        "SN008",
+        "SN009",
+        "SN011",
+        "SN012",
+        "SN013",
+        "SN015",
+        "SN019",
+        "SN020",
+        "SN022",
+        "SN023",
+        "SN026",
+        "SN027",
+        "SN028",
+        "SN029",
+        "SN030",
+        "SN031",
+        "SN035",
+        "SN039",
+        "SN040",
+        "SN041",
+        "SN042",
+        "SN044",
+        "SN047",
+        "SN048",
+        "SN052",
+        "SN053",
+        "SN054",
+        "SN055",
+        "SN056",
+        "SN057",
+        "SN058",
+        "SN061",
+        "SN066",
+        "SN068",
+        "SN069",
+        "SN071",
+        "SN072",
+        "SN073",
+        "SN074",
+        "SN075",
+        "SN076",
+        "SN077",
+        "SN078",
+        "SN079",
+        "SN081",
+        "SN082",
+        "SN083",
+        "SN084",
+        "SN085",
+        "SN087",
+        "SN088",
+        "SN089",
+        "SN090",
+        "SN091",
+        "SN092",
+        "SN093",
+        "SN094",
+        "SN095",
+        "SN096",
+        "SN097",
+        "SN098",
+        "SN099",
+        "SN101",
+        "SN102",
+        "SN103",
+        "SN104",
+        "SN106",
+        "SN107",
+        "SN108",
+        "SN109",
+        "SN110",
+        "SN111",
+        "SN114",
+        "SN117",
+        "SN118",
+        "SN119",
+        "SN121",
+        "SN122",
+        "SN123",
+        "SN124",
+        "SN125",
+        "SN126",
+        "SN127",
+        "SN129",
+        "SN130",
+        "SN131",
+        "SN133",
+        "SN134",
+        "SN136",
+        "SN137",
+        "SN138",
+        "SN139",
+        "SN141",
+        "SN146",
+        "SN147",
+        "SN149",
+        "SN150",
+        "SN151",
+        "SN153",
+        "SN154"
+      ],
+      "n": 106
+    },
+    "val": {
+      "subjects": [
+        "SN010",
+        "SN017",
+        "SN018",
+        "SN025",
+        "SN033",
+        "SN034",
+        "SN045",
+        "SN046",
+        "SN050",
+        "SN059",
+        "SN062",
+        "SN063",
+        "SN065",
+        "SN070",
+        "SN086",
+        "SN112",
+        "SN115",
+        "SN120",
+        "SN128",
+        "SN132",
+        "SN143",
+        "SN148",
+        "SN152"
+      ],
+      "n": 23
+    },
+    "test": {
+      "subjects": [
+        "SN007",
+        "SN016",
+        "SN021",
+        "SN024",
+        "SN032",
+        "SN036",
+        "SN037",
+        "SN038",
+        "SN043",
+        "SN049",
+        "SN051",
+        "SN060",
+        "SN067",
+        "SN080",
+        "SN100",
+        "SN105",
+        "SN113",
+        "SN116",
+        "SN140",
+        "SN142",
+        "SN144",
+        "SN145"
+      ],
+      "n": 22
+    }
+  },
+  "counts": {
+    "n_subjects_ok": 151,
+    "n_train": 106,
+    "n_val": 23,
+    "n_test": 22
+  },
+  "subject_to_split": {
+    "SN001": "train",
+    "SN002": "train",
+    "SN003": "train",
+    "SN004": "train",
+    "SN005": "train",
+    "SN006": "train",
+    "SN008": "train",
+    "SN009": "train",
+    "SN011": "train",
+    "SN012": "train",
+    "SN013": "train",
+    "SN015": "train",
+    "SN019": "train",
+    "SN020": "train",
+    "SN022": "train",
+    "SN023": "train",
+    "SN026": "train",
+    "SN027": "train",
+    "SN028": "train",
+    "SN029": "train",
+    "SN030": "train",
+    "SN031": "train",
+    "SN035": "train",
+    "SN039": "train",
+    "SN040": "train",
+    "SN041": "train",
+    "SN042": "train",
+    "SN044": "train",
+    "SN047": "train",
+    "SN048": "train",
+    "SN052": "train",
+    "SN053": "train",
+    "SN054": "train",
+    "SN055": "train",
+    "SN056": "train",
+    "SN057": "train",
+    "SN058": "train",
+    "SN061": "train",
+    "SN066": "train",
+    "SN068": "train",
+    "SN069": "train",
+    "SN071": "train",
+    "SN072": "train",
+    "SN073": "train",
+    "SN074": "train",
+    "SN075": "train",
+    "SN076": "train",
+    "SN077": "train",
+    "SN078": "train",
+    "SN079": "train",
+    "SN081": "train",
+    "SN082": "train",
+    "SN083": "train",
+    "SN084": "train",
+    "SN085": "train",
+    "SN087": "train",
+    "SN088": "train",
+    "SN089": "train",
+    "SN090": "train",
+    "SN091": "train",
+    "SN092": "train",
+    "SN093": "train",
+    "SN094": "train",
+    "SN095": "train",
+    "SN096": "train",
+    "SN097": "train",
+    "SN098": "train",
+    "SN099": "train",
+    "SN101": "train",
+    "SN102": "train",
+    "SN103": "train",
+    "SN104": "train",
+    "SN106": "train",
+    "SN107": "train",
+    "SN108": "train",
+    "SN109": "train",
+    "SN110": "train",
+    "SN111": "train",
+    "SN114": "train",
+    "SN117": "train",
+    "SN118": "train",
+    "SN119": "train",
+    "SN121": "train",
+    "SN122": "train",
+    "SN123": "train",
+    "SN124": "train",
+    "SN125": "train",
+    "SN126": "train",
+    "SN127": "train",
+    "SN129": "train",
+    "SN130": "train",
+    "SN131": "train",
+    "SN133": "train",
+    "SN134": "train",
+    "SN136": "train",
+    "SN137": "train",
+    "SN138": "train",
+    "SN139": "train",
+    "SN141": "train",
+    "SN146": "train",
+    "SN147": "train",
+    "SN149": "train",
+    "SN150": "train",
+    "SN151": "train",
+    "SN153": "train",
+    "SN154": "train",
+    "SN010": "val",
+    "SN017": "val",
+    "SN018": "val",
+    "SN025": "val",
+    "SN033": "val",
+    "SN034": "val",
+    "SN045": "val",
+    "SN046": "val",
+    "SN050": "val",
+    "SN059": "val",
+    "SN062": "val",
+    "SN063": "val",
+    "SN065": "val",
+    "SN070": "val",
+    "SN086": "val",
+    "SN112": "val",
+    "SN115": "val",
+    "SN120": "val",
+    "SN128": "val",
+    "SN132": "val",
+    "SN143": "val",
+    "SN148": "val",
+    "SN152": "val",
+    "SN007": "test",
+    "SN016": "test",
+    "SN021": "test",
+    "SN024": "test",
+    "SN032": "test",
+    "SN036": "test",
+    "SN037": "test",
+    "SN038": "test",
+    "SN043": "test",
+    "SN049": "test",
+    "SN051": "test",
+    "SN060": "test",
+    "SN067": "test",
+    "SN080": "test",
+    "SN100": "test",
+    "SN105": "test",
+    "SN113": "test",
+    "SN116": "test",
+    "SN140": "test",
+    "SN142": "test",
+    "SN144": "test",
+    "SN145": "test"
+  }
+}

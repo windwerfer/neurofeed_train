@@ -61,3 +61,8 @@ Then dive by topic: A-vig / Head C full-corpus trains, A-eng dual-encoder misfit
 ## Band-math track (peer)
 
 See [`PEER_BAND_MATH_HANDOFF.md`](PEER_BAND_MATH_HANDOFF.md). Peer owns `band_math/`.
+
+## Crown HMC vigilance
+
+- [`crown_hmc_vig_compare.md`](crown_hmc_vig_compare.md) — CBraMod Crown2/4 HMC vig (ship proxy)
+- [`crown_hmc_vig_reve.md`](crown_hmc_vig_reve.md) — REVE Crown2/4 HMC vig (experimental heads-only)

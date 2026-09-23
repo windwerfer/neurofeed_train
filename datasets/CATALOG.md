@@ -3,6 +3,8 @@
 | Corpus | Role | Source | Windows on disk | Subjects (stable) | Notes |
 |--------|------|--------|-----------------|-------------------|-------|
 | `vigilance_sleep_edf` | Head A vigilance + Head C stage labels | Sleep-EDF Expanded cassette+telemetry (ODC-By) + HMC (CC-BY-4.0) | n1-slice npz per recording | **124 subjects** / 125 nights (Sleep-EDF 100+HMC 24) | muse4 proxy `(ch_count=4, professional)`; **stage_raw + stage_coarse required**; expanded 2026-09-08 toward ~120 — ready to train heads |
+| `vigilance_hmc_crown2` | Head A Crown2 vig | HMC CC-BY-4.0 | HF `crown2_vigilance_hmc` | **151** (106/23/22) | C3/C4; ship_candidate Crown vig proxy |
+| `vigilance_hmc_crown4` | Head A Crown4 vig | HMC CC-BY-4.0 | HF `crown4_vigilance_hmc` | **151** (106/23/22) | C3/C4/F6/PO4 (F6≈F4, PO4≈O2); ship_candidate |
 | `attention_ds001787` | Head A attention | OpenNeuro ds001787 | ses-01 attention npz | 12 (`sub-001`…`020`) | BioSemi→AF7/AF8/TP9/TP10; Q1/Q2 probe labels; 3774 windows |
 | `attention_ds003969` | Head A attention | OpenNeuro ds003969 | med1breath/think1 blocks | 11 (`sub-001`…`029`) | Muse-proximal; med→concentration, think→mind_wandering; 8800 windows |
 | `engagement_a_eng` | Head A-eng load/engagement | ds007169+ds007262+eegmat+STEW(HF)+ds007554 | muse4 aeng npz | **133 unique persons** / 150 packs / 19706 windows | muse4 only; tags (ch, professional\|hobbyist); see `docs/head_a_eng_corpus_expansion.md` |
@@ -14,7 +16,7 @@ Status writeup: `docs/attention_corpora_status.md` (`ship_candidate: false`).
 ## Label heads
 
 - **Head A (multi-head, locked 2026-09-07):** see `docs/head_a_multihead.md`
-  - **A-vig:** drowsy / hypnagogic (+ optional awake) — **ship path** frozen CBraMod on `vigilance_sleep_edf` (test macro-F1 ≈ 0.75; see `docs/head_a_vig_full_corpus_train.md`)
+  - **A-vig:** drowsy / hypnagogic (+ optional awake) — **ship path** frozen CBraMod on `vigilance_sleep_edf` (test macro-F1 ≈ 0.75; see `docs/head_a_vig_full_corpus_train.md`); **Crown HMC proxy** packs `vigilance_hmc_crown2/4` (CBraMod test 0.670/0.680; see `docs/crown_hmc_vig_compare.md`)
   - **A-med:** rest / meditation — **not public ship** (open-set smokes near chance; personal Muse cal)
   - **A-eng:** low/high engagement — **misfit** (CBraMod ≈ 0.548 / REVE ≈ 0.590 macro-F1; do not ship; see `docs/head_a_eng_dual_encoder.md`)
   - Public MW / concentration frozen decoder deferred (personal cal / research only)
