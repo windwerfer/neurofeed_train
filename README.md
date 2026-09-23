@@ -97,6 +97,8 @@ neurofeed_train/
 
 Private Kaggle datasets / kernels were used as **GPU scratch** during development. They are **not required** for public use. Prefer the HF windows dataset above. Kernel folders here are thin notebook wrappers; rewrite local dataset mounts to a HF mirror if you reuse them.
 
+Crown HMC vigilance wrappers: [`kaggle_kernel_10_hmc_crown_vig/`](kaggle_kernel_10_hmc_crown_vig/) (CBraMod) and [`kaggle_kernel_11_hmc_crown_vig_reve/`](kaggle_kernel_11_hmc_crown_vig_reve/) (REVE, bring-your-own gated base). See `docs/crown_hmc_vig_compare.md` / `docs/crown_hmc_vig_reve.md`.
+
 ## What is intentionally excluded
 
 - `kaggle_datasets/` caches and window packs  

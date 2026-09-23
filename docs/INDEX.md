@@ -66,3 +66,4 @@ See [`PEER_BAND_MATH_HANDOFF.md`](PEER_BAND_MATH_HANDOFF.md). Peer owns `band_ma
 
 - [`crown_hmc_vig_compare.md`](crown_hmc_vig_compare.md) — CBraMod Crown2/4 HMC vig (ship proxy)
 - [`crown_hmc_vig_reve.md`](crown_hmc_vig_reve.md) — REVE Crown2/4 HMC vig (experimental heads-only)
+- Notebooks (maintainer scratch; public path is HF + scripts): [`kaggle_kernel_10_hmc_crown_vig/`](../kaggle_kernel_10_hmc_crown_vig/), [`kaggle_kernel_11_hmc_crown_vig_reve/`](../kaggle_kernel_11_hmc_crown_vig_reve/)

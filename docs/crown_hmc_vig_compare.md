@@ -38,6 +38,11 @@ ISRUC is **out of scope** for this public release. HMC alone met the ≥0.60 Cro
 - Metrics/heads: `exports/hmc_crown_vig_compare/`
 - Training: local CPU (Kaggle private dataset uploaded but still size=0 / processing; kernel ERROR on empty attach).
 
+## Public notebook wrapper
+
+- Maintainer Kaggle scratch (private OK): [`kaggle_kernel_10_hmc_crown_vig/`](../kaggle_kernel_10_hmc_crown_vig/)
+- Public retrain: HF configs `crown2_vigilance_hmc` / `crown4_vigilance_hmc` + `scripts/train_hmc_crown_vig_compare.py` (this repo). Private Kaggle is **not** required.
+
 ## Maintainer scratch (optional)
 
 Private Kaggle datasets/kernels were used as GPU scratch during development. They are **not required** for public use and must not redistribute gated REVE weights. Prefer HF `windwerfer/neurofeed-eeg-windows` configs `crown2_vigilance_hmc` / `crown4_vigilance_hmc`.

@@ -48,6 +48,11 @@ CBraMod refs from `exports/hmc_crown_vig_compare/` (crown2 test 0.670 / crown4 0
 - CBraMod compare: `exports/hmc_crown_vig_compare/`, `docs/crown_hmc_vig_compare.md`
 - REVE-base: user-local gated download only (never redistributed in public packs).
 
+## Public notebook wrapper
+
+- Maintainer Kaggle scratch (private OK): [`kaggle_kernel_11_hmc_crown_vig_reve/`](../kaggle_kernel_11_hmc_crown_vig_reve/)
+- Public retrain: same HF windows + `scripts/train_hmc_crown_vig_reve.py`. **Bring your own gated REVE-base**; do not redistribute foundation weights. Private Kaggle is **not** required.
+
 ## Maintainer scratch (optional)
 
 Private Kaggle datasets/kernels were used as GPU scratch during development. They are **not required** for public use and must not redistribute gated REVE weights. Prefer HF `windwerfer/neurofeed-eeg-windows` configs `crown2_vigilance_hmc` / `crown4_vigilance_hmc`.
