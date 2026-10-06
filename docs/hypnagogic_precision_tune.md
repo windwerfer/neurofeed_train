@@ -68,13 +68,12 @@ Retrains (`precision_favor` weights `[1.2, 0.6]`, `focal_precision` `[1.3, 0.55]
 - Head + threshold recorded in: `exports/head_a_holdout/run_manifest.json` → key `precision_tune`
 - Tuned weights file: `exports/head_a_holdout/head_a_binary_precision_tuned.pt`
 - Embedding cache (speed): `exports/head_a_holdout/emb_cache/`
-- Notebook: `notebooks/05_hypnagogic_precision_tune.ipynb` (if present)
+- Notebook: `archive/notebooks/05_hypnagogic_precision_tune.ipynb` (maintainer-only)
 
 ## Run again
 ```bash
-export PATH=/home/box/.local/bin:$PATH
-cd /workspace/muse-eeg-heads
-.venv/bin/python scripts/tune_hypnagogic_threshold.py
+# from the repo root
+uv run python scripts/tune_hypnagogic_threshold.py
 ```
 
 ## Limitation

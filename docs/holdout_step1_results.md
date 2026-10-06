@@ -58,8 +58,8 @@ SC4002 has **179** hypnagogic windows (enough for a balanced subsample of that s
 ## Artifacts
 - Windows: `exports/windows_sc4001/`, `exports/windows_sc4002/` (+ manifests)
 - Run: `exports/head_a_holdout/run_manifest.json`, `head_a_binary_state_dict.pt`, `metrics_summary.json`
-- Notebook: `notebooks/04_night_holdout.ipynb`
-- Kernel package: `kaggle_kernel_04_night_holdout/` → `windwerfer/muse-eeg-heads-night-holdout`
+- Notebook: `archive/notebooks/04_night_holdout.ipynb` (maintainer-only)
+- Kernel package: `archive/kaggle_kernel_04_night_holdout/` (maintainer-only)
 - Windows dataset package: `kaggle_datasets/muse-eeg-heads-windows/` (SC4001 + SC4002)
 
 ## Follow-up: stride-aware scoring

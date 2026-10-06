@@ -1,9 +1,10 @@
-# kaggle_kernel_06_reve_attention_loso (optional GPU scratch)
+# kaggle_kernel_06_reve_attention_loso (optional GPU wrapper)
 
-Maintainer notebook wrapper from the private Kaggle workflow.
+Same notebook as [`notebooks/06_reve_attention_loso.ipynb`](../notebooks/06_reve_attention_loso.ipynb), packaged for
+`kaggle kernels push`. It reads the public Hugging Face windows (`muse4_attention_ds001787`, `muse4_attention_ds003969`)
+and needs no private Kaggle datasets.
 
-**Public users:** do **not** depend on private Kaggle datasets. Download windows from
-[Hugging Face `windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows)
-and point paths at a local HF mirror (see repo root README).
-
-Use repo-root `src/` and `requirements.txt` rather than any nested copies.
+- Internet on (to download the HF windows) and a GPU.
+- REVE is **bring-your-own**: accept the gated `brain-bzh/reve-base` / `reve-positions` terms and set `HF_TOKEN`
+  (Kaggle secret), or set `REVE_LOCAL_MODEL` / `REVE_LOCAL_POSITIONS` to your own snapshots.
+- Set `NEUROFEED_TRAIN_ROOT` to a clone of this repo so the notebook can import `src/`.

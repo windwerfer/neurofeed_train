@@ -64,14 +64,10 @@ def sha256(path: Path) -> str:
 
 
 def find_weights() -> Path:
-    cands = [
-        ROOT / "kaggle_datasets/muse-eeg-heads-cache/models/CBraMod/pretrained_weights.pth",
-        Path("/tmp/kaggle_out3/models/CBraMod/pretrained_weights.pth"),
-    ]
-    for p in cands:
-        if p.exists():
-            return p
-    raise FileNotFoundError("CBraMod weights not found")
+    """CBRAMOD_WEIGHTS env -> models/CBraMod/ -> public HF download (see src/public_io.py)."""
+    from src.public_io import find_cbramod_weights
+
+    return find_cbramod_weights()
 
 
 def load_splits() -> Dict[str, Any]:
@@ -501,8 +497,8 @@ def write_dual_stub(cbramod_metrics: Dict[str, Any]) -> None:
         "",
         "## REVE",
         "",
-        "- Prefer Kaggle T4 + private `muse-eeg-heads-cache` (offline).",
-        "- Kernel: `kaggle_kernel_08_reve_a_eng/` (when pushed).",
+        "- Prefer a GPU with your own offline copy of the gated REVE weights.",
+        "- Kernel: `archive/kaggle_kernel_08_reve_a_eng/` (maintainer-only).",
         "- Exports target: `exports/head_a_eng_train_reve/`.",
         "",
         "## Domain mix & confounds",

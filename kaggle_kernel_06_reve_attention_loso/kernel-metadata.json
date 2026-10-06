@@ -13,11 +13,7 @@
     "reve",
     "loso"
   ],
-  "dataset_sources": [
-    "windwerfer/muse-eeg-heads-src",
-    "windwerfer/muse-eeg-heads-windows",
-    "windwerfer/muse-eeg-heads-cache"
-  ],
+  "dataset_sources": [],
   "kernel_sources": [],
   "competition_sources": [],
   "model_sources": []

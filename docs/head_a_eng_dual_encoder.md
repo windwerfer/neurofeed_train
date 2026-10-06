@@ -58,11 +58,11 @@ Frozen heads only (no backbone fine-tune) on `engagement_a_eng` (133 unique pers
 
 - Head C + A-vig **CBraMod** full-corpus trains were already finished (`exports/head_c_full_corpus/`, `exports/head_a_vig_full_corpus/`); not duplicated.
 - REVE sleep kernels (`muse-eeg-heads-reve-sleep-*`) are **ERROR** (src path / P100 issues) — out of scope for this A-eng pass.
-- REVE A-eng metrics above are from **local CPU** embed-once using private `muse-eeg-heads-cache` offline weights (Kaggle T4 preferred; CLI often got P100 incompatible with current Kaggle PyTorch).
+- REVE A-eng metrics above are from **local CPU** embed-once using a local offline copy of the gated REVE weights (Kaggle T4 preferred; CLI often got P100 incompatible with current Kaggle PyTorch).
 
 ## Artifacts
 
 - `exports/head_a_eng_train_cbramod/`
 - `exports/head_a_eng_train_reve/`
 - Scripts: `scripts/train_head_a_eng_cbramod.py`, `scripts/train_head_a_eng_reve.py`
-- Kaggle: `kaggle_kernel_08_reve_a_eng/` + dataset `windwerfer/muse-eeg-heads-aeng`
+- Kaggle (maintainer-only): `archive/kaggle_kernel_08_reve_a_eng/`

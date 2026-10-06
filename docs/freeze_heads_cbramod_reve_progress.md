@@ -20,7 +20,7 @@ Docs: `docs/head_a_vig_full_corpus_train.md`, `docs/head_c_full_corpus_train.md`
 | A-vig | 0.709 | 0.783 | **True** |
 | Head C wake/light | 0.707 | 0.791 | False |
 
-**Caveat:** ≤80 windows/class/recording → val/test ~balanced and much smaller than CBraMod full holdout. **Not a fair encoder bake-off.** Full REVE encode on Kaggle T4 is the authoritative compare (`kaggle_kernel_07_reve_sleep_heads`).
+**Caveat:** ≤80 windows/class/recording → val/test ~balanced and much smaller than CBraMod full holdout. **Not a fair encoder bake-off.** Full REVE encode on Kaggle T4 is the authoritative compare (`archive/kaggle_kernel_07_reve_sleep_heads`).
 
 ## A-eng corpus
 
