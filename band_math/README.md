@@ -5,9 +5,8 @@ Peer-owned. Flutter-matched band power / ratios on the same muse4 windows and sp
 ## Quick start
 
 ```bash
-cd /workspace/muse-eeg-heads/band_math
-python3 -m venv .venv && .venv/bin/pip install numpy scikit-learn
-.venv/bin/python -u scripts/run_compare.py
+cd band_math
+uv run --no-project --with numpy --with scikit-learn python -u scripts/run_compare.py
 ```
 
 Outputs: `COMPARE_AI_VS_BAND.md`, `compare_summary.json`, `results/`.

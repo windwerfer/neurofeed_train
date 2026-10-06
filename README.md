@@ -26,19 +26,19 @@ This repo is **code, docs, recipes, and subject-split JSON** — not the app, no
 Window blobs are **not** in this git tree. Mirror the Hugging Face dataset layout locally, then point scripts at that root.
 
 ```bash
-# Example: full snapshot under ./data/hf_windows
-pip install -U huggingface_hub
-huggingface-cli download windwerfer/neurofeed-eeg-windows \
+# Example: full snapshot under ./data/hf_windows (about 1.56M windows; select configs to save space)
+uvx --from huggingface_hub huggingface-cli download windwerfer/neurofeed-eeg-windows \
   --repo-type dataset \
   --local-dir ./data/hf_windows
 
-# Or selective files
-python - <<'PY'
-from huggingface_hub import hf_hub_download, snapshot_download
+# Or selective configs
+uv run --with huggingface_hub python - <<'PY'
+from huggingface_hub import snapshot_download
 snapshot_download(
     "windwerfer/neurofeed-eeg-windows",
     repo_type="dataset",
     local_dir="./data/hf_windows",
+    allow_patterns=["muse4_attention_ds001787/*", "muse4_attention_ds003969/*"],
 )
 PY
 ```
@@ -53,16 +53,15 @@ data/hf_windows/
   ...
 ```
 
-Point train scripts / env at that mirror (e.g. `DATASETS_ROOT` or CLI `--windows-root`). Split JSON under `datasets/*/splits/` in this repo is the subject split source of truth.
+Point scripts at that mirror with `HF_WINDOWS_ROOT=./data/hf_windows`, or pass `--hf` to scripts that support it (they download the needed config; see [`src/public_io.py`](src/public_io.py)). CBraMod weights: `CBRAMOD_WEIGHTS=<path>`, else the public `weighting666/CBraMod` download. Split JSON under `datasets/*/splits/` in this repo is the subject split source of truth.
 
 ## Quick start
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+uv venv && uv pip install -r requirements.txt
 
-# After HF windows are local:
-python scripts/dataset/validate_splits.py   # if applicable
+uv run python scripts/dataset/validate_splits.py   # if applicable
+uv run python scripts/loso_eval_head_a.py --hf --dry-run   # attention LOSO fold plan from HF windows
 # then run a train/smoke script under scripts/ (see docs/INDEX.md)
 ```
 
@@ -80,7 +79,7 @@ neurofeed_train/
 ├── src/                 # encoders wrappers, heads, windowing, metrics
 ├── scripts/             # train / ingest / eval / corpus tools
 ├── band_math/           # classical band baselines (no large feature caches)
-├── notebooks/           # exploratory notebooks (de-Kaggle notes OK)
+├── notebooks/           # public notebooks (02 Sleep-EDF windows, 06 REVE attention LOSO)
 ├── docs/                # experiment notes + LICENSE_NOTES
 ├── datasets/
 │   ├── CATALOG.md
@@ -88,14 +87,15 @@ neurofeed_train/
 │   └── <corpus>/
 │       ├── README.md / ATTRIBUTION.md
 │       └── splits/*.json   # subject splits only — no windows/raw
-├── kaggle_kernel*/      # optional GPU scratch kernels (maintainers)
+├── kaggle_kernel_{02,06,09,10,11}*/  # optional GPU kernel wrappers
+├── archive/             # maintainer-only notebooks/kernels (01, 03, 04, 05, 07, 08); not for public use
 ├── vendor/cbramod/      # small CBraMod source snippets
 └── requirements.txt
 ```
 
 ## Kaggle (optional, maintainers only)
 
-Private Kaggle datasets / kernels were used as **GPU scratch** during development. They are **not required** for public use. Prefer the HF windows dataset above. Kernel folders here are thin notebook wrappers; rewrite local dataset mounts to a HF mirror if you reuse them.
+Private Kaggle datasets / kernels were used as **GPU scratch** during development. They are **not required** for public use. Prefer the HF windows dataset above. Kernel folders here are thin notebook wrappers. Notebook/kernel 06 reads the HF windows directly; older maintainer notebooks are in [`archive/`](archive/) and are not maintained for public use.
 
 Crown HMC vigilance wrappers: [`kaggle_kernel_10_hmc_crown_vig/`](kaggle_kernel_10_hmc_crown_vig/) (CBraMod) and [`kaggle_kernel_11_hmc_crown_vig_reve/`](kaggle_kernel_11_hmc_crown_vig_reve/) (REVE, bring-your-own gated base). See `docs/crown_hmc_vig_compare.md` / `docs/crown_hmc_vig_reve.md`.
 

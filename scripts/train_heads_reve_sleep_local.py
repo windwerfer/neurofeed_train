@@ -3,7 +3,7 @@
 
 Full-corpus REVE embed is ~13 win/s on CPU (~11h for 519k) → first pass uses
 per-recording class cap; document sampling. Prefer Kaggle T4 for full encode.
-Offline weights: kaggle_datasets/muse-eeg-heads-cache/models/reve-*.
+Offline weights: your own local snapshots of the gated REVE base/positions models (not redistributed).
 """
 from __future__ import annotations
 
@@ -316,7 +316,7 @@ def main():
             "test": c["test"],
         },
         "compare_cbramod_path": "exports/train_heads_expanded_sleep_summary.json",
-        "kaggle_full_encode": "kaggle_kernel_07_reve_sleep_heads (T4 preferred)",
+        "kaggle_full_encode": "archive/kaggle_kernel_07_reve_sleep_heads (maintainer-only; T4 preferred)",
         "encoder_notes": notes,
     }
     (OUT / "metrics_summary.json").write_text(json.dumps(summary, indent=2) + "\n")

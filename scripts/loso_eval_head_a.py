@@ -8,6 +8,12 @@ Usage:
   uv run python scripts/loso_eval_head_a.py --dry-run
   uv run python scripts/loso_eval_head_a.py --max-folds 3
   uv run python scripts/loso_eval_head_a.py
+  uv run python scripts/loso_eval_head_a.py --hf      # windows from Hugging Face
+
+Data: --hf (or NEUROFEED_USE_HF=1) downloads the attention configs from the public HF dataset
+windwerfer/neurofeed-eeg-windows; HF_WINDOWS_ROOT=<local snapshot> reads an existing copy; default is
+datasets/<corpus>/windows from the lab export scripts.
+Weights: CBRAMOD_WEIGHTS=<path>, else models/CBraMod/pretrained_weights.pth, else public HF weighting666/CBraMod.
 """
 from __future__ import annotations
 
@@ -30,6 +36,7 @@ sys.path.insert(0, str(ROOT))
 from src.cbramod_encoder import FrozenCBraModEncoder
 from src.head_a import ATTENTION_LABELS, HeadALinear, class_weights_from_y
 from src.metrics import per_class_report
+from src.public_io import find_cbramod_weights, windows_dir
 
 SEED = 42
 EPOCHS = 5
@@ -40,14 +47,8 @@ OUT_DIR = ROOT / "exports" / "loso_head_a_attention"
 
 
 def find_weights() -> Path:
-    cands = [
-        ROOT / "kaggle_datasets/muse-eeg-heads-cache/models/CBraMod/pretrained_weights.pth",
-        Path("/tmp/kaggle_out3/models/CBraMod/pretrained_weights.pth"),
-    ]
-    for p in cands:
-        if p.exists():
-            return p
-    raise FileNotFoundError("CBraMod weights not found")
+    """CBRAMOD_WEIGHTS env -> models/CBraMod/ -> public HF download (see src/public_io.py)."""
+    return find_cbramod_weights()
 
 
 def subject_for_recording(corpus: str, recording_id: str) -> str:
@@ -63,10 +64,10 @@ def subject_for_recording(corpus: str, recording_id: str) -> str:
     return f"{corpus}/{recording_id}"
 
 
-def load_attention_packs(qc_only: bool = True) -> List[Dict[str, Any]]:
+def load_attention_packs(qc_only: bool = True, use_hf: bool = False) -> List[Dict[str, Any]]:
     packs: List[Dict[str, Any]] = []
     for corpus in ATT_CORPORA:
-        win_dir = ROOT / "datasets" / corpus / "windows"
+        win_dir = windows_dir(corpus, use_hf=use_hf)
         for npz_path in sorted(win_dir.glob("*_windows.npz")):
             rid = npz_path.name.replace("_windows.npz", "")
             data = np.load(npz_path, allow_pickle=True)
@@ -160,11 +161,12 @@ def main() -> None:
     ap.add_argument("--min-test-windows", type=int, default=20)
     ap.add_argument("--require-both-classes", action="store_true", default=True)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--hf", action="store_true", help="read windows from the public HF dataset windwerfer/neurofeed-eeg-windows")
     args = ap.parse_args()
 
     rng = np.random.default_rng(SEED)
     torch.manual_seed(SEED)
-    packs = load_attention_packs(qc_only=True)
+    packs = load_attention_packs(qc_only=True, use_hf=args.hf)
     by_subj: Dict[str, List[Dict[str, Any]]] = {}
     for p in packs:
         by_subj.setdefault(p["subject_id"], []).append(p)
