@@ -88,7 +88,7 @@ def cap_idxs_per_class(y: np.ndarray, per_class: int, rng: np.random.Generator) 
         return np.arange(len(y))
     picks = []
     for c in np.unique(y):
-        cand = np.where(y == c)[0]
+        cand = np.nonzero(y == c)[0]
         n = min(int(per_class), len(cand))
         if n:
             picks.append(rng.choice(cand, size=n, replace=False))
@@ -253,7 +253,7 @@ def ensure_emb_cache(
             if name in name_to_vig:
                 y[y_raw == old_i] = name_to_vig[name]
         keep = qc_mask(X) & (y >= 0)
-        idxs = np.where(keep)[0]
+        idxs = np.nonzero(keep)[0]
         if len(idxs) == 0:
             print(f"  SKIP empty after QC {rid}", flush=True)
             continue

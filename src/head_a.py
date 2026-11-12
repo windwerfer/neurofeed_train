@@ -91,7 +91,7 @@ def undersample_balanced(
     m = int(counts.min())
     idxs = []
     for c in classes:
-        cand = np.where(y == c)[0]
+        cand = np.nonzero(y == c)[0]
         pick = rng.choice(cand, size=m, replace=False)
         idxs.append(pick)
     idxs = np.concatenate(idxs)

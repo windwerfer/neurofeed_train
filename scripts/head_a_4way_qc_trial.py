@@ -177,7 +177,7 @@ def balance_vig_train(
         idxs = []
         used = {}
         for c in (2, 3):  # drowsy, hypnagogic
-            cand = np.where(y == c)[0]
+            cand = np.nonzero(y == c)[0]
             n = min(per_class, len(cand))
             if n == 0:
                 used[HEAD_A_4WAY_LABELS[c]] = 0
@@ -239,7 +239,7 @@ def balance_att_train(
             half = max_per_subject // 2
             keep = []
             for c in (0, 1):
-                cand = np.where(yb == c)[0]
+                cand = np.nonzero(yb == c)[0]
                 n = min(half, len(cand))
                 keep.append(rng.choice(cand, size=n, replace=False))
             keep = np.concatenate(keep)

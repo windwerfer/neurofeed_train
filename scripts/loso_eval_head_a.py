@@ -110,8 +110,8 @@ def train_eval_fold_emb(
     device: torch.device,
     rng: np.random.Generator,
 ) -> Dict[str, Any]:
-    idx0 = np.where(y_tr == 0)[0]
-    idx1 = np.where(y_tr == 1)[0]
+    idx0 = np.nonzero(y_tr == 0)[0]
+    idx1 = np.nonzero(y_tr == 1)[0]
     n = min(len(idx0), len(idx1))
     if n == 0:
         return {

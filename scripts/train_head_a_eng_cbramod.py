@@ -607,7 +607,7 @@ def main() -> None:
         per = args.max_train_balanced // 2
         picks = []
         for c in (0, 1):
-            cand = np.where(y_fit == c)[0]
+            cand = np.nonzero(y_fit == c)[0]
             picks.append(rng.choice(cand, size=min(per, len(cand)), replace=False))
         sel = np.concatenate(picks)
         rng.shuffle(sel)

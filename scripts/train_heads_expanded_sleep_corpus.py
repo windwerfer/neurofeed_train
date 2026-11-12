@@ -114,7 +114,7 @@ def cap_idxs_per_class(
         return np.arange(len(y))
     picks: List[np.ndarray] = []
     for c in np.unique(y):
-        cand = np.where(y == c)[0]
+        cand = np.nonzero(y == c)[0]
         n = min(int(per_class), len(cand))
         if n == 0:
             continue
@@ -241,7 +241,7 @@ def ensure_emb_cache(
         qc = qc_pass_mask(X)
         # Keep windows that have valid A-vig OR valid Head-C label and pass QC
         keep = qc & (y_a >= 0) & keep_c
-        idxs = np.where(keep)[0]
+        idxs = np.nonzero(keep)[0]
         if len(idxs) == 0:
             print(f"  SKIP empty after QC {rid}", flush=True)
             continue

@@ -123,7 +123,7 @@ def one_window_per_probe(
             drops["missing_or_out_of_rule"] += 1
             continue
         mask = probe_ids == pid
-        idxs = np.where(mask)[0]
+        idxs = np.nonzero(mask)[0]
         # pick window closest to median start (center of pre-Q1 cluster)
         med = float(np.median(starts[idxs]))
         best = idxs[int(np.argmin(np.abs(starts[idxs].astype(float) - med)))]

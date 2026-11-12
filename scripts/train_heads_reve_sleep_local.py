@@ -78,7 +78,7 @@ def cap_idxs(y, per_class, rng):
         return np.arange(len(y))
     picks = []
     for c in np.unique(y):
-        cand = np.where(y == c)[0]
+        cand = np.nonzero(y == c)[0]
         n = min(per_class, len(cand))
         if n:
             picks.append(rng.choice(cand, size=n, replace=False))
@@ -232,7 +232,7 @@ def main():
         coarse = np.asarray(data["stage_coarse"], dtype=object)
         y_c = np.array([HEAD_C_LABELS.index(str(c)) if str(c) in HEAD_C_LABELS else -1 for c in coarse], dtype=np.int64)
         keep = qc_mask(X) & (y_a >= 0) & (y_c >= 0)
-        idxs = np.where(keep)[0]
+        idxs = np.nonzero(keep)[0]
         if len(idxs) == 0:
             continue
         if args.per_class_cap > 0:

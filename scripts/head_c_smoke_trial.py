@@ -185,7 +185,7 @@ def build_or_load_recording(
     # Cap per class for smoke (track indices so stage_raw stays aligned)
     idxs: List[np.ndarray] = []
     for c in range(len(HEAD_C_COARSE_LABELS)):
-        cand = np.where(y_qc == c)[0]
+        cand = np.nonzero(y_qc == c)[0]
         n = min(PER_CLASS_PER_REC, len(cand))
         if n == 0:
             continue

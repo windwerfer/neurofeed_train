@@ -217,7 +217,7 @@ def equal_night_balance(
     for p in per_night:
         idxs = []
         for c in range(2):
-            cand = np.where(p["y"] == c)[0]
+            cand = np.nonzero(p["y"] == c)[0]
             pick = rng.choice(cand, size=target, replace=False)
             idxs.append(pick)
         idxs = np.concatenate(idxs)

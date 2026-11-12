@@ -133,7 +133,7 @@ def equal_night_balance(
         idxs = []
         used = {}
         for c in (2, 3):
-            cand = np.where(y == c)[0]
+            cand = np.nonzero(y == c)[0]
             n = min(per_class, len(cand))
             pick = rng.choice(cand, size=n, replace=False)
             idxs.append(pick)

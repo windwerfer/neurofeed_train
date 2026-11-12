@@ -39,7 +39,7 @@ def undersample_balanced(X, y, cap=MAX_TRAIN_BALANCED, rng=None):
     per = min(cap // max(len(classes), 1), *(int((y == c).sum()) for c in classes))
     idx = []
     for c in classes:
-        cand = np.where(y == c)[0]
+        cand = np.nonzero(y == c)[0]
         pick = rng.choice(cand, size=per, replace=False)
         idx.append(pick)
     idx = np.concatenate(idx)

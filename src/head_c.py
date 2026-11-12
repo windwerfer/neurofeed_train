@@ -81,7 +81,7 @@ def undersample_balanced(
     m = int(counts.min())
     idxs = []
     for c in classes:
-        cand = np.where(y == c)[0]
+        cand = np.nonzero(y == c)[0]
         pick = rng.choice(cand, size=m, replace=False)
         idxs.append(pick)
     idxs = np.concatenate(idxs)
@@ -108,7 +108,7 @@ def cap_per_class(
     """Cap each class to at most per_class examples (no undersample of minorities)."""
     idxs: List[np.ndarray] = []
     for c in np.unique(y):
-        cand = np.where(y == c)[0]
+        cand = np.nonzero(y == c)[0]
         n = min(int(per_class), len(cand))
         if n == 0:
             continue

@@ -76,7 +76,7 @@ def label_per_window(
         inside = (events >= start) & (events < end)
         if inside.any():
             # pick earliest event in window
-            idxs = np.where(inside)[0]
+            idxs = np.nonzero(inside)[0]
             labels.append(labs[idxs[0]].item() if hasattr(labs[idxs[0]], "item") else labs[idxs[0]])
         else:
             labels.append(default_label)
