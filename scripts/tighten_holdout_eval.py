@@ -133,7 +133,7 @@ def main() -> None:
     emb = encode_all(encoder, X, device)
 
     head = HeadALinear(in_dim=emb.shape[-1], n_classes=2)
-    head.load_state_dict(torch.load(head_path, map_location="cpu"))
+    head.load_state_dict(torch.load(head_path, map_location="cpu", weights_only=True))
     head.eval()
     with torch.no_grad():
         pred_all = head(emb).argmax(dim=-1).numpy()

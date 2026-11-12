@@ -526,7 +526,7 @@ def main() -> None:
                 if rid.startswith("SC"):
                     sid = rid[:4] + rid[4:6] if len(rid) >= 6 else rid[:5]
                     # SC4001 -> SC400
-                    sid = rid[:5] if rid.startswith("SC") else rid[:5]
+                    sid = rid[:5]
                     sid = "SC4" + rid[3:5]
                 elif rid.startswith("ST"):
                     sid = "ST7" + rid[3:5]
