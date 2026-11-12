@@ -1,5 +1,7 @@
 # neurofeed_train
 
+[![Scanned by SonarCloud](https://img.shields.io/badge/Scanned_by-SonarCloud-4b9fd5?style=flat-square&logo=sonarqubecloud&logoColor=white)](https://sonarcloud.io/project/overview?id=windwerfer_neurofeed_train) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=windwerfer_neurofeed_train&metric=alert_status)](https://sonarcloud.io/project/overview?id=windwerfer_neurofeed_train)
+
 **Train / eval lab** for Muse4 + Crown8 EEG heads used by [neurofeed](https://github.com/windwerfer/neurofeed).
 
 This repo is **code, docs, recipes, and subject-split JSON** — not the app, not shipped runtime packs, and not window binaries.
@@ -115,3 +117,11 @@ Crown HMC vigilance wrappers: [`kaggle_kernel_10_hmc_crown_vig/`](kaggle_kernel_
 - **Training corpora / Hugging Face window binaries**: remain under their **source licenses**; see [`docs/LICENSE_NOTES.md`](docs/LICENSE_NOTES.md). This Apache grant does **not** re-license those materials.
 
 Prefer open corpora (CC0 / CC BY / ODC-By / MIT / BSD). Publish **head-only** weights with dataset + encoder attribution. Do not redistribute gated foundation bases (e.g. REVE-base).
+
+## Security
+
+[SonarQube Cloud](https://sonarcloud.io/project/overview?id=windwerfer_neurofeed_train) automatic analysis runs on `main` and reports code quality, bugs, vulnerabilities, and security hotspots. It is on the free plan, so only the `main` branch is analyzed (not other branches or pull requests).
+
+This is static analysis only. It catches some classes of problems and misses others; it is not an audit and not a guarantee that the code is secure.
+
+**Reporting a vulnerability:** please do not open a public issue. Email [windwerfer@gmail.com](mailto:windwerfer@gmail.com) with a description and, if you can, steps to reproduce. If GitHub's private vulnerability reporting is enabled for this repo, you can also use **Report a vulnerability** on the repo's **Security** tab.
