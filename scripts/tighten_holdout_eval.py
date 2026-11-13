@@ -13,7 +13,7 @@ import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import cbramod_weight_candidates
+from src.safe_paths import first_existing_cbramod_weights
 
 from src.cbramod_encoder import FrozenCBraModEncoder
 from src.head_a import HEAD_A_BINARY_LABELS, HeadALinear
@@ -27,11 +27,7 @@ TARGET_SR = 256.0
 
 
 def find_weights() -> Path:
-    cands = cbramod_weight_candidates(ROOT)
-    for p in cands:
-        if p.exists():
-            return p
-    raise FileNotFoundError("CBraMod weights not found")
+    return first_existing_cbramod_weights(ROOT)
 
 
 def encode_all(encoder: FrozenCBraModEncoder, X: np.ndarray, device: torch.device) -> torch.Tensor:

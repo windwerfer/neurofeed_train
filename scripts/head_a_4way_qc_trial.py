@@ -21,7 +21,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import cbramod_weight_candidates
+from src.safe_paths import first_existing_cbramod_weights
 
 from src.cbramod_encoder import FrozenCBraModEncoder
 from src.head_a import (
@@ -63,11 +63,7 @@ def sha256(path: Path) -> str:
 
 
 def find_weights() -> Path:
-    cands = cbramod_weight_candidates(ROOT)
-    for p in cands:
-        if p.exists():
-            return p
-    raise FileNotFoundError("CBraMod weights not found")
+    return first_existing_cbramod_weights(ROOT)
 
 
 def load_split_subjects(corpus: str) -> Dict[str, List[str]]:

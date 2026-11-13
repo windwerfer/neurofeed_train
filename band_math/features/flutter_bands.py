@@ -8,6 +8,7 @@ Muse feature pads: AF7, AF8 (indices 0,1 in AF7/AF8/TP9/TP10 order).
 """
 from __future__ import annotations
 
+import math
 from typing import Dict, List, Sequence, Tuple
 
 import numpy as np
@@ -63,7 +64,7 @@ def compute_channel_bands(samples: np.ndarray) -> Tuple[float, float, float, flo
     def band_power(lo_hz: float, hi_hz: float) -> float:
         lo = _bin(lo_hz, hz_per_bin)
         hi = _bin(hi_hz, hz_per_bin)
-        if lo_hz == 1.0:
+        if math.isclose(lo_hz, 1.0):
             lo = max(lo, 1)  # rust: (1..=bin(4))
         lo = max(lo, 0)
         hi = min(hi, half_n)

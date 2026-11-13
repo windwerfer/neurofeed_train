@@ -25,7 +25,6 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
-import os
 import sys
 import time
 import urllib.request
@@ -44,7 +43,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import allowed_bases, resolve_under
+from src.safe_paths import write_text_inside
 
 from src.cbramod_encoder import FrozenCBraModEncoder  # noqa: E402
 from src.heads.base import class_weights_from_y, undersample_balanced  # noqa: E402
@@ -899,12 +898,7 @@ def update_doc(summary: Dict[str, Any]) -> None:
         summary["takeaway"],
         "",
     ]
-    doc_target = os.path.realpath(str(DOC_PATH))
-    root_real = os.path.realpath(str(ROOT))
-    if os.path.commonpath([doc_target, root_real]) != root_real:
-        raise ValueError(f"path escapes allowed root {ROOT}: {DOC_PATH}")
-    with open(doc_target, "w", encoding="utf-8") as fh:
-        fh.write(prior.rstrip() + "\n" + "\n".join(section))
+    write_text_inside(DOC_PATH, prior.rstrip() + "\n" + "\n".join(section), ROOT)
 
 
 def main() -> None:

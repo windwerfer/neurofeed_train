@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 import sys
 from collections import Counter
 from datetime import datetime, timezone, timedelta
@@ -29,7 +28,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import allowed_bases, resolve_under
+from src.safe_paths import write_text_inside
 
 from scripts.ds001787_attention_ingest import (  # noqa: E402
     merge_log_ratings,
@@ -569,12 +568,7 @@ def patch_alt_and_multi(summary: Dict[str, Any]) -> None:
                 text = text.replace(anchor, anchor + depth_blurb, 1)
             else:
                 text = text.rstrip() + depth_blurb
-        doc_target = os.path.realpath(str(MULTI_DOC))
-        root_real = os.path.realpath(str(ROOT))
-        if os.path.commonpath([doc_target, root_real]) != root_real:
-            raise ValueError(f"path escapes allowed root {ROOT}: {MULTI_DOC}")
-        with open(doc_target, "w", encoding="utf-8") as fh:
-            fh.write(text if text.endswith("\n") else text + "\n")
+        write_text_inside(MULTI_DOC, text if text.endswith("\n") else text + "\n", ROOT)
         print(f"[doc] patched {MULTI_DOC}", flush=True)
 
 

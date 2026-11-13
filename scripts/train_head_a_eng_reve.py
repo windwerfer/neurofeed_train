@@ -24,7 +24,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import cbramod_weight_candidates
+from src.safe_paths import first_existing_cbramod_weights
 
 from src.reve_encoder import FrozenREVEEncoder
 from src.heads.base import class_weights_from_y, undersample_balanced
@@ -65,11 +65,7 @@ def sha256(path: Path) -> str:
 
 
 def find_weights() -> Path:
-    cands = cbramod_weight_candidates(ROOT)
-    for p in cands:
-        if p.exists():
-            return p
-    raise FileNotFoundError("CBraMod weights not found")
+    return first_existing_cbramod_weights(ROOT)
 
 
 def load_splits() -> Dict[str, Any]:

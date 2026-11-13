@@ -101,3 +101,66 @@ def cbramod_weight_candidates(repo_root: PathLike) -> list[Path]:
             out.append(path)
             seen.add(key)
     return out
+
+
+def write_text_inside(
+    path: PathLike,
+    text: str,
+    *bases: PathLike,
+    encoding: str = "utf-8",
+) -> Path:
+    """Write ``text`` only if the resolved path stays inside one of ``bases``.
+
+    The realpath / commonpath check is the sanitizer SonarCloud accepts for
+    path-traversal rules (S2083 / S8707).
+    """
+    if not bases:
+        raise ValueError("write_text_inside requires at least one allowed base directory")
+    target = os.path.realpath(str(Path(path)))
+    allowed = False
+    for base in bases:
+        base_real = os.path.realpath(str(base))
+        try:
+            if os.path.commonpath([target, base_real]) == base_real:
+                allowed = True
+                break
+        except ValueError:
+            continue
+    if not allowed:
+        roots = ", ".join(str(base) for base in bases)
+        raise ValueError(f"path escapes allowed root(s) {roots}: {path}")
+    Path(target).parent.mkdir(parents=True, exist_ok=True)
+    with open(target, "w", encoding=encoding) as fh:
+        fh.write(text)
+    return Path(target)
+
+
+def stamp_manifest_and_copy(
+    info: dict,
+    step: str,
+    dest_dir: PathLike,
+    *bases: PathLike,
+    copy_npz: bool = True,
+) -> None:
+    """Stamp ``step`` on a subject manifest and copy it (and optional npz) into dest_dir."""
+    import json
+    import shutil
+
+    man_path = resolve_under(info["manifest"], *bases)
+    man = json.loads(man_path.read_text())
+    man["step"] = step
+    write_text_inside(man_path, json.dumps(man, indent=2) + "\n", *bases)
+    dest = Path(dest_dir)
+    shutil.copy2(man_path, resolve_under(dest / man_path.name, *bases))
+    if copy_npz:
+        npz_path = resolve_under(info["npz"], *bases)
+        shutil.copy2(npz_path, dest / npz_path.name)
+
+
+def first_existing_cbramod_weights(repo_root: PathLike) -> Path:
+    """Return the first existing CBraMod weights candidate, or raise FileNotFoundError."""
+    for path in cbramod_weight_candidates(repo_root):
+        if path.exists():
+            return path
+    raise FileNotFoundError("CBraMod weights not found")
+

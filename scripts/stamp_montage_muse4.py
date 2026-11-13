@@ -2,14 +2,13 @@
 """Stamp montage_id=muse4 on attention window manifests (never crown; no Sleep-EDF invent)."""
 from __future__ import annotations
 import json
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import allowed_bases, resolve_under
+from src.safe_paths import allowed_bases, resolve_under, write_text_inside
 MONTAGE_ID = "muse4"
 MODEL_ORDER = ["AF7", "AF8", "TP9", "TP10"]
 CORPORA = {
@@ -34,12 +33,7 @@ def stamp_manifest(path: Path) -> bool:
         changed = True
     if changed:
         doc["montage_stamped_utc"] = datetime.now(timezone.utc).isoformat()
-        target = os.path.realpath(str(path))
-        root_real = os.path.realpath(str(ROOT))
-        if os.path.commonpath([target, root_real]) != root_real:
-            raise ValueError(f"path escapes allowed root {ROOT}: {path}")
-        with open(target, "w", encoding="utf-8") as fh:
-            fh.write(json.dumps(doc, indent=2) + "\n")
+        write_text_inside(path, json.dumps(doc, indent=2) + "\n", ROOT)
     return changed
 
 def main() -> None:

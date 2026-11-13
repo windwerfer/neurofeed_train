@@ -18,7 +18,7 @@ import torch.nn.functional as F
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from safe_paths import allowed_bases, resolve_under
+from safe_paths import allowed_bases, resolve_under, write_text_inside
 
 from head_a import HeadALinear  # noqa: E402
 
@@ -311,12 +311,7 @@ AppImage (GUI, historical boot smoke 2026-09-04):
 - Packaging docs: `docs/export_cbramod_packaging.md`
 - Script: `scripts/flutter_pack_smoke_notes.py`
 """
-    docs_target = os.path.realpath(str(DOCS))
-    root_real = os.path.realpath(str(ROOT))
-    if os.path.commonpath([docs_target, root_real]) != root_real:
-        raise ValueError(f"path escapes allowed root {ROOT}: {DOCS}")
-    with open(docs_target, "w", encoding="utf-8") as fh:
-        fh.write(docs)
+    write_text_inside(DOCS, docs, ROOT)
 
     # --- update overnight_state ---
     state = load_json(STATE)
@@ -351,11 +346,7 @@ AppImage (GUI, historical boot smoke 2026-09-04):
     # extend plan so invent has a trail, but next_index already past original plan
     if "flutter_pack_smoke_notes" not in state["plan"]:
         state["plan"].append("flutter_pack_smoke_notes")
-    state_target = os.path.realpath(str(STATE))
-    if os.path.commonpath([state_target, root_real]) != root_real:
-        raise ValueError(f"path escapes allowed root {ROOT}: {STATE}")
-    with open(state_target, "w", encoding="utf-8") as fh:
-        fh.write(json.dumps(state, indent=2) + "\n")
+    write_text_inside(STATE, json.dumps(state, indent=2) + "\n", ROOT)
 
     print(json.dumps({"ok": all_ok, "summary": str(OUT_DIR / "summary.json"), "docs": str(DOCS)}, indent=2))
     return 0 if all_ok else 1

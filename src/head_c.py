@@ -13,6 +13,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
+from src.head_a import class_weights_from_y, undersample_balanced
+
 # Preferred smoke task: drop unknown
 HEAD_C_COARSE_LABELS: List[str] = ["wake", "light", "deep", "rem"]
 
@@ -70,32 +72,6 @@ def labels_to_ids(labels: Sequence[str], label_list: Sequence[str]) -> np.ndarra
 
 def stage_raw_to_raw5(stage: str) -> Optional[str]:
     return STAGE_RAW_TO_RAW5.get(stage.strip())
-
-
-def undersample_balanced(
-    X: np.ndarray,
-    y: np.ndarray,
-    rng: np.random.Generator,
-) -> tuple[np.ndarray, np.ndarray]:
-    classes, counts = np.unique(y, return_counts=True)
-    m = int(counts.min())
-    idxs = []
-    for c in classes:
-        cand = np.nonzero(y == c)[0]
-        pick = rng.choice(cand, size=m, replace=False)
-        idxs.append(pick)
-    idxs = np.concatenate(idxs)
-    rng.shuffle(idxs)
-    return X[idxs], y[idxs]
-
-
-def class_weights_from_y(y: np.ndarray, n_classes: Optional[int] = None) -> torch.Tensor:
-    if n_classes is None:
-        n_classes = int(y.max()) + 1
-    counts = np.bincount(y, minlength=n_classes).astype(np.float64)
-    counts = np.maximum(counts, 1.0)
-    w = counts.sum() / (len(counts) * counts)
-    return torch.tensor(w, dtype=torch.float32)
 
 
 def cap_per_class(

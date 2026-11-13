@@ -13,7 +13,6 @@ from __future__ import annotations
 import argparse
 import gc
 import json
-import os
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -27,7 +26,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import allowed_bases, resolve_under
+from src.safe_paths import allowed_bases, resolve_under, write_text_inside
 
 from src.reve_encoder import FrozenREVEEncoder
 from src.head_c import class_weights_from_y, undersample_balanced
@@ -602,12 +601,7 @@ def main() -> None:
         },
     }
     compare_path = out_root / "compare.json"
-    compare_target = os.path.realpath(str(compare_path))
-    root_real = os.path.realpath(str(ROOT))
-    if os.path.commonpath([compare_target, root_real]) != root_real:
-        raise ValueError(f"path escapes allowed root {ROOT}: {compare_path}")
-    with open(compare_target, "w", encoding="utf-8") as fh:
-        fh.write(json.dumps(compare, indent=2) + "\n")
+    write_text_inside(compare_path, json.dumps(compare, indent=2) + "\n", ROOT)
     write_docs(compare, ROOT / "docs" / "crown_hmc_vig_reve.md")
     print(json.dumps({"any_ship": any_ship, "both_below": both_below, "f1": compare["f1"]}, indent=2))
     print(f"docs → {ROOT / 'docs' / 'crown_hmc_vig_reve.md'}")

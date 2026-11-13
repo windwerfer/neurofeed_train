@@ -17,7 +17,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import cache_fallback_paths, cbramod_weight_candidates
+from src.safe_paths import cache_fallback_paths, first_existing_cbramod_weights
 
 from src.sleep_edf import (
     PROXY_NOTE,
@@ -75,8 +75,7 @@ def main() -> None:
     psg, hyp = pairs[0]
     print("PSG", psg.name, "HYP", hyp.name)
 
-    weights_cands = cbramod_weight_candidates(ROOT)
-    weights = next(p for p in weights_cands if p.exists())
+    weights = first_existing_cbramod_weights(ROOT)
 
     rec = load_sleep_edf_recording(
         psg,

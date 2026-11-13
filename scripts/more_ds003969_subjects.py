@@ -3,8 +3,6 @@
 from __future__ import annotations
 
 import json
-import os
-import shutil
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -14,7 +12,7 @@ from typing import Any, Dict, List
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
-from src.safe_paths import allowed_bases, resolve_under
+from src.safe_paths import allowed_bases, stamp_manifest_and_copy
 
 import ds003969_attention_ingest as base  # noqa: E402
 
@@ -81,18 +79,7 @@ def main() -> None:
     for spec in SUBJECTS:
         recs = base.fetch_subject(spec)
         info = base.process_subject(spec, recs)
-        man_path = resolve_under(info["manifest"], *allowed_bases(ROOT))
-        man = json.loads(man_path.read_text())
-        man["step"] = "more_ds003969_subjects"
-        target = os.path.realpath(str(man_path))
-        root_real = os.path.realpath(str(ROOT))
-        if os.path.commonpath([target, root_real]) != root_real:
-            raise ValueError(f"path escapes allowed root {ROOT}: {man_path}")
-        with open(target, "w", encoding="utf-8") as fh:
-            fh.write(json.dumps(man, indent=2) + "\n")
-        shutil.copy2(man_path, resolve_under(base.WINDOWS_PKG / man_path.name, *allowed_bases(ROOT)))
-        npz_path = resolve_under(info["npz"], *allowed_bases(ROOT))
-        shutil.copy2(npz_path, base.WINDOWS_PKG / npz_path.name)
+        stamp_manifest_and_copy(info, "more_ds003969_subjects", base.WINDOWS_PKG, *allowed_bases(ROOT))
         results["subjects"].append(info)
         for k, v in info["counts"].items():
             totals[k] += v
