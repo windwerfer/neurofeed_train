@@ -13,10 +13,9 @@ import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import first_existing_cbramod_weights
 
 from src.cbramod_encoder import FrozenCBraModEncoder
-from src.head_a import HEAD_A_BINARY_LABELS, HeadALinear
+from src.head_a import HEAD_A_BINARY_LABELS, HeadALinear, find_weights
 from src.metrics import confusion_matrix, macro_f1, per_class_report
 
 SEED = 42
@@ -24,10 +23,6 @@ BATCH = 32
 WINDOW_SEC = 2.0
 HOP_SEC = 0.5
 TARGET_SR = 256.0
-
-
-def find_weights() -> Path:
-    return first_existing_cbramod_weights(ROOT)
 
 
 def encode_all(encoder: FrozenCBraModEncoder, X: np.ndarray, device: torch.device) -> torch.Tensor:

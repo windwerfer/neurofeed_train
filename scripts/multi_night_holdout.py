@@ -25,7 +25,6 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import first_existing_cbramod_weights
 
 from src.cbramod_encoder import FrozenCBraModEncoder
 from src.head_a import (
@@ -33,6 +32,8 @@ from src.head_a import (
     HeadALinear,
     class_weights_from_y,
     undersample_balanced,
+    equal_night_balance,
+    find_weights,
 )
 from src.metrics import confusion_matrix, macro_f1, per_class_report
 
@@ -55,10 +56,6 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
-
-
-def find_weights() -> Path:
-    return first_existing_cbramod_weights(ROOT)
 
 
 def load_night(tag: str) -> Dict[str, Any]:
@@ -193,35 +190,6 @@ def train_head(emb: torch.Tensor, y: np.ndarray, device: torch.device) -> Tuple[
         history.append(row)
         print(row)
     return head, history
-
-
-def equal_night_balance(
-    nights: List[Dict[str, Any]], rng: np.random.Generator
-) -> Tuple[np.ndarray, np.ndarray, Dict[str, Any]]:
-    """Per-night undersample, then equalize nights to the smallest night's per-class count."""
-    per_night = []
-    for n in nights:
-        Xb, yb = undersample_balanced(n["X"], n["y"], rng)
-        per_class = int(len(yb) // 2)
-        per_night.append({"tag": n["tag"], "X": Xb, "y": yb, "per_class": per_class})
-        print(f"  balanced {n['tag']}: {Xb.shape} per_class={per_class} counts={dict(Counter(yb.tolist()))}")
-    target = min(p["per_class"] for p in per_night)
-    Xs, ys, meta = [], [], {}
-    for p in per_night:
-        idxs = []
-        for c in range(2):
-            cand = np.nonzero(p["y"] == c)[0]
-            pick = rng.choice(cand, size=target, replace=False)
-            idxs.append(pick)
-        idxs = np.concatenate(idxs)
-        rng.shuffle(idxs)
-        Xs.append(p["X"][idxs])
-        ys.append(p["y"][idxs])
-        meta[p["tag"]] = {"per_class_used": target, "n_total": int(len(idxs))}
-    X = np.concatenate(Xs, axis=0)
-    y = np.concatenate(ys, axis=0)
-    perm = rng.permutation(len(y))
-    return X[perm], y[perm], meta
 
 
 def evaluate_night(

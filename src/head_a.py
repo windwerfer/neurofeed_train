@@ -7,7 +7,9 @@ LEGACY 4-way + binary helpers (masked CE). Product architecture is
 
 from __future__ import annotations
 
-from typing import Iterable, List, Optional, Sequence, Tuple
+from collections import Counter
+from pathlib import Path
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 import numpy as np
 import torch
@@ -85,7 +87,7 @@ def undersample_balanced(
     X: np.ndarray,
     y: np.ndarray,
     rng: np.random.Generator,
-) -> tuple[np.ndarray, np.ndarray]:
+) -> Tuple[np.ndarray, np.ndarray]:
     """Undersample majority classes to min class count (smoke clarity)."""
     classes, counts = np.unique(y, return_counts=True)
     m = int(counts.min())
@@ -167,3 +169,121 @@ def group_ids(label_list: Sequence[str] = HEAD_A_4WAY_LABELS) -> Tuple[List[int]
     att = [label_list.index(n) for n in ATTENTION_LABELS if n in label_list]
     vig = [label_list.index(n) for n in VIGILANCE_LABELS if n in label_list]
     return att, vig
+
+
+def find_weights() -> Path:
+    """Locate CBraMod weights relative to this repo (same root as training scripts)."""
+    from src.safe_paths import first_existing_cbramod_weights
+
+    return first_existing_cbramod_weights(Path(__file__).resolve().parents[1])
+
+
+def cap_balanced(
+    X: np.ndarray,
+    y: np.ndarray,
+    max_n: int,
+    rng: np.random.Generator,
+) -> Tuple[np.ndarray, np.ndarray]:
+    """Downsample a (typically already balanced) set to at most ``max_n`` rows."""
+    if max_n <= 0 or len(y) <= max_n:
+        return X, y
+    per = max_n // 2
+    picks = []
+    for c in (0, 1):
+        cand = np.nonzero(y == c)[0]
+        picks.append(rng.choice(cand, size=min(per, len(cand)), replace=False))
+    sel = np.concatenate(picks)
+    rng.shuffle(sel)
+    return X[sel], y[sel]
+
+
+def equal_night_balance(
+    nights: List[Dict[str, Any]], rng: np.random.Generator
+) -> Tuple[np.ndarray, np.ndarray, Dict[str, Any]]:
+    """Per-night undersample, then equalize nights to the smallest night's per-class count."""
+    per_night = []
+    for n in nights:
+        Xb, yb = undersample_balanced(n["X"], n["y"], rng)
+        per_class = int(len(yb) // 2)
+        per_night.append({"tag": n["tag"], "X": Xb, "y": yb, "per_class": per_class})
+        print(f"  balanced {n['tag']}: {Xb.shape} per_class={per_class} counts={dict(Counter(yb.tolist()))}")
+    target = min(p["per_class"] for p in per_night)
+    Xs, ys, meta = [], [], {}
+    for p in per_night:
+        idxs = []
+        for c in range(2):
+            cand = np.nonzero(p["y"] == c)[0]
+            pick = rng.choice(cand, size=target, replace=False)
+            idxs.append(pick)
+        idxs = np.concatenate(idxs)
+        rng.shuffle(idxs)
+        Xs.append(p["X"][idxs])
+        ys.append(p["y"][idxs])
+        meta[p["tag"]] = {"per_class_used": target, "n_total": int(len(idxs))}
+    X = np.concatenate(Xs, axis=0)
+    y = np.concatenate(ys, axis=0)
+    perm = rng.permutation(len(y))
+    return X[perm], y[perm], meta
+
+
+def train_eval_fold_emb(
+    emb_tr: torch.Tensor,
+    y_tr: np.ndarray,
+    emb_te: torch.Tensor,
+    y_te: np.ndarray,
+    device: torch.device,
+    rng: np.random.Generator,
+    *,
+    epochs: int = 5,
+    batch: int = 32,
+    lr: float = 1e-3,
+) -> Dict[str, Any]:
+    """Train a binary Head A on balanced LOSO fold embeddings and evaluate."""
+    from torch.utils.data import DataLoader, TensorDataset
+
+    from src.metrics import per_class_report
+
+    idx0 = np.nonzero(y_tr == 0)[0]
+    idx1 = np.nonzero(y_tr == 1)[0]
+    n = min(len(idx0), len(idx1))
+    if n == 0:
+        return {
+            "n_train_balanced": 0,
+            "n_test": int(len(y_te)),
+            "test_counts": {ATTENTION_LABELS[i]: int((y_te == i).sum()) for i in range(2)},
+            "macro_f1": 0.0,
+            "accuracy": 0.0,
+            "per_class": {},
+            "skip_reason": "no both-class train",
+        }
+    pick0 = rng.choice(idx0, size=n, replace=False)
+    pick1 = rng.choice(idx1, size=n, replace=False)
+    bal = np.concatenate([pick0, pick1])
+    rng.shuffle(bal)
+    emb_b = emb_tr[bal]
+    yb = y_tr[bal]
+    head = HeadALinear(in_dim=emb_b.shape[-1], n_classes=2).to(device)
+    w = class_weights_from_y(yb, n_classes=2).to(device)
+    crit = nn.CrossEntropyLoss(weight=w)
+    opt = torch.optim.Adam(head.parameters(), lr=lr)
+    loader = DataLoader(TensorDataset(emb_b, torch.from_numpy(yb)), batch_size=batch, shuffle=True)
+    for _ in range(epochs):
+        head.train()
+        for xb, ybatch in loader:
+            opt.zero_grad()
+            loss = crit(head(xb.to(device)), ybatch.to(device))
+            loss.backward()
+            opt.step()
+    head.eval()
+    with torch.no_grad():
+        pred = head(emb_te.to(device)).argmax(dim=-1).cpu().numpy()
+    report = per_class_report(y_te.tolist(), pred.tolist(), ATTENTION_LABELS)
+    return {
+        "n_train_balanced": int(len(yb)),
+        "n_test": int(len(y_te)),
+        "test_counts": {ATTENTION_LABELS[i]: int((y_te == i).sum()) for i in range(2)},
+        "macro_f1": float(report["macro_f1"]["f1"]),
+        "accuracy": float((pred == y_te).mean()) if len(y_te) else 0.0,
+        "per_class": {k: v for k, v in report.items() if k != "macro_f1"},
+    }
+

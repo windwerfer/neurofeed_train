@@ -24,7 +24,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import first_existing_cbramod_weights
+from src.head_a import cap_balanced
 
 from src.reve_encoder import FrozenREVEEncoder
 from src.heads.base import class_weights_from_y, undersample_balanced
@@ -62,10 +62,6 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
-
-
-def find_weights() -> Path:
-    return first_existing_cbramod_weights(ROOT)
 
 
 def load_splits() -> Dict[str, Any]:
@@ -633,15 +629,7 @@ def main() -> None:
 
     emb_fit, y_fit = undersample_balanced(emb_tr, y_tr, rng=rng)
     if args.max_train_balanced > 0 and len(y_fit) > args.max_train_balanced:
-        # further downsample keeping balance
-        per = args.max_train_balanced // 2
-        picks = []
-        for c in (0, 1):
-            cand = np.nonzero(y_fit == c)[0]
-            picks.append(rng.choice(cand, size=min(per, len(cand)), replace=False))
-        sel = np.concatenate(picks)
-        rng.shuffle(sel)
-        emb_fit, y_fit = emb_fit[sel], y_fit[sel]
+        emb_fit, y_fit = cap_balanced(emb_fit, y_fit, args.max_train_balanced, rng)
     print(f"train fit balanced n={len(y_fit)} counts={Counter(y_fit.tolist())}", flush=True)
 
     head, history, best_val = train_head(emb_fit, y_fit, emb_va, y_va, device)

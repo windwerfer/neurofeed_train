@@ -26,7 +26,6 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import first_existing_cbramod_weights
 
 from src.cbramod_encoder import FrozenCBraModEncoder
 from src.head_a import (
@@ -34,6 +33,7 @@ from src.head_a import (
     HeadALinear,
     class_weights_from_y,
     undersample_balanced,
+    find_weights,
 )
 from src.metrics import confusion_matrix, macro_f1, per_class_report
 
@@ -48,10 +48,6 @@ HYPN_ID = 1  # HEAD_A_BINARY_LABELS index
 MIN_VAL_RECALL = 0.50
 # Prefer not to drop recall more than this fraction of baseline recall on val
 RECALL_FLOOR_FRAC = 0.85
-
-
-def find_weights() -> Path:
-    return first_existing_cbramod_weights(ROOT)
 
 
 def encode_all(encoder: FrozenCBraModEncoder, X: np.ndarray, device: torch.device) -> torch.Tensor:

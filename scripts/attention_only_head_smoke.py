@@ -22,7 +22,6 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.safe_paths import first_existing_cbramod_weights
 
 from src.cbramod_encoder import FrozenCBraModEncoder
 from src.head_a import (
@@ -30,6 +29,7 @@ from src.head_a import (
     HeadALinear,
     class_weights_from_y,
     undersample_balanced,
+    find_weights,
 )
 from src.metrics import confusion_matrix, macro_f1, per_class_report
 
@@ -51,10 +51,6 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
-
-
-def find_weights() -> Path:
-    return first_existing_cbramod_weights(ROOT)
 
 
 def load_attention(tag: str) -> Dict[str, Any]:

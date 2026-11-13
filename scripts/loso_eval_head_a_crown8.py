@@ -24,17 +24,14 @@ from typing import Any, Dict, List
 
 import numpy as np
 import torch
-import torch.nn as nn
-from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src.cbramod_encoder import FrozenCBraModEncoder
 from src.channel_map import CROWN8_CHANNELS
-from src.head_a import ATTENTION_LABELS, HeadALinear, class_weights_from_y
-from src.metrics import per_class_report
-from src.public_io import find_cbramod_weights, windows_dir
+from src.head_a import ATTENTION_LABELS, HeadALinear, class_weights_from_y, find_weights, train_eval_fold_emb
+from src.public_io import windows_dir
 
 SEED = 42
 EPOCHS = 5
@@ -43,11 +40,6 @@ LR = 1e-3
 ATT_CORPORA = ["attention_ds001787_crown8", "attention_ds003969_crown8"]
 OUT_DIR = ROOT / "exports" / "loso_head_a_attention_crown8"
 MUSE4_REF_F1 = 0.36098056607840057  # exports/loso_head_a_attention/metrics_summary.json
-
-
-def find_weights() -> Path:
-    """CBRAMOD_WEIGHTS env -> models/CBraMod/ -> public HF download (see src/public_io.py)."""
-    return find_cbramod_weights()
 
 
 def subject_for_recording(corpus: str, recording_id: str) -> str:
@@ -105,59 +97,6 @@ def encode(encoder: FrozenCBraModEncoder, X: np.ndarray, device: torch.device) -
         for i in range(0, len(X), BATCH):
             outs.append(encoder(torch.from_numpy(X[i : i + BATCH]).to(device)).cpu())
     return torch.cat(outs, dim=0)
-
-
-def train_eval_fold_emb(
-    emb_tr: torch.Tensor,
-    y_tr: np.ndarray,
-    emb_te: torch.Tensor,
-    y_te: np.ndarray,
-    device: torch.device,
-    rng: np.random.Generator,
-) -> Dict[str, Any]:
-    idx0 = np.nonzero(y_tr == 0)[0]
-    idx1 = np.nonzero(y_tr == 1)[0]
-    n = min(len(idx0), len(idx1))
-    if n == 0:
-        return {
-            "n_train_balanced": 0,
-            "n_test": int(len(y_te)),
-            "test_counts": {ATTENTION_LABELS[i]: int((y_te == i).sum()) for i in range(2)},
-            "macro_f1": 0.0,
-            "accuracy": 0.0,
-            "per_class": {},
-            "skip_reason": "no both-class train",
-        }
-    pick0 = rng.choice(idx0, size=n, replace=False)
-    pick1 = rng.choice(idx1, size=n, replace=False)
-    bal = np.concatenate([pick0, pick1])
-    rng.shuffle(bal)
-    emb_b = emb_tr[bal]
-    yb = y_tr[bal]
-    head = HeadALinear(in_dim=emb_b.shape[-1], n_classes=2).to(device)
-    w = class_weights_from_y(yb, n_classes=2).to(device)
-    crit = nn.CrossEntropyLoss(weight=w)
-    opt = torch.optim.Adam(head.parameters(), lr=LR)
-    loader = DataLoader(TensorDataset(emb_b, torch.from_numpy(yb)), batch_size=BATCH, shuffle=True)
-    for _ in range(EPOCHS):
-        head.train()
-        for xb, ybatch in loader:
-            opt.zero_grad()
-            loss = crit(head(xb.to(device)), ybatch.to(device))
-            loss.backward()
-            opt.step()
-    head.eval()
-    with torch.no_grad():
-        pred = head(emb_te.to(device)).argmax(dim=-1).cpu().numpy()
-    report = per_class_report(y_te.tolist(), pred.tolist(), ATTENTION_LABELS)
-    return {
-        "n_train_balanced": int(len(yb)),
-        "n_test": int(len(y_te)),
-        "test_counts": {ATTENTION_LABELS[i]: int((y_te == i).sum()) for i in range(2)},
-        "macro_f1": float(report["macro_f1"]["f1"]),
-        "accuracy": float((pred == y_te).mean()) if len(y_te) else 0.0,
-        "per_class": {k: v for k, v in report.items() if k != "macro_f1"},
-    }
 
 
 def main() -> None:
