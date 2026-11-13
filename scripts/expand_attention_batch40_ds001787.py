@@ -6,6 +6,7 @@ Local-first; paced downloads; frozen test holdouts untouched.
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import sys
 import time
@@ -186,7 +187,12 @@ def main() -> None:
             man_path = resolve_under(info["manifest"], *allowed_bases(ROOT))
             man = json.loads(man_path.read_text())
             man["step"] = STEP
-            man_path.write_text(json.dumps(man, indent=2) + "\n")
+            target = os.path.realpath(str(man_path))
+            root_real = os.path.realpath(str(ROOT))
+            if os.path.commonpath([target, root_real]) != root_real:
+                raise ValueError(f"path escapes allowed root {ROOT}: {man_path}")
+            with open(target, "w", encoding="utf-8") as fh:
+                fh.write(json.dumps(man, indent=2) + "\n")
             shutil.copy2(man_path, resolve_under(base.WINDOWS_PKG / man_path.name, *allowed_bases(ROOT)))
             npz_path = resolve_under(info["npz"], *allowed_bases(ROOT))
             shutil.copy2(npz_path, base.WINDOWS_PKG / npz_path.name)

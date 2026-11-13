@@ -25,6 +25,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
 import sys
 import time
 import urllib.request
@@ -898,7 +899,12 @@ def update_doc(summary: Dict[str, Any]) -> None:
         summary["takeaway"],
         "",
     ]
-    resolve_under(DOC_PATH, *allowed_bases(ROOT)).write_text(prior.rstrip() + "\n" + "\n".join(section))
+    doc_target = os.path.realpath(str(DOC_PATH))
+    root_real = os.path.realpath(str(ROOT))
+    if os.path.commonpath([doc_target, root_real]) != root_real:
+        raise ValueError(f"path escapes allowed root {ROOT}: {DOC_PATH}")
+    with open(doc_target, "w", encoding="utf-8") as fh:
+        fh.write(prior.rstrip() + "\n" + "\n".join(section))
 
 
 def main() -> None:

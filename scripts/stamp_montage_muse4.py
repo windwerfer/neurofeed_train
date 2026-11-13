@@ -2,6 +2,7 @@
 """Stamp montage_id=muse4 on attention window manifests (never crown; no Sleep-EDF invent)."""
 from __future__ import annotations
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 import sys
@@ -33,7 +34,12 @@ def stamp_manifest(path: Path) -> bool:
         changed = True
     if changed:
         doc["montage_stamped_utc"] = datetime.now(timezone.utc).isoformat()
-        path.write_text(json.dumps(doc, indent=2) + "\n")
+        target = os.path.realpath(str(path))
+        root_real = os.path.realpath(str(ROOT))
+        if os.path.commonpath([target, root_real]) != root_real:
+            raise ValueError(f"path escapes allowed root {ROOT}: {path}")
+        with open(target, "w", encoding="utf-8") as fh:
+            fh.write(json.dumps(doc, indent=2) + "\n")
     return changed
 
 def main() -> None:

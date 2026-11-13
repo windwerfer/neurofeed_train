@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import sys
 from collections import Counter
 from datetime import datetime, timezone, timedelta
@@ -568,7 +569,12 @@ def patch_alt_and_multi(summary: Dict[str, Any]) -> None:
                 text = text.replace(anchor, anchor + depth_blurb, 1)
             else:
                 text = text.rstrip() + depth_blurb
-        resolve_under(MULTI_DOC, *allowed_bases(ROOT)).write_text(text if text.endswith("\n") else text + "\n")
+        doc_target = os.path.realpath(str(MULTI_DOC))
+        root_real = os.path.realpath(str(ROOT))
+        if os.path.commonpath([doc_target, root_real]) != root_real:
+            raise ValueError(f"path escapes allowed root {ROOT}: {MULTI_DOC}")
+        with open(doc_target, "w", encoding="utf-8") as fh:
+            fh.write(text if text.endswith("\n") else text + "\n")
         print(f"[doc] patched {MULTI_DOC}", flush=True)
 
 
