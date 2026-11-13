@@ -13,6 +13,7 @@ import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.safe_paths import cbramod_weight_candidates
 
 from src.cbramod_encoder import FrozenCBraModEncoder
 from src.head_a import HEAD_A_BINARY_LABELS, HeadALinear
@@ -26,10 +27,7 @@ TARGET_SR = 256.0
 
 
 def find_weights() -> Path:
-    cands = [
-        Path("/tmp/kaggle_out3/models/CBraMod/pretrained_weights.pth"),
-        ROOT / "kaggle_datasets/muse-eeg-heads-cache/models/CBraMod/pretrained_weights.pth",
-    ]
+    cands = cbramod_weight_candidates(ROOT)
     for p in cands:
         if p.exists():
             return p

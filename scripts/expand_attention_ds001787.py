@@ -13,7 +13,9 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
+from src.safe_paths import allowed_bases, resolve_under
 
 import ds001787_attention_ingest as base  # noqa: E402
 
@@ -91,12 +93,13 @@ def main() -> None:
     totals = Counter()
     for spec in SUBJECTS:
         info = base.process_subject(spec)
-        man_path = Path(info["manifest"])
+        man_path = resolve_under(info["manifest"], *allowed_bases(ROOT))
         man = json.loads(man_path.read_text())
         man["step"] = STEP
         man_path.write_text(json.dumps(man, indent=2) + "\n")
-        shutil.copy2(man_path, base.WINDOWS_PKG / man_path.name)
-        shutil.copy2(Path(info["npz"]), base.WINDOWS_PKG / Path(info["npz"]).name)
+        shutil.copy2(man_path, resolve_under(base.WINDOWS_PKG / man_path.name, *allowed_bases(ROOT)))
+        npz_path = resolve_under(info["npz"], *allowed_bases(ROOT))
+        shutil.copy2(npz_path, base.WINDOWS_PKG / npz_path.name)
         results["subjects"].append(info)
         for k, v in info["counts"].items():
             totals[k] += v

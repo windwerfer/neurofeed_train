@@ -12,7 +12,8 @@ DATASET = "ds003816"
 TASKS = ("PreResting", "LKMSelf")
 USED = {"sub-09st", "sub-22st", "sub-48st", "sub-26st", "sub-19st", "sub-23st"}
 PAUSE = 1.5
-OUT = Path("/tmp/ds003816_st_sizes.json")
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "exports" / "ds003816_st_sizes.json"
 
 
 def list_s3(prefix: str):
@@ -90,6 +91,7 @@ def main() -> None:
     cands = [r for r in rows if not r["used"] and r["ok_5mb"]]
     print("\nnext 6 lightest unused >=5MB:", [r["sub"] for r in cands[:6]], flush=True)
     print("their total MB:", sum(r["total_MB"] for r in cands[:6]), flush=True)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"rows": rows, "next6": cands[:6]}, indent=2))
     print("wrote", OUT, flush=True)
 

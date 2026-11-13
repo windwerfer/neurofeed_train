@@ -8,11 +8,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from src.safe_paths import cache_fallback_paths
 DATASETS = ROOT / "datasets"
 EXPORTS = ROOT / "exports"
 CACHE_SLEEP = (
@@ -23,7 +26,6 @@ CACHE_SLEEP = (
     / "sleep-edfx-pilot"
     / "sleep-cassette"
 )
-TMP_SLEEP = Path("/tmp/kaggle_out3/data/sleep-edfx-pilot/sleep-cassette")
 
 SLEEP_NIGHTS = {
     "SC4001": "sc4001",
@@ -57,7 +59,8 @@ def link_or_copy(src: Path, dst: Path, mode: str) -> str:
 
 
 def find_sleep_raw(name: str) -> Path | None:
-    for base in (CACHE_SLEEP, TMP_SLEEP):
+    bases = [CACHE_SLEEP, *cache_fallback_paths("data/sleep-edfx-pilot/sleep-cassette")]
+    for base in bases:
         p = base / name
         if p.exists():
             return p

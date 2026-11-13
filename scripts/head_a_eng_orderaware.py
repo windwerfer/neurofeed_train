@@ -43,6 +43,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.safe_paths import allowed_bases, resolve_under
 
 from src.cbramod_encoder import FrozenCBraModEncoder  # noqa: E402
 from src.heads.base import class_weights_from_y, undersample_balanced  # noqa: E402
@@ -897,7 +898,7 @@ def update_doc(summary: Dict[str, Any]) -> None:
         summary["takeaway"],
         "",
     ]
-    DOC_PATH.write_text(prior.rstrip() + "\n" + "\n".join(section))
+    resolve_under(DOC_PATH, *allowed_bases(ROOT)).write_text(prior.rstrip() + "\n" + "\n".join(section))
 
 
 def main() -> None:

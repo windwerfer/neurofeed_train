@@ -17,6 +17,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.safe_paths import cache_fallback_paths, cbramod_weight_candidates
 
 from src.sleep_edf import (
     PROXY_NOTE,
@@ -60,7 +61,7 @@ def main() -> None:
 
     cache_roots = [
         ROOT / "kaggle_datasets/muse-eeg-heads-cache/data/sleep-edfx-pilot",
-        Path("/tmp/kaggle_out3/data/sleep-edfx-pilot"),
+        *cache_fallback_paths("data/sleep-edfx-pilot"),
     ]
     pairs = []
     for r in cache_roots:
@@ -74,10 +75,7 @@ def main() -> None:
     psg, hyp = pairs[0]
     print("PSG", psg.name, "HYP", hyp.name)
 
-    weights_cands = [
-        ROOT / "kaggle_datasets/muse-eeg-heads-cache/models/CBraMod/pretrained_weights.pth",
-        Path("/tmp/kaggle_out3/models/CBraMod/pretrained_weights.pth"),
-    ]
+    weights_cands = cbramod_weight_candidates(ROOT)
     weights = next(p for p in weights_cands if p.exists())
 
     rec = load_sleep_edf_recording(

@@ -28,6 +28,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.safe_paths import allowed_bases, resolve_under
 
 from scripts.ds001787_attention_ingest import (  # noqa: E402
     merge_log_ratings,
@@ -567,7 +568,7 @@ def patch_alt_and_multi(summary: Dict[str, Any]) -> None:
                 text = text.replace(anchor, anchor + depth_blurb, 1)
             else:
                 text = text.rstrip() + depth_blurb
-        MULTI_DOC.write_text(text if text.endswith("\n") else text + "\n")
+        resolve_under(MULTI_DOC, *allowed_bases(ROOT)).write_text(text if text.endswith("\n") else text + "\n")
         print(f"[doc] patched {MULTI_DOC}", flush=True)
 
 

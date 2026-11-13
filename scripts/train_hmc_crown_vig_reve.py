@@ -26,6 +26,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.safe_paths import allowed_bases, resolve_under
 
 from src.reve_encoder import FrozenREVEEncoder
 from src.head_c import class_weights_from_y, undersample_balanced
@@ -217,7 +218,7 @@ def ensure_emb_cache(
     per_class_cap: int,
     rng: np.random.Generator,
 ) -> Dict[str, Any]:
-    emb_cache = out_dir / "emb_cache"
+    emb_cache = resolve_under(out_dir / "emb_cache", *allowed_bases(ROOT))
     emb_cache.mkdir(parents=True, exist_ok=True)
     win_dir = pack / "windows"
     meta: Dict[str, Any] = {
@@ -346,7 +347,7 @@ def run_one(
         sample = next((pack / "windows").glob("*_windows.npz"))
         expected_c = int(np.load(sample)["X"].shape[1])
     split_map = load_split_map(pack)
-    out_dir = out_root / montage_key
+    out_dir = resolve_under(out_root / montage_key, *allowed_bases(ROOT))
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"\n===== {montage_key} C={expected_c} ch={channel_names} pack={pack_name} =====", flush=True)
@@ -559,7 +560,7 @@ def main() -> None:
     print(f"device={device} batch_enc={batch_enc} per_class_cap={args.per_class_cap}", flush=True)
     rng = np.random.default_rng(SEED)
     torch.manual_seed(SEED)
-    out_root = Path(args.out)
+    out_root = resolve_under(Path(args.out), *allowed_bases(ROOT))
     out_root.mkdir(parents=True, exist_ok=True)
 
     sampling = (
@@ -599,7 +600,7 @@ def main() -> None:
             for r in results
         },
     }
-    (out_root / "compare.json").write_text(json.dumps(compare, indent=2) + "\n")
+    resolve_under(out_root / "compare.json", *allowed_bases(ROOT)).write_text(json.dumps(compare, indent=2) + "\n")
     write_docs(compare, ROOT / "docs" / "crown_hmc_vig_reve.md")
     print(json.dumps({"any_ship": any_ship, "both_below": both_below, "f1": compare["f1"]}, indent=2))
     print(f"docs → {ROOT / 'docs' / 'crown_hmc_vig_reve.md'}")

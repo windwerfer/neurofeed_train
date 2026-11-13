@@ -18,6 +18,7 @@ import torch.nn.functional as F
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+from safe_paths import allowed_bases, resolve_under
 
 from head_a import HeadALinear  # noqa: E402
 
@@ -78,7 +79,7 @@ def main() -> int:
     # --- head checksums ---
     head_results = []
     for h in manifest["heads"]:
-        path = PACK / h["path"]
+        path = resolve_under(PACK / h["path"], *allowed_bases(ROOT))
         digest = sha256_file(path) if path.is_file() else None
         match = digest == h["sha256"]
         checks.append(
@@ -91,7 +92,7 @@ def main() -> int:
             }
         )
         # load HeadALinear
-        blob = torch.load(path, map_location="cpu", weights_only=False)
+        blob = torch.load(path, map_location="cpu", weights_only=True)
         if isinstance(blob, dict) and "state_dict" in blob and "net.1.weight" not in blob:
             sd = blob["state_dict"]
             n_classes = int(blob.get("n_classes", h["n_classes"]))
@@ -310,7 +311,7 @@ AppImage (GUI, historical boot smoke 2026-09-04):
 - Packaging docs: `docs/export_cbramod_packaging.md`
 - Script: `scripts/flutter_pack_smoke_notes.py`
 """
-    DOCS.write_text(docs, encoding="utf-8")
+    resolve_under(DOCS, *allowed_bases(ROOT)).write_text(docs, encoding="utf-8")
 
     # --- update overnight_state ---
     state = load_json(STATE)
@@ -345,7 +346,7 @@ AppImage (GUI, historical boot smoke 2026-09-04):
     # extend plan so invent has a trail, but next_index already past original plan
     if "flutter_pack_smoke_notes" not in state["plan"]:
         state["plan"].append("flutter_pack_smoke_notes")
-    STATE.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
+    resolve_under(STATE, *allowed_bases(ROOT)).write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
 
     print(json.dumps({"ok": all_ok, "summary": str(OUT_DIR / "summary.json"), "docs": str(DOCS)}, indent=2))
     return 0 if all_ok else 1

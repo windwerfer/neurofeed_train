@@ -4,8 +4,11 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from src.safe_paths import allowed_bases, resolve_under
 MONTAGE_ID = "muse4"
 MODEL_ORDER = ["AF7", "AF8", "TP9", "TP10"]
 CORPORA = {
@@ -14,6 +17,7 @@ CORPORA = {
 }
 
 def stamp_manifest(path: Path) -> bool:
+    path = resolve_under(path, *allowed_bases(ROOT))
     doc = json.loads(path.read_text())
     changed = False
     if doc.get("montage_id") != MONTAGE_ID:
